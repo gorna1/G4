@@ -8,12 +8,12 @@
  *
  * @author Lucas
  */
-public class registrarJugador extends javax.swing.JFrame {
+public class RegistrarJugador extends javax.swing.JFrame {
 
     /**
      * Creates new form registrarJugador
      */
-    public registrarJugador() {
+    public RegistrarJugador() {
         initComponents();
     }
 
@@ -47,6 +47,7 @@ public class registrarJugador extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(400, 300));
         setResizable(false);
+        getContentPane().setLayout(new javax.swing.BoxLayout(getContentPane(), javax.swing.BoxLayout.Y_AXIS));
 
         jPanel3.setBackground(new java.awt.Color(200, 200, 200));
         jPanel3.setLayout(new javax.swing.BoxLayout(jPanel3, javax.swing.BoxLayout.Y_AXIS));
@@ -54,30 +55,41 @@ public class registrarJugador extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(200, 200, 200));
         jPanel1.setLayout(new java.awt.GridLayout(6, 2));
 
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Nombre");
         jPanel1.add(jLabel1);
 
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Apellidos");
         jPanel1.add(jLabel2);
         jPanel1.add(jTextField1);
         jPanel1.add(jTextField2);
 
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("DNI");
         jPanel1.add(jLabel3);
 
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Teléfono");
         jPanel1.add(jLabel4);
         jPanel1.add(jTextField3);
+
+        jTextField4.setForeground(new java.awt.Color(0, 0, 0));
         jPanel1.add(jTextField4);
 
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Nivel de Habilidad");
         jPanel1.add(jLabel5);
 
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Dirección");
         jPanel1.add(jLabel6);
 
+        jComboBox1.setForeground(new java.awt.Color(0, 0, 0));
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Principiante", "Intermedio", "Experto" }));
         jPanel1.add(jComboBox1);
+
+        jTextField6.setForeground(new java.awt.Color(0, 0, 0));
         jPanel1.add(jTextField6);
 
         jPanel3.add(jPanel1);
@@ -92,7 +104,7 @@ public class registrarJugador extends javax.swing.JFrame {
 
         jPanel3.add(jPanel2);
 
-        getContentPane().add(jPanel3, java.awt.BorderLayout.PAGE_END);
+        getContentPane().add(jPanel3);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -114,20 +126,21 @@ public class registrarJugador extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(registrarJugador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RegistrarJugador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(registrarJugador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RegistrarJugador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(registrarJugador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RegistrarJugador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(registrarJugador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RegistrarJugador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new registrarJugador().setVisible(true);
+                new RegistrarJugador().setVisible(true);
             }
         });
     }
