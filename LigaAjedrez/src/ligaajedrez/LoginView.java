@@ -47,6 +47,11 @@ public class LoginView extends javax.swing.JFrame {
 
         jButtonLogin.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
         jButtonLogin.setText("Iniciar Sesión");
+        jButtonLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonLoginActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelViewLayout = new javax.swing.GroupLayout(jPanelView);
         jPanelView.setLayout(jPanelViewLayout);
@@ -85,6 +90,12 @@ public class LoginView extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLoginActionPerformed
+        AdminView adminView = new AdminView() ;
+        setVisible(false) ;
+        adminView.setVisible(true) ;
+    }//GEN-LAST:event_jButtonLoginActionPerformed
 
     /**
      * @param args the command line arguments

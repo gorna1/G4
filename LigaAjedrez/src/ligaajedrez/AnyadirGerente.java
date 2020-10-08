@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+package ligaajedrez;
 /**
  *
  * @author Gor
@@ -44,7 +44,7 @@ public class AnyadirGerente extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Nombre");
+        jLabel1.setText("DNI:");
 
         jLabel2.setText("Apellidos");
 
