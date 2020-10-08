@@ -126,7 +126,9 @@ public class MorososView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVolverActionPerformed
-        // TODO add your handling code here:
+        AdminView adminView = new AdminView();
+        setVisible(false);
+        adminView.setVisible(true);
     }//GEN-LAST:event_jButtonVolverActionPerformed
 
     /**

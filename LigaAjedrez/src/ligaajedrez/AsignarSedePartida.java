@@ -1,3 +1,5 @@
+package ligaajedrez;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -105,7 +107,9 @@ public class AsignarSedePartida extends javax.swing.JFrame {
     }//GEN-LAST:event_botonGuardarActionPerformed
 
     private void botonAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAtrasActionPerformed
-        // TODO add your handling code here:
+        AdminView adminView = new AdminView();
+        setVisible(false);
+        adminView.setVisible(true);
     }//GEN-LAST:event_botonAtrasActionPerformed
 
     /**

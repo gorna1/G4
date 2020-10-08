@@ -1,3 +1,8 @@
+package ligaajedrez;
+
+
+import ligaajedrez.AdminView;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -8,12 +13,12 @@
  *
  * @author Lucas
  */
-public class asignarResponsable extends javax.swing.JFrame {
+public class AsignarResponsable extends javax.swing.JFrame {
 
     /**
      * Creates new form asignarResponsable
      */
-    public asignarResponsable() {
+    public AsignarResponsable() {
         initComponents();
     }
 
@@ -90,6 +95,11 @@ public class asignarResponsable extends javax.swing.JFrame {
         jPanel1.add(jPanel4);
 
         jButton1.setText("ATRAS");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         jPanel5.add(jButton1);
 
         jButton2.setText("CONTINUAR");
@@ -101,6 +111,12 @@ public class asignarResponsable extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        AdminView adminView = new AdminView();
+        setVisible(false);
+        adminView.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -119,20 +135,21 @@ public class asignarResponsable extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(asignarResponsable.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AsignarResponsable.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(asignarResponsable.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AsignarResponsable.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(asignarResponsable.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AsignarResponsable.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(asignarResponsable.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AsignarResponsable.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new asignarResponsable().setVisible(true);
+                new AsignarResponsable().setVisible(true);
             }
         });
     }

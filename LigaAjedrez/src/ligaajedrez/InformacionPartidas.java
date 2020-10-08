@@ -1,3 +1,5 @@
+package ligaajedrez;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -73,6 +75,11 @@ public class InformacionPartidas extends javax.swing.JFrame {
         textFieldDuracionPartida.setEditable(false);
 
         botonVolver.setText("Volver");
+        botonVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonVolverActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -147,6 +154,12 @@ public class InformacionPartidas extends javax.swing.JFrame {
     private void textFieldRivalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldRivalActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_textFieldRivalActionPerformed
+
+    private void botonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVolverActionPerformed
+        AdminView adminView = new AdminView();
+        setVisible(false);
+        adminView.setVisible(true);
+    }//GEN-LAST:event_botonVolverActionPerformed
 
     /**
      * @param args the command line arguments

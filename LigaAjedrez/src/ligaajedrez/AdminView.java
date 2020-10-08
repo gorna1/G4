@@ -29,7 +29,6 @@ public class AdminView extends javax.swing.JFrame {
 
         jPanelView = new javax.swing.JPanel();
         jButtonSede = new javax.swing.JButton();
-        jButtonCambiarClub = new javax.swing.JButton();
         jButtonInfoPartidas = new javax.swing.JButton();
         jButtonAnyadirGerente = new javax.swing.JButton();
         jButtonAnyadirEntrenador = new javax.swing.JButton();
@@ -43,33 +42,75 @@ public class AdminView extends javax.swing.JFrame {
 
         jButtonSede.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
         jButtonSede.setText("Elegir sede para partida");
-
-        jButtonCambiarClub.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
-        jButtonCambiarClub.setText("Cambiar de club jugador/gerente");
+        jButtonSede.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSedeActionPerformed(evt);
+            }
+        });
 
         jButtonInfoPartidas.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
         jButtonInfoPartidas.setText("Ver info partidas para cada jugador");
+        jButtonInfoPartidas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonInfoPartidasActionPerformed(evt);
+            }
+        });
 
         jButtonAnyadirGerente.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
-        jButtonAnyadirGerente.setText("Añadir gerente");
+        jButtonAnyadirGerente.setText("Administrar gerente");
+        jButtonAnyadirGerente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAnyadirGerenteActionPerformed(evt);
+            }
+        });
 
         jButtonAnyadirEntrenador.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
-        jButtonAnyadirEntrenador.setText("Registrar Entrenador");
+        jButtonAnyadirEntrenador.setText("Administrar Entrenador");
+        jButtonAnyadirEntrenador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAnyadirEntrenadorActionPerformed(evt);
+            }
+        });
 
         jButtonMultasMorosos.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
         jButtonMultasMorosos.setText("Pago multas de morosos");
+        jButtonMultasMorosos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonMultasMorososActionPerformed(evt);
+            }
+        });
 
         jButton1.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
         jButton1.setText("Asignar Responsable");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
         jButton2.setText("Introducir Resultados");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
         jButton3.setText("Realizar Reserva");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
         jButton4.setText("Administrar jugadores");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelViewLayout = new javax.swing.GroupLayout(jPanelView);
         jPanelView.setLayout(jPanelViewLayout);
@@ -79,7 +120,6 @@ public class AdminView extends javax.swing.JFrame {
                 .addGap(36, 36, 36)
                 .addGroup(jPanelViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButtonSede, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButtonCambiarClub, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButtonInfoPartidas, javax.swing.GroupLayout.DEFAULT_SIZE, 337, Short.MAX_VALUE)
                     .addComponent(jButtonAnyadirGerente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButtonAnyadirEntrenador, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -98,8 +138,6 @@ public class AdminView extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jButtonInfoPartidas)
                 .addGap(18, 18, 18)
-                .addComponent(jButtonCambiarClub)
-                .addGap(18, 18, 18)
                 .addComponent(jButtonAnyadirGerente)
                 .addGap(18, 18, 18)
                 .addComponent(jButtonAnyadirEntrenador)
@@ -113,7 +151,7 @@ public class AdminView extends javax.swing.JFrame {
                 .addComponent(jButton3)
                 .addGap(18, 18, 18)
                 .addComponent(jButton4)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(58, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -126,11 +164,65 @@ public class AdminView extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanelView, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 45, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonInfoPartidasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonInfoPartidasActionPerformed
+        InformacionPartidas informacionPartidas = new InformacionPartidas();
+        setVisible(false);
+        informacionPartidas.setVisible(true);
+    }//GEN-LAST:event_jButtonInfoPartidasActionPerformed
+
+    private void jButtonSedeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSedeActionPerformed
+        AsignarSedePartida asignarSedePartida = new AsignarSedePartida();
+        setVisible(false);
+        asignarSedePartida.setVisible(true);
+    }//GEN-LAST:event_jButtonSedeActionPerformed
+
+    private void jButtonAnyadirGerenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAnyadirGerenteActionPerformed
+        AdminGerentesView adminGerentesView = new AdminGerentesView();
+        setVisible(false);
+        adminGerentesView.setVisible(true);
+    }//GEN-LAST:event_jButtonAnyadirGerenteActionPerformed
+
+    private void jButtonAnyadirEntrenadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAnyadirEntrenadorActionPerformed
+        //AdminGerentesView adminGerentesView = new AdminGerentesView();
+        //setVisible(false);
+        //adminGerentesView.setVisible(true);
+    }//GEN-LAST:event_jButtonAnyadirEntrenadorActionPerformed
+
+    private void jButtonMultasMorososActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMultasMorososActionPerformed
+        MorososView morososView = new MorososView();
+        setVisible(false);
+        morososView.setVisible(true);
+    }//GEN-LAST:event_jButtonMultasMorososActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        AsignarResponsable asignarResponsable = new AsignarResponsable();
+        setVisible(false);
+        asignarResponsable.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        IntroducirResultados introducirResultados = new IntroducirResultados();
+        setVisible(false);
+        introducirResultados.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        RealizarReserva realizarReserva = new RealizarReserva();
+        setVisible(false);
+        realizarReserva.setVisible(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        AdminJugadorView adminJugadorView = new AdminJugadorView();
+        setVisible(false);
+        adminJugadorView.setVisible(true);
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -175,7 +267,6 @@ public class AdminView extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButtonAnyadirEntrenador;
     private javax.swing.JButton jButtonAnyadirGerente;
-    private javax.swing.JButton jButtonCambiarClub;
     private javax.swing.JButton jButtonInfoPartidas;
     private javax.swing.JButton jButtonMultasMorosos;
     private javax.swing.JButton jButtonSede;

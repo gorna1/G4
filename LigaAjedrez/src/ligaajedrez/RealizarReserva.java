@@ -1,6 +1,7 @@
 
 import javax.swing.DefaultListCellRenderer;
 import javax.swing.SwingConstants;
+import ligaajedrez.AdminView;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -12,12 +13,12 @@ import javax.swing.SwingConstants;
  *
  * @author Lucas
  */
-public class realizarReserva extends javax.swing.JFrame {
+public class RealizarReserva extends javax.swing.JFrame {
 
     /**
      * Creates new form realizarReserva
      */
-    public realizarReserva() {
+    public RealizarReserva() {
         initComponents();
     }
 
@@ -68,6 +69,11 @@ public class realizarReserva extends javax.swing.JFrame {
         getContentPane().add(jPanel1);
 
         jButton2.setText("ATRAS");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         jPanel2.add(jButton2);
 
         jButton1.setText("CONTINUAR");
@@ -77,6 +83,12 @@ public class realizarReserva extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        AdminView adminView = new AdminView();
+        setVisible(false);
+        adminView.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -95,20 +107,21 @@ public class realizarReserva extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(realizarReserva.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RealizarReserva.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(realizarReserva.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RealizarReserva.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(realizarReserva.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RealizarReserva.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(realizarReserva.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RealizarReserva.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new realizarReserva().setVisible(true);
+                new RealizarReserva().setVisible(true);
             }
         });
     }

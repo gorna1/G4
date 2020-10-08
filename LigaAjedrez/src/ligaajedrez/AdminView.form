@@ -30,7 +30,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <Component id="jPanelView" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="45" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -45,7 +45,6 @@
                   <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="jButtonSede" max="32767" attributes="0"/>
-                      <Component id="jButtonCambiarClub" max="32767" attributes="0"/>
                       <Component id="jButtonInfoPartidas" pref="337" max="32767" attributes="0"/>
                       <Component id="jButtonAnyadirGerente" max="32767" attributes="0"/>
                       <Component id="jButtonAnyadirEntrenador" max="32767" attributes="0"/>
@@ -66,8 +65,6 @@
                   <Component id="jButtonSede" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jButtonInfoPartidas" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                  <Component id="jButtonCambiarClub" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jButtonAnyadirGerente" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -82,7 +79,7 @@
                   <Component id="jButton3" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jButton4" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="58" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -95,14 +92,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Elegir sede para partida"/>
           </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="jButtonCambiarClub">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Lucida Grande" size="15" style="0"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Cambiar de club jugador/gerente"/>
-          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonSedeActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButtonInfoPartidas">
           <Properties>
@@ -111,22 +103,31 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Ver info partidas para cada jugador"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonInfoPartidasActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButtonAnyadirGerente">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Lucida Grande" size="15" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="A&#xf1;adir gerente"/>
+            <Property name="text" type="java.lang.String" value="Administrar gerente"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonAnyadirGerenteActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButtonAnyadirEntrenador">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Lucida Grande" size="15" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Registrar Entrenador"/>
+            <Property name="text" type="java.lang.String" value="Administrar Entrenador"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonAnyadirEntrenadorActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButtonMultasMorosos">
           <Properties>
@@ -135,6 +136,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Pago multas de morosos"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonMultasMorososActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButton1">
           <Properties>
@@ -143,6 +147,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Asignar Responsable"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButton2">
           <Properties>
@@ -151,6 +158,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Introducir Resultados"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButton3">
           <Properties>
@@ -159,6 +169,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Realizar Reserva"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButton4">
           <Properties>
@@ -167,6 +180,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Administrar jugadores"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton4ActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

@@ -1,3 +1,6 @@
+
+import ligaajedrez.AdminJugadorView;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -97,6 +100,11 @@ public class RegistrarJugador extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(200, 200, 200));
 
         jButton1.setText("ATRAS");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         jPanel2.add(jButton1);
 
         jButton2.setText("CONTINUAR");
@@ -108,6 +116,12 @@ public class RegistrarJugador extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        AdminJugadorView adminJugadorView = new AdminJugadorView();
+        setVisible(false);
+        adminJugadorView.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
