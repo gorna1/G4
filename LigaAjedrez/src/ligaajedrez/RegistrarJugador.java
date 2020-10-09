@@ -1,5 +1,4 @@
-
-import ligaajedrez.AdminJugadorView;
+package ligaajedrez;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
