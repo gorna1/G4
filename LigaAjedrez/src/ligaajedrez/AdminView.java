@@ -189,9 +189,9 @@ public class AdminView extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonAnyadirGerenteActionPerformed
 
     private void jButtonAnyadirEntrenadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAnyadirEntrenadorActionPerformed
-        //AdminGerentesView adminGerentesView = new AdminGerentesView();
-        //setVisible(false);
-        //adminGerentesView.setVisible(true);
+        AdministrarEntrenador adminEntrenador = new AdministrarEntrenador();
+        setVisible(false);
+        adminEntrenador.setVisible(true);
     }//GEN-LAST:event_jButtonAnyadirEntrenadorActionPerformed
 
     private void jButtonMultasMorososActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMultasMorososActionPerformed
