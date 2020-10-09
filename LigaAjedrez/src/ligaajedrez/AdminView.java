@@ -14,7 +14,10 @@ public class AdminView extends javax.swing.JFrame {
     /**
      * Creates new form AdminView
      */
+    private AdministrarEntrenador adminEntrenador;
     public AdminView() {
+        adminEntrenador = new AdministrarEntrenador(this);
+        adminEntrenador.pack();
         initComponents();
     }
 
@@ -189,9 +192,8 @@ public class AdminView extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonAnyadirGerenteActionPerformed
 
     private void jButtonAnyadirEntrenadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAnyadirEntrenadorActionPerformed
-        AdministrarEntrenador adminEntrenador = new AdministrarEntrenador();
-        setVisible(false);
-        adminEntrenador.setVisible(true);
+       this.setVisible(false);
+       adminEntrenador.setVisible(true);
     }//GEN-LAST:event_jButtonAnyadirEntrenadorActionPerformed
 
     private void jButtonMultasMorososActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMultasMorososActionPerformed
