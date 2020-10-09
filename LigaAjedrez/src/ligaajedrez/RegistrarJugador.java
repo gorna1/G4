@@ -1,5 +1,7 @@
 package ligaajedrez;
 
+import javax.swing.JFrame;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -15,7 +17,11 @@ public class RegistrarJugador extends javax.swing.JFrame {
     /**
      * Creates new form registrarJugador
      */
-    public RegistrarJugador() {
+    JFrame vAnterior;
+    JFrame vPrincipal;
+    public RegistrarJugador(javax.swing.JFrame vAnterior, javax.swing.JFrame vPrincipal) {
+        this.vAnterior = vAnterior;
+        this.vPrincipal = vPrincipal;
         initComponents();
     }
 
@@ -57,41 +63,30 @@ public class RegistrarJugador extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(200, 200, 200));
         jPanel1.setLayout(new java.awt.GridLayout(6, 2));
 
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Nombre");
         jPanel1.add(jLabel1);
 
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Apellidos");
         jPanel1.add(jLabel2);
         jPanel1.add(jTextField1);
         jPanel1.add(jTextField2);
 
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("DNI");
         jPanel1.add(jLabel3);
 
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Teléfono");
         jPanel1.add(jLabel4);
         jPanel1.add(jTextField3);
-
-        jTextField4.setForeground(new java.awt.Color(0, 0, 0));
         jPanel1.add(jTextField4);
 
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Nivel de Habilidad");
         jPanel1.add(jLabel5);
 
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Dirección");
         jPanel1.add(jLabel6);
 
-        jComboBox1.setForeground(new java.awt.Color(0, 0, 0));
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Principiante", "Intermedio", "Experto" }));
         jPanel1.add(jComboBox1);
-
-        jTextField6.setForeground(new java.awt.Color(0, 0, 0));
         jPanel1.add(jTextField6);
 
         jPanel3.add(jPanel1);
@@ -107,6 +102,11 @@ public class RegistrarJugador extends javax.swing.JFrame {
         jPanel2.add(jButton1);
 
         jButton2.setText("CONTINUAR");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         jPanel2.add(jButton2);
 
         jPanel3.add(jPanel2);
@@ -117,46 +117,16 @@ public class RegistrarJugador extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        AdminJugadorView adminJugadorView = new AdminJugadorView();
+        
         setVisible(false);
-        adminJugadorView.setVisible(true);
+        vAnterior.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(RegistrarJugador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(RegistrarJugador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(RegistrarJugador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(RegistrarJugador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        setVisible(false);
+        vPrincipal.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new RegistrarJugador().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;

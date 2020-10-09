@@ -5,6 +5,8 @@
  */
 package ligaajedrez;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author alberto
@@ -14,7 +16,9 @@ public class MorososView extends javax.swing.JFrame {
     /**
      * Creates new form MorososView
      */
-    public MorososView() {
+    JFrame vAnterior;
+    public MorososView(javax.swing.JFrame vAnterior) {
+        this.vAnterior = vAnterior;
         initComponents();
     }
 
@@ -41,7 +45,6 @@ public class MorososView extends javax.swing.JFrame {
 
         jLabelNombre.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
         jLabelNombre.setText("Nombre:");
-        jLabelNombre.setSize(new java.awt.Dimension(50, 20));
 
         jLabelApellidos.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
         jLabelApellidos.setText("Apellidos: ");
@@ -55,6 +58,11 @@ public class MorososView extends javax.swing.JFrame {
         jComboBoxMorosos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jButtonCobrar.setText("Cobrar Multa");
+        jButtonCobrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCobrarActionPerformed(evt);
+            }
+        });
 
         jButtonVolver.setText("Volver");
         jButtonVolver.addActionListener(new java.awt.event.ActionListener() {
@@ -126,46 +134,16 @@ public class MorososView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVolverActionPerformed
-        AdminView adminView = new AdminView();
+
         setVisible(false);
-        adminView.setVisible(true);
+        vAnterior.setVisible(true);
     }//GEN-LAST:event_jButtonVolverActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MorososView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MorososView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MorososView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MorososView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
+    private void jButtonCobrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCobrarActionPerformed
+        setVisible(false);
+        vAnterior.setVisible(true);
+    }//GEN-LAST:event_jButtonCobrarActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new MorososView().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonBuscar;
