@@ -15,6 +15,10 @@ public class Torneo {
     String ciudad;
     String sede;
     protected ArrayList<Jugador> jugadoresTorneo = new ArrayList<Jugador>();
+    protected ArrayList<EnfrentamientoTorneo> listaEnfrentamientos = new ArrayList<EnfrentamientoTorneo>();
+    protected ArrayList<Jugador> listaRivales = new ArrayList<Jugador>();
+    
+    
     
     
     public Torneo (String ciudad){
@@ -40,5 +44,18 @@ public class Torneo {
     public void anyadirJugadorTorneo(Jugador jugador){
         jugadoresTorneo.add(jugador);
     }
+    
+    public void anyadirEnfrentamientos(Jugador j1, Jugador j2){
+        listaEnfrentamientos.add(new EnfrentamientoTorneo(j1,j2));
+    }
+    
+    public ArrayList consultarEnfrentamiento(String nombre){
+        
+        for(EnfrentamientoTorneo et: listaEnfrentamientos)
+            listaRivales.add(et.consultarEnfrentamiento(nombre));
+        
+        return listaRivales;
+    }
+            
     
 }

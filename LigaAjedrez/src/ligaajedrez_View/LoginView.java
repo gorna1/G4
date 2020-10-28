@@ -29,7 +29,10 @@ public class LoginView extends javax.swing.JFrame {
         jugador2 = new Jugador ("Pepe","Andres","Z283913Y","723382912","23","Experto");
         torneo = new Torneo("Valencia");
         liga.anyadirJugadores(jugador1);
+        System.out.println("añadido gor");
+        
         liga.anyadirJugadores(jugador2);
+        System.out.println("añadido pepe");
         liga.anyadirTorneo(torneo);
         adminView = new AdminView(liga) ;
         

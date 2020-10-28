@@ -36,10 +36,11 @@ public class AdminView extends javax.swing.JFrame {
         adminGerentesView = new AdminGerentesView(this);
         morososView = new MorososView(this);
         asignarResponsable = new AsignarResponsable(this);
-        introducirResultados = new IntroducirResultados(this);
+        
         realizarReserva = new RealizarReserva(this);
         adminJugadorView = new AdminJugadorView(this,liga);
         apTorneo = new ApuntarseTorneo(this,liga);
+        introducirResultados = new IntroducirResultados(this,liga);
         
         morososView.pack();
         informacionPartidas.pack();

@@ -16,6 +16,7 @@ import java.util.ArrayList;
 public class LigaAjedrez {
     protected ArrayList<Jugador> listaJugadores = new ArrayList<Jugador>();
     protected ArrayList<Torneo> listaTorneos = new ArrayList<Torneo>();
+    protected ArrayList<Jugador> listaRivales = new ArrayList<Jugador>();
     
     
     public void anyadirJugadores(Jugador jugador){
@@ -32,12 +33,21 @@ public class LigaAjedrez {
     
     public void anyadirJugadorTorneo(Torneo t, Jugador j){
         for(Torneo lTorneos :listaTorneos)
-            if(lTorneos == t){
+            if(lTorneos == t)
                 lTorneos.anyadirJugadorTorneo(j);
-                System.out.println("He añadido jugador al torneo");
-                }
             }
                 
+    public ArrayList<Jugador> consultarJugadores(){
+        return listaJugadores;
+    }
+    
+    public ArrayList<Jugador> consultarEnfrentamiento(String nombre){
+        for(Torneo t : listaTorneos)
+            listaRivales = t.consultarEnfrentamiento(nombre);
+    
+        return listaRivales;
+}
+    
     
 }
 

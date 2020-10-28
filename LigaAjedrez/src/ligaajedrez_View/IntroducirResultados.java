@@ -1,7 +1,11 @@
 package ligaajedrez_View;
 
 
+import java.util.ArrayList;
 import javax.swing.JFrame;
+import ligaajedrez_Model.Jugador;
+import ligaajedrez_Model.LigaAjedrez;
+import ligaajedrez_Model.Torneo;
 import ligaajedrez_View.AdminView;
 
 /*
@@ -20,9 +24,20 @@ public class IntroducirResultados extends javax.swing.JFrame {
      * Creates new form introducirResultados
      */
     JFrame vAnterior;
-    public IntroducirResultados(javax.swing.JFrame vAnterior) {
+    private LigaAjedrez liga;
+    protected ArrayList<Jugador> listaJugadores = new ArrayList<Jugador>();
+    protected ArrayList<Jugador> listaJugadores2 = new ArrayList<Jugador>();
+    
+    
+    public IntroducirResultados(javax.swing.JFrame vAnterior,LigaAjedrez liga) {
         this.vAnterior = vAnterior;
         initComponents();
+        jComboBox1.removeAllItems();
+        
+        listaJugadores = liga.consultarJugadores();
+        for(Jugador j : listaJugadores)
+            jComboBox1.addItem(j.getsNmb());
+        
     }
 
     /**
@@ -75,6 +90,11 @@ public class IntroducirResultados extends javax.swing.JFrame {
 
         jComboBox1.setBackground(new java.awt.Color(204, 204, 204));
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Paquito", "Juan", "José" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
         jPanel3.add(jComboBox1);
 
         jComboBox2.setBackground(new java.awt.Color(204, 204, 204));
@@ -137,6 +157,11 @@ public class IntroducirResultados extends javax.swing.JFrame {
         setVisible(false);
         vAnterior.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        
+        
+    }//GEN-LAST:event_jComboBox1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
