@@ -1,4 +1,4 @@
-package ligaajedrez;
+package ligaajedrez_View;
 import javax.swing.JFrame;
 
 

@@ -1,6 +1,8 @@
-package ligaajedrez;
+package ligaajedrez_View;
+
 
 import javax.swing.JFrame;
+import ligaajedrez_View.AdminView;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -12,16 +14,14 @@ import javax.swing.JFrame;
  *
  * @author Lucas
  */
-public class RegistrarJugador extends javax.swing.JFrame {
+public class AsignarResponsable extends javax.swing.JFrame {
 
     /**
-     * Creates new form registrarJugador
+     * Creates new form asignarResponsable
      */
     JFrame vAnterior;
-    JFrame vPrincipal;
-    public RegistrarJugador(javax.swing.JFrame vAnterior, javax.swing.JFrame vPrincipal) {
+    public AsignarResponsable(javax.swing.JFrame vAnterior) {
         this.vAnterior = vAnterior;
-        this.vPrincipal = vPrincipal;
         initComponents();
     }
 
@@ -34,64 +34,68 @@ public class RegistrarJugador extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel3 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        jTextField6 = new javax.swing.JTextField();
+        jTextField5 = new javax.swing.JTextField();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         jTextField3 = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jTextField6 = new javax.swing.JTextField();
-        jPanel2 = new javax.swing.JPanel();
+        jPanel5 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Asignar Responsable");
         setMinimumSize(new java.awt.Dimension(400, 300));
-        setResizable(false);
-        getContentPane().setLayout(new javax.swing.BoxLayout(getContentPane(), javax.swing.BoxLayout.Y_AXIS));
-
-        jPanel3.setBackground(new java.awt.Color(200, 200, 200));
-        jPanel3.setLayout(new javax.swing.BoxLayout(jPanel3, javax.swing.BoxLayout.Y_AXIS));
+        getContentPane().setLayout(new java.awt.BorderLayout(20, 20));
 
         jPanel1.setBackground(new java.awt.Color(200, 200, 200));
-        jPanel1.setLayout(new java.awt.GridLayout(6, 2));
-
-        jLabel1.setText("Nombre");
-        jPanel1.add(jLabel1);
-
-        jLabel2.setText("Apellidos");
-        jPanel1.add(jLabel2);
-        jPanel1.add(jTextField1);
-        jPanel1.add(jTextField2);
-
-        jLabel3.setText("DNI");
-        jPanel1.add(jLabel3);
-
-        jLabel4.setText("Teléfono");
-        jPanel1.add(jLabel4);
-        jPanel1.add(jTextField3);
-        jPanel1.add(jTextField4);
-
-        jLabel5.setText("Nivel de Habilidad");
-        jPanel1.add(jLabel5);
-
-        jLabel6.setText("Dirección");
-        jPanel1.add(jLabel6);
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Principiante", "Intermedio", "Experto" }));
-        jPanel1.add(jComboBox1);
-        jPanel1.add(jTextField6);
-
-        jPanel3.add(jPanel1);
+        jPanel1.setLayout(new javax.swing.BoxLayout(jPanel1, javax.swing.BoxLayout.Y_AXIS));
 
         jPanel2.setBackground(new java.awt.Color(200, 200, 200));
+
+        jLabel1.setText("Nombre Niño");
+        jPanel2.add(jLabel1);
+
+        jTextField6.setColumns(10);
+        jPanel2.add(jTextField6);
+
+        jPanel1.add(jPanel2);
+
+        jTextField5.setBackground(new java.awt.Color(200, 200, 200));
+        jTextField5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField5.setText("Datos Responsable");
+        jTextField5.setBorder(null);
+        jPanel1.add(jTextField5);
+
+        jPanel4.setBackground(new java.awt.Color(200, 200, 200));
+        jPanel4.setLayout(new java.awt.GridLayout(4, 2));
+
+        jLabel5.setText("Nombre");
+        jPanel4.add(jLabel5);
+
+        jLabel7.setText("DNI");
+        jPanel4.add(jLabel7);
+        jPanel4.add(jTextField1);
+        jPanel4.add(jTextField2);
+
+        jLabel6.setText("Teléfono");
+        jPanel4.add(jLabel6);
+
+        jLabel8.setText("Dirección");
+        jPanel4.add(jLabel8);
+        jPanel4.add(jTextField3);
+        jPanel4.add(jTextField4);
+
+        jPanel1.add(jPanel4);
 
         jButton1.setText("ATRAS");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -99,7 +103,7 @@ public class RegistrarJugador extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton1);
+        jPanel5.add(jButton1);
 
         jButton2.setText("CONTINUAR");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -107,44 +111,43 @@ public class RegistrarJugador extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton2);
+        jPanel5.add(jButton2);
 
-        jPanel3.add(jPanel2);
+        jPanel1.add(jPanel5);
 
-        getContentPane().add(jPanel3);
+        getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
         setVisible(false);
         vAnterior.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         setVisible(false);
-        vPrincipal.setVisible(true);
+        vAnterior.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     // End of variables declaration//GEN-END:variables
 }

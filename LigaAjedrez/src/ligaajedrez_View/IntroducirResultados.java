@@ -1,8 +1,8 @@
-package ligaajedrez;
+package ligaajedrez_View;
 
 
 import javax.swing.JFrame;
-import ligaajedrez.AdminView;
+import ligaajedrez_View.AdminView;
 
 /*
  * To change this license header, choose License Headers in Project Properties.

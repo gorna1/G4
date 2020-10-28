@@ -1,4 +1,4 @@
-package ligaajedrez;
+package ligaajedrez_View;
 
 import javax.swing.DefaultListCellRenderer;
 import javax.swing.JFrame;
@@ -37,9 +37,9 @@ public class RealizarReserva extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
         jPanel1 = new javax.swing.JPanel();
-        jCalendar2 = new com.toedter.calendar.JCalendar();
         jScrollPane3 = new javax.swing.JScrollPane();
         jList3 = new javax.swing.JList<>();
+        jCalendar2 = new com.toedter.calendar.JCalendar();
         jPanel2 = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
@@ -56,7 +56,6 @@ public class RealizarReserva extends javax.swing.JFrame {
         getContentPane().setLayout(new javax.swing.BoxLayout(getContentPane(), javax.swing.BoxLayout.Y_AXIS));
 
         jPanel1.setLayout(new java.awt.GridLayout(2, 1));
-        jPanel1.add(jCalendar2);
 
         jList3.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "08:00 - 10:00", "10:00 - 12:00", "12:00 - 14:00" };
@@ -68,6 +67,7 @@ public class RealizarReserva extends javax.swing.JFrame {
         jScrollPane3.setViewportView(jList3);
 
         jPanel1.add(jScrollPane3);
+        jPanel1.add(jCalendar2);
 
         getContentPane().add(jPanel1);
 
