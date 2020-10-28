@@ -2,6 +2,7 @@ package ligaajedrez_View;
 
 import ligaajedrez_Model.Jugador ;
 import javax.swing.JFrame;
+import ligaajedrez_Model.LigaAjedrez;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -20,10 +21,13 @@ public class RegistrarJugador extends javax.swing.JFrame {
      */
     JFrame vAnterior;
     JFrame vPrincipal;
-    private String sNmb, sApe, sTel, sEdad, sDNI, sElo ;
-    private Jugador jugador ;
+    private String sNmb, sApe, sTel, sDNI,sEdad, sElo;
+    private Jugador jugador;
+    private LigaAjedrez liga;
+
     
-    public RegistrarJugador(javax.swing.JFrame vAnterior, javax.swing.JFrame vPrincipal) {
+    public RegistrarJugador(javax.swing.JFrame vAnterior, javax.swing.JFrame vPrincipal, LigaAjedrez liga) {
+        this.liga = liga;
         this.vAnterior = vAnterior;
         this.vPrincipal = vPrincipal;
         initComponents();
@@ -131,7 +135,9 @@ public class RegistrarJugador extends javax.swing.JFrame {
         sApe = jTextFieldApellidos.getText() ;
         sTel = jTextFieldTelefono.getText() ;
         sDNI = jTextFieldDNI.getText() ;
-        sEdad = jTextFieldEdad.getText() ;
+        sEdad = jTextFieldEdad.getText();
+
+        
         
         switch (jComboBoxElo.getSelectedIndex()) {
                     case 0:
@@ -148,6 +154,7 @@ public class RegistrarJugador extends javax.swing.JFrame {
                         break;
                 }
         jugador = new Jugador(sNmb, sApe, sTel, sDNI, sEdad, sElo) ;
+        liga.anyadirJugadores(jugador);
         
         setVisible(false);
         vPrincipal.setVisible(true);

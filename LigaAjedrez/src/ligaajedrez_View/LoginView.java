@@ -5,6 +5,10 @@
  */
 package ligaajedrez_View;
 
+import ligaajedrez_Model.Jugador;
+import ligaajedrez_Model.LigaAjedrez;
+import ligaajedrez_Model.Torneo;
+
 /**
  *
  * @author alberto
@@ -15,8 +19,20 @@ public class LoginView extends javax.swing.JFrame {
      * Creates new form LoginView
      */
     private AdminView adminView;
+    private Jugador jugador1, jugador2;
+    private LigaAjedrez liga;
+    private Torneo torneo;
     public LoginView() {
-        adminView = new AdminView() ;
+        
+        liga = new LigaAjedrez();
+        jugador1 = new Jugador("Gor", "Navasardyan", "X2752013V", "625102312", "22", "Principiante");
+        jugador2 = new Jugador ("Pepe","Andres","Z283913Y","723382912","23","Experto");
+        torneo = new Torneo("Valencia");
+        liga.anyadirJugadores(jugador1);
+        liga.anyadirJugadores(jugador2);
+        liga.anyadirTorneo(torneo);
+        adminView = new AdminView(liga) ;
+        
         initComponents();
     }
 

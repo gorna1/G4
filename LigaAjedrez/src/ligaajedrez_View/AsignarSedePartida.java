@@ -43,7 +43,7 @@ public class AsignarSedePartida extends javax.swing.JFrame {
 
         comboBoxPartidas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        labelPartidas.setText("Partidas");
+        labelPartidas.setText("Torneo");
 
         comboBoxSedes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 

@@ -25,4 +25,52 @@ public class Jugador {
         this.sEdad = sEdad ;
         this.sElo = sElo ;
     }
+
+    public String getsNmb() {
+        return sNmb;
+    }
+
+    public void setsNmb(String sNmb) {
+        this.sNmb = sNmb;
+    }
+
+    public String getsApe() {
+        return sApe;
+    }
+
+    public void setsApe(String sApe) {
+        this.sApe = sApe;
+    }
+
+    public String getsDNI() {
+        return sDNI;
+    }
+
+    public void setsDNI(String sDNI) {
+        this.sDNI = sDNI;
+    }
+
+    public String getsTel() {
+        return sTel;
+    }
+
+    public void setsTel(String sTel) {
+        this.sTel = sTel;
+    }
+
+    public String getsEdad() {
+        return sEdad;
+    }
+
+    public void setsEdad(String sEdad) {
+        this.sEdad = sEdad;
+    }
+
+    public String getsElo() {
+        return sElo;
+    }
+
+    public void setsElo(String sElo) {
+        this.sElo = sElo;
+    }
 }
