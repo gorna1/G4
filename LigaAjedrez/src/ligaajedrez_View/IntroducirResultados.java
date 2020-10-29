@@ -36,8 +36,7 @@ public class IntroducirResultados extends javax.swing.JFrame {
         
         listaJugadores = liga.consultarJugadores();
         for(Jugador j : listaJugadores)
-            jComboBox1.addItem(j.getsNmb());
-        
+            jComboBox1.addItem(j.getsNmb());       
     }
 
     /**
@@ -161,9 +160,6 @@ public class IntroducirResultados extends javax.swing.JFrame {
         listaJugadores2 = liga.consultarEnfrentamiento(jComboBox1.getSelectedItem().toString());  
         for(Jugador j : listaJugadores2)
             jComboBox2.addItem(j.getsNmb());
-        
-        
-        
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
 

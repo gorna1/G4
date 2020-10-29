@@ -6,6 +6,7 @@
 package ligaajedrez_View;
 
 import javax.swing.JFrame;
+import ligaajedrez_Model.LigaAjedrez;
 
 /**
  *
@@ -18,9 +19,12 @@ public class EliminarJugador extends javax.swing.JFrame {
      */
     JFrame vAnterior;
     JFrame vPrincipal;
-    public EliminarJugador(javax.swing.JFrame vAnterior, javax.swing.JFrame vPrincipal) {
+    LigaAjedrez liga;
+    private String sDNI;
+    public EliminarJugador(javax.swing.JFrame vAnterior, javax.swing.JFrame vPrincipal,LigaAjedrez liga) {
         this.vAnterior = vAnterior;
         this.vPrincipal = vPrincipal;
+        this.liga = liga;
         initComponents();
     }
 
@@ -35,39 +39,39 @@ public class EliminarJugador extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        jLabelDNI = new javax.swing.JLabel();
+        jTextFieldDNI = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jButtonAtras = new javax.swing.JButton();
+        jButtonContinuar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(new javax.swing.BoxLayout(jPanel1, javax.swing.BoxLayout.Y_AXIS));
 
-        jLabel1.setText("DNI");
-        jPanel2.add(jLabel1);
+        jLabelDNI.setText("DNI");
+        jPanel2.add(jLabelDNI);
 
-        jTextField1.setColumns(10);
-        jPanel2.add(jTextField1);
+        jTextFieldDNI.setColumns(10);
+        jPanel2.add(jTextFieldDNI);
 
         jPanel1.add(jPanel2);
 
-        jButton1.setText("ATRAS");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jButtonAtras.setText("ATRAS");
+        jButtonAtras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButtonAtrasActionPerformed(evt);
             }
         });
-        jPanel3.add(jButton1);
+        jPanel3.add(jButtonAtras);
 
-        jButton2.setText("CONTINUAR");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jButtonContinuar.setText("CONTINUAR");
+        jButtonContinuar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jButtonContinuarActionPerformed(evt);
             }
         });
-        jPanel3.add(jButton2);
+        jPanel3.add(jButtonContinuar);
 
         jPanel1.add(jPanel3);
 
@@ -76,25 +80,27 @@ public class EliminarJugador extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButtonAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAtrasActionPerformed
         
         setVisible(false);
         vAnterior.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jButtonAtrasActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jButtonContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonContinuarActionPerformed
+        sDNI = jTextFieldDNI.getText();
+        liga.eliminarJugador(sDNI);
         setVisible(false);
         vPrincipal.setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_jButtonContinuarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton jButtonAtras;
+    private javax.swing.JButton jButtonContinuar;
+    private javax.swing.JLabel jLabelDNI;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextFieldDNI;
     // End of variables declaration//GEN-END:variables
 }

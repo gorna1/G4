@@ -17,6 +17,10 @@ public class Jugador {
     private String sEdad ;
     private String sElo ;
     
+    public Jugador(){
+        
+    }
+    
     public Jugador(String sNmb, String sApe, String sDNI, String sTel, String sEdad, String sElo){
         this.sNmb = sNmb ;
         this.sApe = sApe ;

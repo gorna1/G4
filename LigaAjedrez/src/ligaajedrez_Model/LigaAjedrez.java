@@ -16,12 +16,18 @@ import java.util.ArrayList;
 public class LigaAjedrez {
     protected ArrayList<Jugador> listaJugadores = new ArrayList<Jugador>();
     protected ArrayList<Torneo> listaTorneos = new ArrayList<Torneo>();
-    protected ArrayList<Jugador> listaRivales = new ArrayList<Jugador>();       
+    protected ArrayList<Jugador> listaRivales = new ArrayList<Jugador>();
+    protected ArrayList<Jugador> listaMorosos = new ArrayList<Jugador>();
     
     
     public void anyadirJugadores(Jugador jugador){
-        listaJugadores.add(jugador);
-    }   
+        //Anyadir es para Sprint 1, modificar no.
+        /*if(listaJugadores.contains(jugador))
+            listaJugadores.add(jugador);
+        else
+            listaJugadores.add(jugador);*/
+            listaJugadores.add(jugador);
+    }       
     
     public void anyadirTorneo(Torneo torneo){
         listaTorneos.add(torneo);
@@ -42,19 +48,33 @@ public class LigaAjedrez {
     }
     
     public ArrayList<Jugador> consultarEnfrentamiento(String nombre){
-        
         for(Torneo t : listaTorneos)
             listaRivales = t.consultarEnfrentamiento(nombre);
     
         return listaRivales;
     }
-    public void anyadirEnfrentamiento(Jugador j1, Jugador j2){
-        for(Torneo lT: listaTorneos)
-            lT.anyadirEnfrentamientos(j1, j2);  // es de prueba.
+    
+    //Sprint 2
+    public void eliminarJugador(String sDNI){
+        Jugador jugador = new Jugador() ;
+        
+        for(int i=0; i<listaJugadores.size(); i++)
+            if(listaJugadores.get(i).getsDNI().equals(sDNI))
+                jugador = listaJugadores.get(i) ;
+            else
+                System.out.println("El DNI introducido no corresponde a ningun jugador") ;
+        
+        if(listaMorosos.contains(jugador))
+            System.out.println("El jugador con el DNI introducido esta en la lista de morosos") ;
+        else{
+            listaJugadores.remove(jugador) ;
+            System.out.println("El jugador con el DNI introducido a sido eliminado") ;
+        }
+            
     }
-    
-    
 }
+    
+
 
 
 
