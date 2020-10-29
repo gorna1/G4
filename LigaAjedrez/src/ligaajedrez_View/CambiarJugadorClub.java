@@ -1,5 +1,8 @@
 package ligaajedrez_View;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
+import ligaajedrez_Model.Jugador;
+import ligaajedrez_Model.LigaAjedrez;
 
 
 /*
@@ -19,10 +22,17 @@ public class CambiarJugadorClub extends javax.swing.JFrame {
      */
     JFrame vAnterior;
     JFrame vPrincipal;
-    public CambiarJugadorClub(javax.swing.JFrame vAnterior, javax.swing.JFrame vPrincipal) {
+    private LigaAjedrez liga;
+    private Jugador jugador1;
+    public CambiarJugadorClub(javax.swing.JFrame vAnterior, javax.swing.JFrame vPrincipal, LigaAjedrez liga) {
+        this.liga = liga;
+        jugador1 = new Jugador("marquitos", "jimenez", "s3452013V", "625302345", "21", "Principiante");
+        liga.anyadirJugadores(jugador1);
         this.vAnterior = vAnterior;
         this.vPrincipal = vPrincipal;
         initComponents();
+        comboBoxJugador.addItem(jugador1.getsNmb());
+        comboBoxJugador.setSelectedIndex(0);
     }
 
     /**
@@ -47,16 +57,12 @@ public class CambiarJugadorClub extends javax.swing.JFrame {
 
         labelJugador.setText("Jugador");
 
-        comboBoxJugador.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
         labelClubActual.setText("Club actual");
 
         textFieldClubActual.setEditable(false);
         textFieldClubActual.setText(" ");
 
         labelClubNuevo.setText("Nuevo club");
-
-        comboBoxClubNuevo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         botonConfirmar.setText("Confirmar");
         botonConfirmar.addActionListener(new java.awt.event.ActionListener() {
@@ -128,8 +134,7 @@ public class CambiarJugadorClub extends javax.swing.JFrame {
 
     private void botonAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAtrasActionPerformed
        this.setVisible(false);
-       vAnterior.setVisible(true);
-       
+       vAnterior.setVisible(true);  
     }//GEN-LAST:event_botonAtrasActionPerformed
 
 

@@ -28,7 +28,7 @@ public class AdminJugadorView extends javax.swing.JFrame {
         this.vAnterior = vAnterior;
         registrarJUgador = new RegistrarJugador(this, vAnterior, liga);
         eliminarJugador = new EliminarJugador(this, vAnterior);
-        cambiarClub = new CambiarJugadorClub(this,vAnterior);
+        cambiarClub = new CambiarJugadorClub(this,vAnterior, liga);
         initComponents();
     }
 
