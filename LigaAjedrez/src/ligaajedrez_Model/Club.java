@@ -12,4 +12,8 @@ package ligaajedrez_Model;
 public class Club {
     private String nombre;
     
+    public Club(String nombre) {
+        this.nombre = nombre;
+    }
+    
 }
