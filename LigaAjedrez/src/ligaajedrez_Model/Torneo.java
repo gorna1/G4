@@ -54,6 +54,7 @@ public class Torneo {
         for(EnfrentamientoTorneo et: listaEnfrentamientos)
             listaRivales.add(et.consultarEnfrentamiento(nombre));
         
+        
         return listaRivales;
     }
             

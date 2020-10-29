@@ -27,12 +27,16 @@ public class ApuntarseTorneo extends javax.swing.JFrame {
     private Jugador jugador1;
     
     public ApuntarseTorneo(javax.swing.JFrame vAnterior ,LigaAjedrez liga) {
-        jugador1 = new Jugador("joselo", "fernandez", "X2252013V", "625302312", "24", "Principiante");
+        jugador1 = new Jugador("joselo", "fernandez", "X2252013V", "625302312", "24", "Principiante");      //Jugador de prueba.
         this.liga = liga;
-        liga.anyadirJugadores(jugador1);        // pa probar
+        liga.anyadirJugadores(jugador1);       
         this.vAnterior = vAnterior;
         initComponents();
         jComboBox1.removeAllItems();
+        
+        listaTorneos = liga.consultarTorneo();
+        for(Torneo lTorneos : listaTorneos)
+            jComboBox1.addItem(lTorneos.getCiudad());
         
         
     }
@@ -121,16 +125,18 @@ public class ApuntarseTorneo extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        liga.anyadirJugadorTorneo((Torneo) jComboBox1.getSelectedItem(),jugador1);      //preguntar como casteo esto
+         for(Torneo lT: listaTorneos)
+            if(lT.getCiudad() == jComboBox1.getSelectedItem())
+                liga.anyadirJugadorTorneo(lT,jugador1);
         this.setVisible(false);
         vAnterior.setVisible(true);
         jComboBox1.removeAllItems();
+        
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        listaTorneos = liga.consultarTorneo();
-        for(Torneo lTorneos : listaTorneos)
-            jComboBox1.addItem(lTorneos.getCiudad());
+        
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     

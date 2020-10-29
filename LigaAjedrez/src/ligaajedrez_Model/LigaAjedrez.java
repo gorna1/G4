@@ -16,7 +16,7 @@ import java.util.ArrayList;
 public class LigaAjedrez {
     protected ArrayList<Jugador> listaJugadores = new ArrayList<Jugador>();
     protected ArrayList<Torneo> listaTorneos = new ArrayList<Torneo>();
-    protected ArrayList<Jugador> listaRivales = new ArrayList<Jugador>();
+    protected ArrayList<Jugador> listaRivales = new ArrayList<Jugador>();       
     
     
     public void anyadirJugadores(Jugador jugador){
@@ -42,11 +42,16 @@ public class LigaAjedrez {
     }
     
     public ArrayList<Jugador> consultarEnfrentamiento(String nombre){
+        
         for(Torneo t : listaTorneos)
             listaRivales = t.consultarEnfrentamiento(nombre);
     
         return listaRivales;
-}
+    }
+    public void anyadirEnfrentamiento(Jugador j1, Jugador j2){
+        for(Torneo lT: listaTorneos)
+            lT.anyadirEnfrentamientos(j1, j2);  // es de prueba.
+    }
     
     
 }

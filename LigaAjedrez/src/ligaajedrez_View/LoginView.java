@@ -5,6 +5,7 @@
  */
 package ligaajedrez_View;
 
+import ligaajedrez_Model.EnfrentamientoTorneo;
 import ligaajedrez_Model.Jugador;
 import ligaajedrez_Model.LigaAjedrez;
 import ligaajedrez_Model.Torneo;
@@ -22,6 +23,7 @@ public class LoginView extends javax.swing.JFrame {
     private Jugador jugador1, jugador2;
     private LigaAjedrez liga;
     private Torneo torneo;
+    private EnfrentamientoTorneo enfrentamientoTorneo;
     public LoginView() {
         
         liga = new LigaAjedrez();
@@ -34,7 +36,12 @@ public class LoginView extends javax.swing.JFrame {
         liga.anyadirJugadores(jugador2);
         System.out.println("añadido pepe");
         liga.anyadirTorneo(torneo);
+        //enfrentamientoTorneo = new EnfrentamientoTorneo(jugador1, jugador2);
+        torneo.anyadirEnfrentamientos(jugador1, jugador2);
+        //liga.anyadirEnfrentamiento(jugador1, jugador2);
+        
         adminView = new AdminView(liga) ;
+        
         
         initComponents();
     }

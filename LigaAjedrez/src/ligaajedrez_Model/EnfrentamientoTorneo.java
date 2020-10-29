@@ -34,7 +34,7 @@ public class EnfrentamientoTorneo {
     }
     
     public Jugador consultarEnfrentamiento(String nombre){
-        if(nombre == jugador1.getsNmb())
+        if(nombre.equals(jugador1.getsNmb()))
             return jugador2;
         else 
             return jugador1;

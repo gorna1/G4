@@ -30,9 +30,9 @@ public class IntroducirResultados extends javax.swing.JFrame {
     
     
     public IntroducirResultados(javax.swing.JFrame vAnterior,LigaAjedrez liga) {
+        this.liga = liga;
         this.vAnterior = vAnterior;
         initComponents();
-        jComboBox1.removeAllItems();
         
         listaJugadores = liga.consultarJugadores();
         for(Jugador j : listaJugadores)
@@ -89,7 +89,7 @@ public class IntroducirResultados extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
         jComboBox1.setBackground(new java.awt.Color(204, 204, 204));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Paquito", "Juan", "José" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
@@ -98,7 +98,6 @@ public class IntroducirResultados extends javax.swing.JFrame {
         jPanel3.add(jComboBox1);
 
         jComboBox2.setBackground(new java.awt.Color(204, 204, 204));
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Esmeralda", "Petunia", "Lola" }));
         jPanel3.add(jComboBox2);
 
         jPanel2.add(jPanel3);
@@ -148,7 +147,6 @@ public class IntroducirResultados extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
         setVisible(false);
         vAnterior.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -159,6 +157,11 @@ public class IntroducirResultados extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        
+        listaJugadores2 = liga.consultarEnfrentamiento(jComboBox1.getSelectedItem().toString());  
+        for(Jugador j : listaJugadores2)
+            jComboBox2.addItem(j.getsNmb());
+        
         
         
     }//GEN-LAST:event_jComboBox1ActionPerformed
