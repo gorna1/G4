@@ -16,22 +16,28 @@ public class Jugador {
     private String sTel ;
     private String sEdad ;
     private String sElo ;
+    private String sFed ;
     
     public Jugador(){
         
     }
     
-    public Jugador(String sNmb, String sApe, String sDNI, String sTel, String sEdad, String sElo){
+    public Jugador(String sNmb, String sApe, String sDNI, String sTel, String sEdad, String sElo, String sFed){
         this.sNmb = sNmb ;
         this.sApe = sApe ;
         this.sDNI = sDNI ;
         this.sTel = sTel ;
         this.sEdad = sEdad ;
         this.sElo = sElo ;
+        this.sFed = sFed ;
     }
 
     public String getsNmb() {
         return sNmb;
+    }
+    
+    public String getFed() {
+        return sFed;
     }
 
     public void setsNmb(String sNmb) {

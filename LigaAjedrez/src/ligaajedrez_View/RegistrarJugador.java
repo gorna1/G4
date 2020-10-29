@@ -153,7 +153,7 @@ public class RegistrarJugador extends javax.swing.JFrame {
                         sElo = "Principiante";
                         break;
                 }
-        jugador = new Jugador(sNmb, sApe, sTel, sDNI, sEdad, sElo) ;
+        jugador = new Jugador(sNmb, sApe, sTel, sDNI, sEdad, sElo, "Valencia") ;
         liga.anyadirJugadores(jugador);
         
         setVisible(false);

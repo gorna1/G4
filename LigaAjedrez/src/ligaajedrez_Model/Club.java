@@ -5,15 +5,70 @@
  */
 package ligaajedrez_Model;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author lucas
  */
 public class Club {
+    protected ArrayList<Jugador> listaJugadores = new ArrayList<Jugador>();
     private String nombre;
+    private String federacion;
     
-    public Club(String nombre) {
+    public Club(String nombre, String federacion) {
         this.nombre = nombre;
+        this.federacion = federacion;
+    }
+    
+    public boolean checkJugador(Jugador j) {
+        boolean res = false;
+        for (Jugador jAux : listaJugadores) {
+            if (jAux.getsDNI().equals(j.getsDNI())) {
+                res = true;
+            }
+        }
+        return res;
+    }
+    
+    public boolean anyadirJugador(Jugador j) {
+        boolean res = true;
+        for (Jugador jAux : listaJugadores) {
+            if (jAux.getsDNI().equals(j.getsDNI())) {
+                res = false;
+            }
+        }
+        if (res) {
+            listaJugadores.add(j);
+        }
+        return res;
+    }
+    
+    public boolean eliminarJugador(Jugador j) {
+        boolean res = false;
+        for (Jugador jAux : listaJugadores) {
+            if (jAux.getsDNI().equals(j.getsDNI())) {
+                listaJugadores.remove(jAux);
+                res = true;
+            }
+        }
+        return res;
+    }
+    
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    
+    public void setFederacion(String federacion) {
+        this.federacion = federacion;
+    }
+    
+    public String getNombre() {
+        return nombre;
+    }
+    
+    public String getFederacion() {
+        return federacion;
     }
     
 }

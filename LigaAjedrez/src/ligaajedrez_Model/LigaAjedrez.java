@@ -18,7 +18,7 @@ public class LigaAjedrez {
     protected ArrayList<Torneo> listaTorneos = new ArrayList<Torneo>();
     protected ArrayList<Jugador> listaRivales = new ArrayList<Jugador>();
     protected ArrayList<Jugador> listaMorosos = new ArrayList<Jugador>();
-    
+    protected ArrayList<Club> listaClubs = new ArrayList<Club>();
     
     public void anyadirJugadores(Jugador jugador){
         //Anyadir es para Sprint 1, modificar no.
@@ -35,6 +35,14 @@ public class LigaAjedrez {
     
     public ArrayList<Torneo> consultarTorneo(){
         return listaTorneos;
+    }
+    
+    public void anyadirClub(Club c) {
+        listaClubs.add(c);
+    }
+    
+    public ArrayList<Club> consultarClubs() {
+        return listaClubs;
     }
     
     public void anyadirJugadorTorneo(Torneo t, Jugador j){

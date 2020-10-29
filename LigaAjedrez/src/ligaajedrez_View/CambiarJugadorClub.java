@@ -1,6 +1,8 @@
 package ligaajedrez_View;
+import java.util.ArrayList;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
+import ligaajedrez_Model.Club;
 import ligaajedrez_Model.Jugador;
 import ligaajedrez_Model.LigaAjedrez;
 
@@ -24,15 +26,29 @@ public class CambiarJugadorClub extends javax.swing.JFrame {
     JFrame vPrincipal;
     private LigaAjedrez liga;
     private Jugador jugador1;
+    private Jugador jugador2;
+    private String fed;
+    private ArrayList<Club> clubs = new ArrayList<Club>();
+    private ArrayList<Jugador> listaJugadores = new ArrayList<Jugador>();
     public CambiarJugadorClub(javax.swing.JFrame vAnterior, javax.swing.JFrame vPrincipal, LigaAjedrez liga) {
         this.liga = liga;
-        jugador1 = new Jugador("marquitos", "jimenez", "s3452013V", "625302345", "21", "Principiante");
+        jugador1 = new Jugador("marquitos", "jimenez", "s3452013V", "625302345", "21", "Principiante", "Valencia");
         liga.anyadirJugadores(jugador1);
         this.vAnterior = vAnterior;
         this.vPrincipal = vPrincipal;
         initComponents();
+        clubs = liga.consultarClubs();
         comboBoxJugador.addItem(jugador1.getsNmb());
         comboBoxJugador.setSelectedIndex(0);
+        
+        for (Club c : clubs) {
+            if (c.getFederacion().equals(jugador1.getFed())) {
+                textFieldClubActual.setText(c.getNombre());
+            }
+            comboBoxClubNuevo.addItem(c.getNombre());
+        }
+        
+        
     }
 
     /**

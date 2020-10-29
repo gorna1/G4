@@ -5,6 +5,7 @@
  */
 package ligaajedrez_View;
 
+import ligaajedrez_Model.Club;
 import ligaajedrez_Model.EnfrentamientoTorneo;
 import ligaajedrez_Model.Jugador;
 import ligaajedrez_Model.LigaAjedrez;
@@ -19,6 +20,8 @@ public class LoginView extends javax.swing.JFrame {
     /**
      * Creates new form LoginView
      */
+    private Club club1;
+    private Club club2;
     private AdminView adminView;
     private Jugador jugador1, jugador2;
     private LigaAjedrez liga;
@@ -27,8 +30,12 @@ public class LoginView extends javax.swing.JFrame {
     public LoginView() {
         
         liga = new LigaAjedrez();
-        jugador1 = new Jugador("Gor", "Navasardyan", "X2752013V", "625102312", "22", "Principiante");
-        jugador2 = new Jugador ("Pepe","Andres","Z283913Y","723382912","23","Experto");
+        club1 = new Club("Club1", "Valencia");
+        liga.anyadirClub(club1);
+        club2 = new Club("Club2", "China");
+        liga.anyadirClub(club2);
+        jugador1 = new Jugador("Gor", "Navasardyan", "X2752013V", "625102312", "22", "Principiante", "Valencia");
+        jugador2 = new Jugador ("Pepe","Andres","Z283913Y","723382912","23","Experto", "Valencia");
         torneo = new Torneo("Valencia");
         liga.anyadirJugadores(jugador1);
         System.out.println("añadido gor");

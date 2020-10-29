@@ -27,7 +27,7 @@ public class ApuntarseTorneo extends javax.swing.JFrame {
     private Jugador jugador1;
     
     public ApuntarseTorneo(javax.swing.JFrame vAnterior ,LigaAjedrez liga) {
-        jugador1 = new Jugador("joselo", "fernandez", "X2252013V", "625302312", "24", "Principiante");      //Jugador de prueba.
+        jugador1 = new Jugador("joselo", "fernandez", "X2252013V", "625302312", "24", "Principiante", "Valencia");      //Jugador de prueba.
         this.liga = liga;
         liga.anyadirJugadores(jugador1);       
         this.vAnterior = vAnterior;
