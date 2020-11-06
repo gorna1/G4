@@ -36,7 +36,7 @@ public class IntroducirResultados extends javax.swing.JFrame {
         
         listaJugadores = liga.consultarJugadores();
         for(Jugador j : listaJugadores)
-            jComboBox1.addItem(j.getsNmb());       
+            jComboBoxJugador1.addItem(j.getsNmb());       
     }
 
     /**
@@ -51,18 +51,18 @@ public class IntroducirResultados extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        jLabelJugador1 = new javax.swing.JLabel();
+        jLabelJugador2 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        jComboBoxJugador1 = new javax.swing.JComboBox<>();
+        jComboBoxJugador2 = new javax.swing.JComboBox<>();
         jPanel6 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
+        jLabelGanador = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
-        jComboBox3 = new javax.swing.JComboBox<>();
+        jComboBoxGanador = new javax.swing.JComboBox<>();
         jPanel5 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jButtonAtras = new javax.swing.JButton();
+        jButtonContinuar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Introducir Resultados");
@@ -77,42 +77,42 @@ public class IntroducirResultados extends javax.swing.JFrame {
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 40, 5));
 
-        jLabel1.setText("Jugador 1");
-        jPanel4.add(jLabel1);
+        jLabelJugador1.setText("Jugador 1");
+        jPanel4.add(jLabelJugador1);
 
-        jLabel2.setText("Jugador 2");
-        jPanel4.add(jLabel2);
+        jLabelJugador2.setText("Jugador 2");
+        jPanel4.add(jLabelJugador2);
 
         jPanel2.add(jPanel4);
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
-        jComboBox1.setBackground(new java.awt.Color(204, 204, 204));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        jComboBoxJugador1.setBackground(new java.awt.Color(204, 204, 204));
+        jComboBoxJugador1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "" }));
+        jComboBoxJugador1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                jComboBoxJugador1ActionPerformed(evt);
             }
         });
-        jPanel3.add(jComboBox1);
+        jPanel3.add(jComboBoxJugador1);
 
-        jComboBox2.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel3.add(jComboBox2);
+        jComboBoxJugador2.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel3.add(jComboBoxJugador2);
 
         jPanel2.add(jPanel3);
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel3.setText("GANADOR");
-        jPanel6.add(jLabel3);
+        jLabelGanador.setText("GANADOR");
+        jPanel6.add(jLabelGanador);
 
         jPanel2.add(jPanel6);
 
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
 
-        jComboBox3.setBackground(new java.awt.Color(204, 204, 204));
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Jugador 1", "Jugador 2" }));
-        jPanel7.add(jComboBox3);
+        jComboBoxGanador.setBackground(new java.awt.Color(204, 204, 204));
+        jComboBoxGanador.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Jugador 1", "Jugador 2" }));
+        jPanel7.add(jComboBoxGanador);
 
         jPanel2.add(jPanel7);
 
@@ -120,23 +120,23 @@ public class IntroducirResultados extends javax.swing.JFrame {
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
 
-        jButton1.setText("ATRAS");
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jButtonAtras.setText("ATRAS");
+        jButtonAtras.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jButtonAtras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButtonAtrasActionPerformed(evt);
             }
         });
-        jPanel5.add(jButton1);
+        jPanel5.add(jButtonAtras);
 
-        jButton2.setText("CONTINUAR");
-        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jButtonContinuar.setText("CONTINUAR");
+        jButtonContinuar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jButtonContinuar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jButtonContinuarActionPerformed(evt);
             }
         });
-        jPanel5.add(jButton2);
+        jPanel5.add(jButtonContinuar);
 
         jPanel1.add(jPanel5);
 
@@ -145,33 +145,33 @@ public class IntroducirResultados extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButtonAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAtrasActionPerformed
         setVisible(false);
         vAnterior.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jButtonAtrasActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jButtonContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonContinuarActionPerformed
         setVisible(false);
         vAnterior.setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_jButtonContinuarActionPerformed
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void jComboBoxJugador1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxJugador1ActionPerformed
         
-        listaJugadores2 = liga.consultarEnfrentamiento(jComboBox1.getSelectedItem().toString());  
+        listaJugadores2 = liga.consultarEnfrentamiento(jComboBoxJugador1.getSelectedItem().toString());  
         for(Jugador j : listaJugadores2)
-            jComboBox2.addItem(j.getsNmb());
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+            jComboBoxJugador2.addItem(j.getsNmb());
+    }//GEN-LAST:event_jComboBoxJugador1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JButton jButtonAtras;
+    private javax.swing.JButton jButtonContinuar;
+    private javax.swing.JComboBox<String> jComboBoxGanador;
+    private javax.swing.JComboBox<String> jComboBoxJugador1;
+    private javax.swing.JComboBox<String> jComboBoxJugador2;
+    private javax.swing.JLabel jLabelGanador;
+    private javax.swing.JLabel jLabelJugador1;
+    private javax.swing.JLabel jLabelJugador2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

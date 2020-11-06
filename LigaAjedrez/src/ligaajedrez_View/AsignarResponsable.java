@@ -36,21 +36,21 @@ public class AsignarResponsable extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
+        jLabelNmbNinyo = new javax.swing.JLabel();
+        jTextFieldNmbNinyo = new javax.swing.JTextField();
         jTextField5 = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        jLabelNmbAdulto = new javax.swing.JLabel();
+        jLabelDNI = new javax.swing.JLabel();
+        jTextFieldNmbAdulto = new javax.swing.JTextField();
+        jTextFieldDNI = new javax.swing.JTextField();
+        jLabelTelefono = new javax.swing.JLabel();
+        jLabelDireccion = new javax.swing.JLabel();
+        jTextFieldTelefono = new javax.swing.JTextField();
+        jTextFieldDireccion = new javax.swing.JTextField();
         jPanel5 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jButtonAtras = new javax.swing.JButton();
+        jButtonContinuar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Asignar Responsable");
@@ -62,11 +62,11 @@ public class AsignarResponsable extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(200, 200, 200));
 
-        jLabel1.setText("Nombre Niño");
-        jPanel2.add(jLabel1);
+        jLabelNmbNinyo.setText("Nombre Niño");
+        jPanel2.add(jLabelNmbNinyo);
 
-        jTextField6.setColumns(10);
-        jPanel2.add(jTextField6);
+        jTextFieldNmbNinyo.setColumns(10);
+        jPanel2.add(jTextFieldNmbNinyo);
 
         jPanel1.add(jPanel2);
 
@@ -79,39 +79,39 @@ public class AsignarResponsable extends javax.swing.JFrame {
         jPanel4.setBackground(new java.awt.Color(200, 200, 200));
         jPanel4.setLayout(new java.awt.GridLayout(4, 2));
 
-        jLabel5.setText("Nombre");
-        jPanel4.add(jLabel5);
+        jLabelNmbAdulto.setText("Nombre");
+        jPanel4.add(jLabelNmbAdulto);
 
-        jLabel7.setText("DNI");
-        jPanel4.add(jLabel7);
-        jPanel4.add(jTextField1);
-        jPanel4.add(jTextField2);
+        jLabelDNI.setText("DNI");
+        jPanel4.add(jLabelDNI);
+        jPanel4.add(jTextFieldNmbAdulto);
+        jPanel4.add(jTextFieldDNI);
 
-        jLabel6.setText("Teléfono");
-        jPanel4.add(jLabel6);
+        jLabelTelefono.setText("Teléfono");
+        jPanel4.add(jLabelTelefono);
 
-        jLabel8.setText("Dirección");
-        jPanel4.add(jLabel8);
-        jPanel4.add(jTextField3);
-        jPanel4.add(jTextField4);
+        jLabelDireccion.setText("Dirección");
+        jPanel4.add(jLabelDireccion);
+        jPanel4.add(jTextFieldTelefono);
+        jPanel4.add(jTextFieldDireccion);
 
         jPanel1.add(jPanel4);
 
-        jButton1.setText("ATRAS");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jButtonAtras.setText("ATRAS");
+        jButtonAtras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButtonAtrasActionPerformed(evt);
             }
         });
-        jPanel5.add(jButton1);
+        jPanel5.add(jButtonAtras);
 
-        jButton2.setText("CONTINUAR");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jButtonContinuar.setText("CONTINUAR");
+        jButtonContinuar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jButtonContinuarActionPerformed(evt);
             }
         });
-        jPanel5.add(jButton2);
+        jPanel5.add(jButtonContinuar);
 
         jPanel1.add(jPanel5);
 
@@ -120,34 +120,34 @@ public class AsignarResponsable extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButtonAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAtrasActionPerformed
         setVisible(false);
         vAnterior.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jButtonAtrasActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jButtonContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonContinuarActionPerformed
         setVisible(false);
         vAnterior.setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_jButtonContinuarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
+    private javax.swing.JButton jButtonAtras;
+    private javax.swing.JButton jButtonContinuar;
+    private javax.swing.JLabel jLabelDNI;
+    private javax.swing.JLabel jLabelDireccion;
+    private javax.swing.JLabel jLabelNmbAdulto;
+    private javax.swing.JLabel jLabelNmbNinyo;
+    private javax.swing.JLabel jLabelTelefono;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextFieldDNI;
+    private javax.swing.JTextField jTextFieldDireccion;
+    private javax.swing.JTextField jTextFieldNmbAdulto;
+    private javax.swing.JTextField jTextFieldNmbNinyo;
+    private javax.swing.JTextField jTextFieldTelefono;
     // End of variables declaration//GEN-END:variables
 }

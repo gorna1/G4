@@ -42,7 +42,7 @@ public class CambiarJugadorClub extends javax.swing.JFrame {
         comboBoxJugador.setSelectedIndex(0);
         
         for (Club c : clubs) {
-            if (c.getFederacion().equals(jugador1.getFed())) {
+            if (c.getNombre().equals(jugador1.getClb())) {
                 textFieldClubActual.setText(c.getNombre());
             }
             comboBoxClubNuevo.addItem(c.getNombre());

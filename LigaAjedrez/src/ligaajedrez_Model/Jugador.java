@@ -16,71 +16,75 @@ public class Jugador {
     private String sTel ;
     private String sEdad ;
     private String sElo ;
-    private String sFed ;
+    private String sClb ;
     
     public Jugador(){
         
     }
     
-    public Jugador(String sNmb, String sApe, String sDNI, String sTel, String sEdad, String sElo, String sFed){
+    public Jugador(String sNmb, String sApe, String sDNI, String sTel, String sEdad, String sElo, String sClb){
         this.sNmb = sNmb ;
         this.sApe = sApe ;
         this.sDNI = sDNI ;
         this.sTel = sTel ;
         this.sEdad = sEdad ;
         this.sElo = sElo ;
-        this.sFed = sFed ;
+        this.sClb = sClb ;
     }
 
     public String getsNmb() {
-        return sNmb;
-    }
-    
-    public String getFed() {
-        return sFed;
+        return sNmb ;
     }
 
     public void setsNmb(String sNmb) {
-        this.sNmb = sNmb;
+        this.sNmb = sNmb ;
     }
 
     public String getsApe() {
-        return sApe;
+        return sApe ;
     }
 
     public void setsApe(String sApe) {
-        this.sApe = sApe;
+        this.sApe = sApe ;
     }
 
     public String getsDNI() {
-        return sDNI;
+        return sDNI ;
     }
 
     public void setsDNI(String sDNI) {
-        this.sDNI = sDNI;
+        this.sDNI = sDNI ;
     }
 
     public String getsTel() {
-        return sTel;
+        return sTel ;
     }
 
     public void setsTel(String sTel) {
-        this.sTel = sTel;
+        this.sTel = sTel ;
     }
 
     public String getsEdad() {
-        return sEdad;
+        return sEdad ;
     }
 
     public void setsEdad(String sEdad) {
-        this.sEdad = sEdad;
+        this.sEdad = sEdad ;
     }
 
     public String getsElo() {
-        return sElo;
+        return sElo ;
     }
 
     public void setsElo(String sElo) {
-        this.sElo = sElo;
+        this.sElo = sElo ;
+    }
+    
+    public String getClb() {
+        return sClb ;
+    }
+    
+    public void setClb() {
+        this.sClb = sClb ;
     }
 }

@@ -69,11 +69,11 @@ public class AdminView extends javax.swing.JFrame {
         jButtonAnyadirGerente = new javax.swing.JButton();
         jButtonAnyadirEntrenador = new javax.swing.JButton();
         jButtonMultasMorosos = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        jButtonAsignarRes = new javax.swing.JButton();
+        jButtonIntroRes = new javax.swing.JButton();
+        jButtonRealizarReserva = new javax.swing.JButton();
+        jButtonAdminJug = new javax.swing.JButton();
+        jButtonAptTorneo = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -117,42 +117,43 @@ public class AdminView extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
-        jButton1.setText("Asignar Responsable");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jButtonAsignarRes.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
+        jButtonAsignarRes.setText("Asignar Responsable");
+        jButtonAsignarRes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButtonAsignarResActionPerformed(evt);
             }
         });
 
-        jButton2.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
-        jButton2.setText("Introducir Resultados");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jButtonIntroRes.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
+        jButtonIntroRes.setText("Introducir Resultados");
+        jButtonIntroRes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jButtonIntroResActionPerformed(evt);
             }
         });
 
-        jButton3.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
-        jButton3.setText("Realizar Reserva");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        jButtonRealizarReserva.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
+        jButtonRealizarReserva.setText("Realizar Reserva");
+        jButtonRealizarReserva.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                jButtonRealizarReservaActionPerformed(evt);
             }
         });
 
-        jButton4.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
-        jButton4.setText("Administrar jugadores");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        jButtonAdminJug.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
+        jButtonAdminJug.setText("Administrar jugadores");
+        jButtonAdminJug.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                jButtonAdminJugActionPerformed(evt);
             }
         });
 
-        jButton5.setText("Apuntarse torneo");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        jButtonAptTorneo.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
+        jButtonAptTorneo.setText("Apuntarse torneo");
+        jButtonAptTorneo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                jButtonAptTorneoActionPerformed(evt);
             }
         });
 
@@ -168,18 +169,18 @@ public class AdminView extends javax.swing.JFrame {
                     .addComponent(jButtonAnyadirGerente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButtonAnyadirEntrenador, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButtonMultasMorosos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jButtonAsignarRes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonIntroRes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonRealizarReserva, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonAdminJug, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonAptTorneo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(50, Short.MAX_VALUE))
         );
         jPanelViewLayout.setVerticalGroup(
             jPanelViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelViewLayout.createSequentialGroup()
                 .addGap(8, 8, 8)
-                .addComponent(jButton5)
+                .addComponent(jButtonAptTorneo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButtonSede)
                 .addGap(18, 18, 18)
@@ -191,13 +192,13 @@ public class AdminView extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jButtonMultasMorosos)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
+                .addComponent(jButtonAsignarRes)
                 .addGap(18, 18, 18)
-                .addComponent(jButton2)
+                .addComponent(jButtonIntroRes)
                 .addGap(18, 18, 18)
-                .addComponent(jButton3)
+                .addComponent(jButtonRealizarReserva)
                 .addGap(18, 18, 18)
-                .addComponent(jButton4)
+                .addComponent(jButtonAdminJug)
                 .addContainerGap(58, Short.MAX_VALUE))
         );
 
@@ -245,44 +246,44 @@ public class AdminView extends javax.swing.JFrame {
         morososView.setVisible(true);
     }//GEN-LAST:event_jButtonMultasMorososActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButtonAsignarResActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAsignarResActionPerformed
         
         setVisible(false);
         asignarResponsable.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jButtonAsignarResActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jButtonIntroResActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIntroResActionPerformed
         setVisible(false);
         introducirResultados.setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_jButtonIntroResActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void jButtonRealizarReservaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRealizarReservaActionPerformed
         setVisible(false);
         realizarReserva.setVisible(true);
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_jButtonRealizarReservaActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void jButtonAdminJugActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAdminJugActionPerformed
         
         setVisible(false);
         adminJugadorView.setVisible(true);
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_jButtonAdminJugActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void jButtonAptTorneoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAptTorneoActionPerformed
         this.setVisible(false);
         apTorneo.setVisible(true);
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_jButtonAptTorneoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButtonAdminJug;
     private javax.swing.JButton jButtonAnyadirEntrenador;
     private javax.swing.JButton jButtonAnyadirGerente;
+    private javax.swing.JButton jButtonAptTorneo;
+    private javax.swing.JButton jButtonAsignarRes;
     private javax.swing.JButton jButtonInfoPartidas;
+    private javax.swing.JButton jButtonIntroRes;
     private javax.swing.JButton jButtonMultasMorosos;
+    private javax.swing.JButton jButtonRealizarReserva;
     private javax.swing.JButton jButtonSede;
     private javax.swing.JPanel jPanelView;
     // End of variables declaration//GEN-END:variables

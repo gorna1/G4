@@ -35,64 +35,64 @@ public class RegEntrenadorView extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanelView = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jLabelNombre = new javax.swing.JLabel();
+        jLabelApellidos = new javax.swing.JLabel();
+        jLabelFecha = new javax.swing.JLabel();
+        jLabelDNI = new javax.swing.JLabel();
+        jLabelTelefono = new javax.swing.JLabel();
+        jLabelClubs = new javax.swing.JLabel();
+        jTextFieldNombre = new javax.swing.JTextField();
+        jTextFieldApellidos = new javax.swing.JTextField();
+        jTextFieldFecha = new javax.swing.JTextField();
+        jTextFieldDNI = new javax.swing.JTextField();
+        jTextFieldTelefono = new javax.swing.JTextField();
+        jTextFieldClubs = new javax.swing.JTextField();
+        jButtonVolver = new javax.swing.JButton();
+        jButtonRegistrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
-        jLabel1.setText("Nombre:");
+        jLabelNombre.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
+        jLabelNombre.setText("Nombre:");
 
-        jLabel2.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
-        jLabel2.setText("Apellidos:");
+        jLabelApellidos.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
+        jLabelApellidos.setText("Apellidos:");
 
-        jLabel3.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
-        jLabel3.setText("Fecha nacimiento:");
+        jLabelFecha.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
+        jLabelFecha.setText("Fecha nacimiento:");
 
-        jLabel4.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
-        jLabel4.setText("DNI:");
+        jLabelDNI.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
+        jLabelDNI.setText("DNI:");
 
-        jLabel5.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
-        jLabel5.setText("Telefóno:");
+        jLabelTelefono.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
+        jLabelTelefono.setText("Telefóno:");
 
-        jLabel6.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
-        jLabel6.setText("Email:");
+        jLabelClubs.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
+        jLabelClubs.setText("Clubes:");
 
-        jTextField1.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
+        jTextFieldNombre.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
 
-        jTextField2.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
+        jTextFieldApellidos.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
 
-        jTextField3.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
+        jTextFieldFecha.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
 
-        jTextField4.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
+        jTextFieldDNI.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
 
-        jTextField5.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
+        jTextFieldTelefono.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
 
-        jTextField6.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
+        jTextFieldClubs.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
 
-        jButton1.setText("Volver");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jButtonVolver.setText("Volver");
+        jButtonVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButtonVolverActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Registrar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jButtonRegistrar.setText("Registrar");
+        jButtonRegistrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jButtonRegistrarActionPerformed(evt);
             }
         });
 
@@ -105,33 +105,33 @@ public class RegEntrenadorView extends javax.swing.JFrame {
                 .addGroup(jPanelViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelViewLayout.createSequentialGroup()
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButtonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jButtonRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanelViewLayout.createSequentialGroup()
-                            .addComponent(jLabel6)
+                            .addComponent(jLabelClubs)
                             .addGap(18, 18, 18)
-                            .addComponent(jTextField6))
+                            .addComponent(jTextFieldClubs))
                         .addGroup(jPanelViewLayout.createSequentialGroup()
-                            .addComponent(jLabel5)
+                            .addComponent(jLabelTelefono)
                             .addGap(18, 18, 18)
-                            .addComponent(jTextField5))
+                            .addComponent(jTextFieldTelefono))
                         .addGroup(jPanelViewLayout.createSequentialGroup()
-                            .addComponent(jLabel4)
+                            .addComponent(jLabelDNI)
                             .addGap(18, 18, 18)
-                            .addComponent(jTextField4))
+                            .addComponent(jTextFieldDNI))
                         .addGroup(jPanelViewLayout.createSequentialGroup()
-                            .addComponent(jLabel3)
+                            .addComponent(jLabelFecha)
                             .addGap(18, 18, 18)
-                            .addComponent(jTextField3))
+                            .addComponent(jTextFieldFecha))
                         .addGroup(jPanelViewLayout.createSequentialGroup()
-                            .addComponent(jLabel2)
+                            .addComponent(jLabelApellidos)
                             .addGap(18, 18, 18)
-                            .addComponent(jTextField2)))
+                            .addComponent(jTextFieldApellidos)))
                     .addGroup(jPanelViewLayout.createSequentialGroup()
-                        .addComponent(jLabel1)
+                        .addComponent(jLabelNombre)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jTextFieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(41, Short.MAX_VALUE))
         );
         jPanelViewLayout.setVerticalGroup(
@@ -139,32 +139,32 @@ public class RegEntrenadorView extends javax.swing.JFrame {
             .addGroup(jPanelViewLayout.createSequentialGroup()
                 .addGap(35, 35, 35)
                 .addGroup(jPanelViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabelNombre)
+                    .addComponent(jTextFieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanelViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabelApellidos)
+                    .addComponent(jTextFieldApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanelViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabelFecha)
+                    .addComponent(jTextFieldFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanelViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabelDNI)
+                    .addComponent(jTextFieldDNI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanelViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabelTelefono)
+                    .addComponent(jTextFieldTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanelViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabelClubs)
+                    .addComponent(jTextFieldClubs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
                 .addGroup(jPanelViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(jButtonVolver)
+                    .addComponent(jButtonRegistrar))
                 .addGap(35, 35, 35))
         );
 
@@ -182,35 +182,35 @@ public class RegEntrenadorView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButtonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVolverActionPerformed
        
        this.setVisible(false);
        vAnterior.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jButtonVolverActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jButtonRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegistrarActionPerformed
         
         this.setVisible(false);
         vPrincipal.setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_jButtonRegistrarActionPerformed
 
    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
+    private javax.swing.JButton jButtonRegistrar;
+    private javax.swing.JButton jButtonVolver;
+    private javax.swing.JLabel jLabelApellidos;
+    private javax.swing.JLabel jLabelClubs;
+    private javax.swing.JLabel jLabelDNI;
+    private javax.swing.JLabel jLabelFecha;
+    private javax.swing.JLabel jLabelNombre;
+    private javax.swing.JLabel jLabelTelefono;
     private javax.swing.JPanel jPanelView;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextFieldApellidos;
+    private javax.swing.JTextField jTextFieldClubs;
+    private javax.swing.JTextField jTextFieldDNI;
+    private javax.swing.JTextField jTextFieldFecha;
+    private javax.swing.JTextField jTextFieldNombre;
+    private javax.swing.JTextField jTextFieldTelefono;
     // End of variables declaration//GEN-END:variables
 }

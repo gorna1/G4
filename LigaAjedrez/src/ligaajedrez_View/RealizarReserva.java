@@ -38,11 +38,11 @@ public class RealizarReserva extends javax.swing.JFrame {
         jList1 = new javax.swing.JList<>();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jList3 = new javax.swing.JList<>();
-        jCalendar2 = new com.toedter.calendar.JCalendar();
+        jListHoras = new javax.swing.JList<>();
+        jCalendarDia = new com.toedter.calendar.JCalendar();
         jPanel2 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        jButtonAtras = new javax.swing.JButton();
+        jButtonContinuar = new javax.swing.JButton();
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -57,59 +57,59 @@ public class RealizarReserva extends javax.swing.JFrame {
 
         jPanel1.setLayout(new java.awt.GridLayout(2, 1));
 
-        jList3.setModel(new javax.swing.AbstractListModel<String>() {
+        jListHoras.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "08:00 - 10:00", "10:00 - 12:00", "12:00 - 14:00" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        DefaultListCellRenderer renderer = (DefaultListCellRenderer) jList3.getCellRenderer();
+        DefaultListCellRenderer renderer = (DefaultListCellRenderer) jListHoras.getCellRenderer();
         renderer.setHorizontalAlignment(SwingConstants.CENTER);
-        jScrollPane3.setViewportView(jList3);
+        jScrollPane3.setViewportView(jListHoras);
 
         jPanel1.add(jScrollPane3);
-        jPanel1.add(jCalendar2);
+        jPanel1.add(jCalendarDia);
 
         getContentPane().add(jPanel1);
 
-        jButton2.setText("ATRAS");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jButtonAtras.setText("ATRAS");
+        jButtonAtras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jButtonAtrasActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton2);
+        jPanel2.add(jButtonAtras);
 
-        jButton1.setText("CONTINUAR");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jButtonContinuar.setText("CONTINUAR");
+        jButtonContinuar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButtonContinuarActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton1);
+        jPanel2.add(jButtonContinuar);
 
         getContentPane().add(jPanel2);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jButtonAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAtrasActionPerformed
         
         setVisible(false);
         vAnterior.setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_jButtonAtrasActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButtonContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonContinuarActionPerformed
         setVisible(false);
         vAnterior.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jButtonContinuarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private com.toedter.calendar.JCalendar jCalendar2;
+    private javax.swing.JButton jButtonAtras;
+    private javax.swing.JButton jButtonContinuar;
+    private com.toedter.calendar.JCalendar jCalendarDia;
     private javax.swing.JList<String> jList1;
-    private javax.swing.JList<String> jList3;
+    private javax.swing.JList<String> jListHoras;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
