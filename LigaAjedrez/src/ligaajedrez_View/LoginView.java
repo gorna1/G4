@@ -68,8 +68,8 @@ public class LoginView extends javax.swing.JFrame {
         jTextFieldUsuario = new javax.swing.JTextField();
         jPasswordFieldContrasenya = new javax.swing.JPasswordField();
         jButtonLogin = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jButtonAdmin = new javax.swing.JButton();
+        jButtonJugador = new javax.swing.JButton();
 
         jLabel1.setText("jLabel1");
 
@@ -90,14 +90,14 @@ public class LoginView extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("Prueba admin");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jButtonAdmin.setText("Prueba admin");
+        jButtonAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButtonAdminActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Prueba jugador");
+        jButtonJugador.setText("Prueba jugador");
 
         javax.swing.GroupLayout jPanelViewLayout = new javax.swing.GroupLayout(jPanelView);
         jPanelView.setLayout(jPanelViewLayout);
@@ -105,16 +105,15 @@ public class LoginView extends javax.swing.JFrame {
             jPanelViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelViewLayout.createSequentialGroup()
                 .addGap(56, 56, 56)
-                .addGroup(jPanelViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanelViewLayout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addGap(73, 73, 73)
-                        .addComponent(jButton2))
-                    .addGroup(jPanelViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jTextFieldUsuario, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jPasswordFieldContrasenya, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 269, Short.MAX_VALUE)
-                        .addComponent(jButtonLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap(88, Short.MAX_VALUE))
+                        .addComponent(jButtonAdmin)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButtonJugador))
+                    .addComponent(jPasswordFieldContrasenya)
+                    .addComponent(jTextFieldUsuario)
+                    .addComponent(jButtonLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(143, Short.MAX_VALUE))
         );
         jPanelViewLayout.setVerticalGroup(
             jPanelViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -127,8 +126,8 @@ public class LoginView extends javax.swing.JFrame {
                 .addComponent(jButtonLogin)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                 .addGroup(jPanelViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(jButtonAdmin)
+                    .addComponent(jButtonJugador))
                 .addGap(33, 33, 33))
         );
 
@@ -151,10 +150,10 @@ public class LoginView extends javax.swing.JFrame {
         adminView.setVisible(true) ;
     }//GEN-LAST:event_jButtonLoginActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButtonAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAdminActionPerformed
         setVisible(false) ;
         adminView.setVisible(true) ;
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jButtonAdminActionPerformed
 
     /**
      * @param args the command line arguments
@@ -193,8 +192,8 @@ public class LoginView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButtonAdmin;
+    private javax.swing.JButton jButtonJugador;
     private javax.swing.JButton jButtonLogin;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
