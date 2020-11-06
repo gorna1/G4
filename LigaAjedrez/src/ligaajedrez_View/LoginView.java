@@ -5,6 +5,7 @@
  */
 package ligaajedrez_View;
 
+import java.io.File;
 import ligaajedrez_Model.Club;
 import ligaajedrez_Model.EnfrentamientoTorneo;
 import ligaajedrez_Model.Jugador;
@@ -30,6 +31,8 @@ public class LoginView extends javax.swing.JFrame {
     public LoginView() {
         
         liga = new LigaAjedrez();
+        //File datos = new File("NetbeansProjects/G4/Datos_G4.txt") ; //No encuentra el txt
+        //liga = new LigaAjedrez(datos) ;
         club1 = new Club("Club1", "Valencia");
         liga.anyadirClub(club1);
         club2 = new Club("Club2", "China");

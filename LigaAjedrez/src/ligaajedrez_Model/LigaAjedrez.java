@@ -5,6 +5,9 @@
  */
 package ligaajedrez_Model;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.util.ArrayList;
 
 /**
@@ -19,6 +22,181 @@ public class LigaAjedrez {
     protected ArrayList<Jugador> listaRivales = new ArrayList<Jugador>();
     protected ArrayList<Jugador> listaMorosos = new ArrayList<Jugador>();
     protected ArrayList<Club> listaClubs = new ArrayList<Club>();
+    
+    public LigaAjedrez(){}
+    
+    public LigaAjedrez(File datos){
+        FileReader fr = null ;
+        BufferedReader br = null ;
+        String sLin ;
+        char cCar ;
+        String sPlb = "" , sPlb_Aux = "", sPlb_Aux2 = "", sPlb_Aux3 = "" ;
+        String sPlb_Aux4 = "", sPlb_Aux5 = "", sPlb_Aux6 = "" ;
+        int i=0 ;
+        
+        try{
+            // Apertura del fichero y creacion de BufferedReader para poder
+            // hacer una lectura comoda (disponer del metodo readLine()).
+            datos = new File ("") ;
+            fr = new FileReader (datos) ;
+            br = new BufferedReader(fr) ;
+
+            // Lectura del fichero
+            sLin=br.readLine() ;
+            while(!(sLin.equals("FIN TORNEOS"))){
+                sLin=br.readLine() ;
+                while(sLin.charAt(i) != ','){
+                    sPlb += sLin.charAt(i) ;
+                    i++ ;
+                }
+                for(int j=i+1; j<sLin.length(); j++){
+                    sPlb_Aux += sLin.charAt(j) ;
+                }
+                //Constructor de Torneo pasando sPlb y sPlb_Aux
+                sLin=br.readLine() ;
+            }
+            
+            sLin=br.readLine() ;
+            while(!(sLin.equals("FIN CLUBES"))){
+                sLin=br.readLine() ;
+                while(sLin.charAt(i) != ','){
+                    sPlb += sLin.charAt(i) ;
+                    i++ ;
+                }
+                for(int j=i+1; j<sLin.length(); j++){
+                    sPlb_Aux += sLin.charAt(j) ;
+                }
+                //Constructor de Club pasando sPlb y sPlb_Aux
+                sLin=br.readLine() ;
+            }
+            
+            sLin=br.readLine() ;
+            while(!(sLin.equals("FIN JUGADORES"))){
+                sLin=br.readLine() ;
+                while(sLin.charAt(i) != ','){
+                    sPlb += sLin.charAt(i) ;
+                    i++ ;
+                }
+                i++ ;
+                while(sLin.charAt(i) != ','){
+                    sPlb_Aux += sLin.charAt(i) ;
+                    i++ ;
+                }
+                i++ ;
+                while(sLin.charAt(i) != ','){
+                    sPlb_Aux2 += sLin.charAt(i) ;
+                    i++ ;
+                }
+                i++ ;
+                while(sLin.charAt(i) != ','){
+                    sPlb_Aux3 += sLin.charAt(i) ;
+                    i++ ;
+                }
+                i++ ;
+                while(sLin.charAt(i) != ','){
+                    sPlb_Aux4 += sLin.charAt(i) ;
+                    i++ ;
+                }
+                i++ ;
+                while(sLin.charAt(i) != ','){
+                    sPlb_Aux5 += sLin.charAt(i) ;
+                    i++ ;
+                }       
+                for(int j=i+1; j<sLin.length(); j++){
+                    sPlb_Aux6 += sLin.charAt(j) ;
+                }
+                //Constructor de Jugador pasando sPlb,sPlb_Aux,sPlb_Aux2,sPlb_Aux3,sPlb_Aux,4,sPlb_Aux5,sPlb_Aux6
+                sLin=br.readLine() ;
+            }
+            
+            sLin=br.readLine() ;
+            while(!(sLin.equals("FIN ENTRENADORES"))){
+                sLin=br.readLine() ;
+                while(sLin.charAt(i) != ','){
+                    sPlb += sLin.charAt(i) ;
+                    i++ ;
+                }
+                i++ ;
+                while(sLin.charAt(i) != ','){
+                    sPlb_Aux += sLin.charAt(i) ;
+                    i++ ;
+                }
+                i++ ;
+                while(sLin.charAt(i) != ','){
+                    sPlb_Aux2 += sLin.charAt(i) ;
+                    i++ ;
+                }
+                i++ ;
+                while(sLin.charAt(i) != ','){
+                    sPlb_Aux3 += sLin.charAt(i) ;
+                    i++ ;
+                }
+                i++ ;
+                while(sLin.charAt(i) != ','){
+                    sPlb_Aux4 += sLin.charAt(i) ;
+                    i++ ;
+                }
+                if(sLin.contains("/")){
+                    i++ ;
+                    while(sLin.charAt(i) != '/'){
+                        sPlb_Aux5 += sLin.charAt(i) ;
+                        i++ ;
+                    }
+                    for(int j=i+1; j<sLin.length(); j++){
+                        sPlb_Aux6 += sLin.charAt(j) ;
+                    }
+                }
+                else{
+                    for(int j=i+1; j<sLin.length(); j++){
+                        sPlb_Aux6 += sLin.charAt(j) ;
+                    }
+                }
+                //Constructor de Entrenador pasando sPlb,sPlb_Aux,sPlb_Aux2,sPlb_Aux3,sPlb_Aux,4,sPlb_Aux5,sPlb_Aux6
+                //Hay que tener en cuenta que sPlb_Aux5 y sPlb_Aux6 son ambos Strings clubes, ya que pueden estar en varios
+                sLin=br.readLine() ;
+            }
+            
+            sLin=br.readLine() ;
+            while(!(sLin.equals("FIN GERENTES"))){
+                sLin=br.readLine() ;
+                while(sLin.charAt(i) != ','){
+                    sPlb += sLin.charAt(i) ;
+                    i++ ;
+                }
+                i++ ;
+                while(sLin.charAt(i) != ','){
+                    sPlb_Aux += sLin.charAt(i) ;
+                    i++ ;
+                }
+                i++ ;
+                while(sLin.charAt(i) != ','){
+                    sPlb_Aux2 += sLin.charAt(i) ;
+                    i++ ;
+                }
+                for(int j=i+1; j<sLin.length(); j++){
+                    sPlb_Aux3 += sLin.charAt(j) ;
+                }
+                //Constructor de Jugador pasando sPlb,sPlb_Aux,sPlb_Aux2,sPlb_Aux3
+                sLin=br.readLine() ;
+            }   
+        }
+        catch(Exception e){
+            e.printStackTrace() ;
+        }
+        finally{
+            // En el finally cerramos el fichero, para asegurarnos
+            // que se cierra tanto si todo va bien como si salta 
+            // una excepcion.
+            try{                    
+                if(null != fr)
+                   fr.close() ;     
+            
+            }
+            catch (Exception e2){ 
+                e2.printStackTrace() ;
+            }
+        }
+    }
     
     public void anyadirJugadores(Jugador jugador){
         //Anyadir es para Sprint 1, modificar no.
