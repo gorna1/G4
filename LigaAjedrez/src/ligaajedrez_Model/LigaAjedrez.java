@@ -66,7 +66,7 @@ public class LigaAjedrez {
                 for(int j=i+1; j<sLin.length(); j++){
                     sPlb_Aux += sLin.charAt(j) ;
                 }
-                //Constructor de Club pasando sPlb y sPlb_Aux
+                Club club = new Club(sPlb, sPlb_Aux) ;  //Constructor de Club pasando sPlb y sPlb_Aux
                 sLin=br.readLine() ;
             }
             
