@@ -22,6 +22,8 @@ public class LigaAjedrez {
     protected ArrayList<Jugador> listaRivales = new ArrayList<Jugador>();
     protected ArrayList<Jugador> listaMorosos = new ArrayList<Jugador>();
     protected ArrayList<Club> listaClubs = new ArrayList<Club>();
+    //protected ArrayList<Entrenador> listaEntrenadores = new ArrayList<Entrenador>() ;
+    //protected ArrayList<Gerente> listaGerentes = new ArrayList<Gerente>() ;
     
     public LigaAjedrez(){}
     
@@ -53,6 +55,7 @@ public class LigaAjedrez {
                     sPlb_Aux += sLin.charAt(j) ;
                 }
                 Torneo torneo = new Torneo(sPlb, sPlb_Aux) ;
+                listaTorneos.add(torneo) ;
                 sLin=br.readLine() ;
             }
             
@@ -66,7 +69,8 @@ public class LigaAjedrez {
                 for(int j=i+1; j<sLin.length(); j++){
                     sPlb_Aux += sLin.charAt(j) ;
                 }
-                Club club = new Club(sPlb, sPlb_Aux) ;  //Constructor de Club pasando sPlb y sPlb_Aux
+                Club club = new Club(sPlb, sPlb_Aux) ;
+                listaClubs.add(club) ;
                 sLin=br.readLine() ;
             }
             
@@ -105,7 +109,8 @@ public class LigaAjedrez {
                 for(int j=i+1; j<sLin.length(); j++){
                     sPlb_Aux6 += sLin.charAt(j) ;
                 }
-                //Constructor de Jugador pasando sPlb,sPlb_Aux,sPlb_Aux2,sPlb_Aux3,sPlb_Aux,4,sPlb_Aux5,sPlb_Aux6
+                Jugador jugador = new Jugador(sPlb, sPlb_Aux, sPlb_Aux2, sPlb_Aux3, sPlb_Aux4, sPlb_Aux5, sPlb_Aux6) ;
+                listaJugadores.add(jugador) ;
                 sLin=br.readLine() ;
             }
             
@@ -176,7 +181,8 @@ public class LigaAjedrez {
                 for(int j=i+1; j<sLin.length(); j++){
                     sPlb_Aux3 += sLin.charAt(j) ;
                 }
-                //Constructor de Jugador pasando sPlb,sPlb_Aux,sPlb_Aux2,sPlb_Aux3
+                //Gerente gerente = new Gerente((sPlb, sPlb_Aux, sPlb_Aux2, sPlb_Aux3) ;
+                //listaGerentes.add(gerente) ;
                 sLin=br.readLine() ;
             }   
         }
