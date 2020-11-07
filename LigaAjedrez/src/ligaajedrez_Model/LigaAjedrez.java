@@ -205,12 +205,14 @@ public class LigaAjedrez {
     }
     
     public void anyadirJugadores(Jugador jugador){
-        //Anyadir es para Sprint 1, modificar no.
-        /*if(listaJugadores.contains(jugador))
-            listaJugadores.add(jugador);
+        //Si esta en la lista ya en lugar de crear se sobreescribe borrando y creando
+        if(listaJugadores.contains(jugador)){
+            listaJugadores.remove(jugador) ;
+            listaJugadores.add(jugador) ;
+        }
+        //Si no esta en la lista se crea directamente
         else
-            listaJugadores.add(jugador);*/
-            listaJugadores.add(jugador);
+            listaJugadores.add(jugador) ;
     }       
     
     public void anyadirTorneo(Torneo torneo){
@@ -246,23 +248,23 @@ public class LigaAjedrez {
         return listaRivales;
     }
     
-    //Sprint 2
     public void eliminarJugador(String sDNI){
         Jugador jugador = new Jugador() ;
         
+        //Se busca si existe el jugador mediante el DNI
         for(int i=0; i<listaJugadores.size(); i++)
             if(listaJugadores.get(i).getsDNI().equals(sDNI))
                 jugador = listaJugadores.get(i) ;
             else
                 System.out.println("El DNI introducido no corresponde a ningun jugador") ;
         
+        //Se comprueba si el jugador esta en la lista de morosos
         if(listaMorosos.contains(jugador))
             System.out.println("El jugador con el DNI introducido esta en la lista de morosos") ;
         else{
             listaJugadores.remove(jugador) ;
             System.out.println("El jugador con el DNI introducido a sido eliminado") ;
         }
-            
     }
 }
     
