@@ -36,7 +36,7 @@ public class ApuntarseTorneo extends javax.swing.JFrame {
         
         listaTorneos = liga.consultarTorneo();
         for(Torneo lTorneos : listaTorneos)
-            jComboBoxRes.addItem(lTorneos.getCiudad());
+            jComboBoxRes.addItem(lTorneos.getFederacion());
         
         
     }
@@ -126,7 +126,7 @@ public class ApuntarseTorneo extends javax.swing.JFrame {
 
     private void jButtonConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmarActionPerformed
          for(Torneo lT: listaTorneos)
-            if(lT.getCiudad() == jComboBoxRes.getSelectedItem())
+            if(lT.getFederacion() == jComboBoxRes.getSelectedItem())
                 liga.anyadirJugadorTorneo(lT,jugador1);
         this.setVisible(false);
         vAnterior.setVisible(true);

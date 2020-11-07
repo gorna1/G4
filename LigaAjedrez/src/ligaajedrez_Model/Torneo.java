@@ -12,25 +12,29 @@ import java.util.ArrayList;
  * @author Gor
  */
 public class Torneo {
-    String ciudad;
+    String federacion ;
+    String sNmb ;
     String sede;
     protected ArrayList<Jugador> jugadoresTorneo = new ArrayList<Jugador>();
     protected ArrayList<EnfrentamientoTorneo> listaEnfrentamientos = new ArrayList<EnfrentamientoTorneo>();
     protected ArrayList<Jugador> listaRivales = new ArrayList<Jugador>();
     
     
+    public Torneo(String sNmb, String sFed){
+        this.sNmb = sNmb ;
+        this.federacion = sFed ;
+    }
     
-    
-    public Torneo (String ciudad){
-        this.ciudad = ciudad;
+    public Torneo (String federacion){
+        this.federacion = federacion;
     }
 
-    public String getCiudad() {
-        return ciudad;
+    public String getFederacion() {
+        return federacion;
     }
 
-    public void setCiudad(String ciudad) {
-        this.ciudad = ciudad;
+    public void setFederacion(String ciudad) {
+        this.federacion = federacion;
     }
 
     public String getSede() {
