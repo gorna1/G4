@@ -21,7 +21,7 @@ public class RegistrarJugador extends javax.swing.JFrame {
      */
     JFrame vAnterior;
     JFrame vPrincipal;
-    private String sNmb, sApe, sTel, sDNI,sEdad, sElo;
+    private String sNmb, sApe, sTel, sDNI,sEdad, sElo, sClb;
     private Jugador jugador;
     private LigaAjedrez liga;
 
@@ -135,8 +135,8 @@ public class RegistrarJugador extends javax.swing.JFrame {
         sApe = jTextFieldApellidos.getText() ;
         sTel = jTextFieldTelefono.getText() ;
         sDNI = jTextFieldDNI.getText() ;
-        sEdad = jTextFieldEdad.getText();
-
+        sEdad = jTextFieldEdad.getText() ;
+        sClb = jTextFieldClub.getText() ;
         
         
         switch (jComboBoxElo.getSelectedIndex()) {
@@ -153,7 +153,7 @@ public class RegistrarJugador extends javax.swing.JFrame {
                         sElo = "Principiante";
                         break;
                 }
-        jugador = new Jugador(sNmb, sApe, sDNI, sTel, sEdad, sElo, /*falta club, que se tiene que pedir en la vista*/) ;
+        jugador = new Jugador(sNmb, sApe, sDNI, sTel, sEdad, sElo, sClb) ;
         liga.anyadirJugadores(jugador);
         
         setVisible(false);
