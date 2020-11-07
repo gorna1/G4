@@ -90,7 +90,7 @@ public class RegistrarJugador extends javax.swing.JFrame {
         jLabelElo.setText("Nivel de Habilidad");
         jPanel1.add(jLabelElo);
 
-        jLabelEdad.setText("Fecha nacimiento");
+        jLabelEdad.setText("Edad");
         jPanel1.add(jLabelEdad);
 
         jComboBoxElo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Principiante", "Intermedio", "Experto" }));
@@ -153,7 +153,7 @@ public class RegistrarJugador extends javax.swing.JFrame {
                         sElo = "Principiante";
                         break;
                 }
-        jugador = new Jugador(sNmb, sApe, sTel, sDNI, sEdad, sElo, "Valencia") ;
+        jugador = new Jugador(sNmb, sApe, sDNI, sTel, sEdad, sElo, /*falta club, que se tiene que pedir en la vista*/) ;
         liga.anyadirJugadores(jugador);
         
         setVisible(false);

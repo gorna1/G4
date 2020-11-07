@@ -252,11 +252,7 @@ public class LigaAjedrez {
         Jugador jugador = new Jugador() ;
         
         //Se busca si existe el jugador mediante el DNI
-        for(int i=0; i<listaJugadores.size(); i++)
-            if(listaJugadores.get(i).getsDNI().equals(sDNI))
-                jugador = listaJugadores.get(i) ;
-            else
-                System.out.println("El DNI introducido no corresponde a ningun jugador") ;
+        jugador = buscarJugador(sDNI) ;
         
         //Se comprueba si el jugador esta en la lista de morosos
         if(listaMorosos.contains(jugador))
@@ -265,6 +261,29 @@ public class LigaAjedrez {
             listaJugadores.remove(jugador) ;
             System.out.println("El jugador con el DNI introducido a sido eliminado") ;
         }
+    }
+    
+    public void cambiarClubJugador(Jugador jugador, String sClb_Nvo){
+        Club club = new Club() ;
+        
+        for(int i=0; i<listaClubs.size(); i++)
+            if(listaClubs.get(i).getNombre().equals(sClb_Nvo))
+                jugador.setsClb(sClb_Nvo) ;
+            else
+                System.out.println("El Club introducido no corresponde a ningun nombre") ;
+        
+    }
+    
+    public Jugador buscarJugador(String sDNI){
+        Jugador jugador = new Jugador() ;
+        
+        for(int i=0; i<listaJugadores.size(); i++)
+            if(listaJugadores.get(i).getsDNI().equals(sDNI))
+                jugador = listaJugadores.get(i) ;
+            else
+                System.out.println("El DNI introducido no corresponde a ningun jugador") ;
+        
+        return jugador ;
     }
 }
     

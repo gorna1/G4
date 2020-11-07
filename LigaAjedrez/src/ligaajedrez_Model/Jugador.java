@@ -80,11 +80,11 @@ public class Jugador {
         this.sElo = sElo ;
     }
     
-    public String getClb() {
+    public String getsClb() {
         return sClb ;
     }
     
-    public void setClb() {
+    public void setsClb(String sClb) {
         this.sClb = sClb ;
     }
 }

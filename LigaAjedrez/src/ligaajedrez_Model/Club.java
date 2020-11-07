@@ -20,6 +20,8 @@ public class Club {
         this.nombre = nombre;
         this.federacion = federacion;
     }
+
+    Club() { }
     
     public boolean checkJugador(Jugador j) {
         boolean res = false;

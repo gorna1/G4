@@ -81,7 +81,6 @@ public class EliminarJugador extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAtrasActionPerformed
-        
         setVisible(false);
         vAnterior.setVisible(true);
     }//GEN-LAST:event_jButtonAtrasActionPerformed
@@ -89,6 +88,7 @@ public class EliminarJugador extends javax.swing.JFrame {
     private void jButtonContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonContinuarActionPerformed
         sDNI = jTextFieldDNI.getText();
         liga.eliminarJugador(sDNI);
+        
         setVisible(false);
         vPrincipal.setVisible(true);
     }//GEN-LAST:event_jButtonContinuarActionPerformed

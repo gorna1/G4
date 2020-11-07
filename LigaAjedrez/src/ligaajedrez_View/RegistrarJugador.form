@@ -87,7 +87,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabelEdad">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Fecha nacimiento"/>
+                <Property name="text" type="java.lang.String" value="Edad"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JComboBox" name="jComboBoxElo">

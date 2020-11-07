@@ -24,41 +24,48 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="labelJugador" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="labelClubActual" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="labelClubNuevo" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                  <Component id="labelJugador" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelClubActual" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelClubNuevo" alignment="0" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="textFieldClubActual" max="32767" attributes="0"/>
+                  <Component id="jTextFieldClubNuevo" max="32767" attributes="0"/>
+                  <Component id="jTextFieldDNI" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace pref="89" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="botonAtras" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                      <Component id="botonConfirmar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
+                      <Component id="jButtonBuscar" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="botonAtras" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="botonConfirmar" min="-2" max="-2" attributes="0"/>
-                  <Component id="comboBoxClubNuevo" min="-2" max="-2" attributes="0"/>
-                  <Component id="textFieldClubActual" min="-2" pref="75" max="-2" attributes="0"/>
-                  <Component id="comboBoxJugador" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace pref="41" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="labelJugador" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="comboBoxJugador" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTextFieldDNI" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jButtonBuscar" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="labelClubActual" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="textFieldClubActual" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -66,9 +73,9 @@
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="labelClubNuevo" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="comboBoxClubNuevo" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTextFieldClubNuevo" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="30" max="32767" attributes="0"/>
+              <EmptySpace pref="33" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="botonConfirmar" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="botonAtras" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -81,18 +88,8 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="labelJugador">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Jugador"/>
+        <Property name="text" type="java.lang.String" value="DNI Jugador"/>
       </Properties>
-    </Component>
-    <Component class="javax.swing.JComboBox" name="comboBoxJugador">
-      <Properties>
-        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="0"/>
-        </Property>
-      </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-      </AuxValues>
     </Component>
     <Component class="javax.swing.JLabel" name="labelClubActual">
       <Properties>
@@ -110,16 +107,6 @@
         <Property name="text" type="java.lang.String" value="Nuevo club"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="comboBoxClubNuevo">
-      <Properties>
-        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="0"/>
-        </Property>
-      </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-      </AuxValues>
-    </Component>
     <Component class="javax.swing.JButton" name="botonConfirmar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Confirmar"/>
@@ -134,6 +121,18 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonAtrasActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextFieldClubNuevo">
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextFieldDNI">
+    </Component>
+    <Component class="javax.swing.JButton" name="jButtonBuscar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Buscar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonBuscarActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
