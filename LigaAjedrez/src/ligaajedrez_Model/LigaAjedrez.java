@@ -23,7 +23,7 @@ public class LigaAjedrez {
     protected ArrayList<Jugador> listaMorosos = new ArrayList<Jugador>();
     protected ArrayList<Club> listaClubs = new ArrayList<Club>();
     //protected ArrayList<Entrenador> listaEntrenadores = new ArrayList<Entrenador>() ;
-    //protected ArrayList<Gerente> listaGerentes = new ArrayList<Gerente>() ;
+    protected ArrayList<Gerente> listaGerentes = new ArrayList<Gerente>() ;
     
     public LigaAjedrez(){}
     
@@ -202,18 +202,7 @@ public class LigaAjedrez {
                 e2.printStackTrace() ;
             }
         }
-    }
-    
-    public void anyadirJugadores(Jugador jugador){
-        //Si esta en la lista ya en lugar de crear se sobreescribe borrando y creando
-        if(listaJugadores.contains(jugador)){
-            listaJugadores.remove(jugador) ;
-            listaJugadores.add(jugador) ;
-        }
-        //Si no esta en la lista se crea directamente
-        else
-            listaJugadores.add(jugador) ;
-    }       
+    }  
     
     public void anyadirTorneo(Torneo torneo){
         listaTorneos.add(torneo);
@@ -246,6 +235,17 @@ public class LigaAjedrez {
             listaRivales = t.consultarEnfrentamiento(nombre);
     
         return listaRivales;
+    }
+    
+    public void anyadirJugadores(Jugador jugador){
+        //Si esta en la lista ya en lugar de crear se sobreescribe borrando y creando
+        if(listaJugadores.contains(jugador)){
+            listaJugadores.remove(jugador) ;
+            listaJugadores.add(jugador) ;
+        }
+        //Si no esta en la lista se crea directamente
+        else
+            listaJugadores.add(jugador) ;
     }
     
     public void eliminarJugador(String sDNI){
@@ -284,6 +284,50 @@ public class LigaAjedrez {
                 System.out.println("El DNI introducido no corresponde a ningun jugador") ;
         
         return jugador ;
+    }
+    
+    public void anyadirGerente(Gerente gerente){
+        //Si esta en la lista ya en lugar de crear se sobreescribe borrando y
+        //creando ya que el usuario ha debido modificar algun campo
+        if(listaGerentes.contains(gerente)){
+            listaGerentes.remove(gerente) ;
+            listaGerentes.add(gerente) ;
+        }
+        //Si no esta en la lista se crea directamente
+        else
+            listaGerentes.add(gerente) ;
+    }
+    
+    public void eliminarGerente(String sDNI){
+        Gerente gerente = new Gerente() ;
+        
+        //Se busca si existe el jugador mediante el DNI
+        gerente = buscarGerente(sDNI) ;
+        
+        listaGerentes.remove(gerente) ;
+        
+    }
+    
+    public void cambiarClubGerente(Gerente gerente, String sClb_Nvo){
+        Club club = new Club() ;
+        
+        for(int i=0; i<listaClubs.size(); i++)
+            if(listaClubs.get(i).getNombre().equals(sClb_Nvo))
+                gerente.setsClb(sClb_Nvo) ;
+            else
+                System.out.println("El Club introducido no corresponde a ningun nombre") ;
+    }
+    
+    public Gerente buscarGerente(String sDNI){
+        Gerente gerente = new Gerente() ;
+        
+        for(int i=0; i<listaGerentes.size(); i++)
+            if(listaGerentes.get(i).getsDNI().equals(sDNI))
+                gerente = listaGerentes.get(i) ;
+            else
+                System.out.println("El DNI introducido no corresponde a ningun gerente") ;
+        
+        return gerente ;
     }
 }
     

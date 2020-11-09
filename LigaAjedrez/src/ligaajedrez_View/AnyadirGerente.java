@@ -6,6 +6,8 @@
 package ligaajedrez_View;
 
 import javax.swing.JFrame;
+import ligaajedrez_Model.Gerente;
+import ligaajedrez_Model.LigaAjedrez;
 
 /**
  *
@@ -18,9 +20,15 @@ public class AnyadirGerente extends javax.swing.JFrame {
      */
     JFrame vAnterior;
     JFrame vPrincipal;
-    public AnyadirGerente(javax.swing.JFrame vAnterior, javax.swing.JFrame vPrincipal) {
+    private LigaAjedrez liga ;
+    private String sDNI ;
+    private Gerente gerente ;
+    private String sNmb, sNom, sIRPF, sClb ;
+    private boolean bCmp ;
+    public AnyadirGerente(javax.swing.JFrame vAnterior, javax.swing.JFrame vPrincipal, LigaAjedrez liga) {
         this.vAnterior = vAnterior;
         this.vPrincipal = vPrincipal;
+        this.liga = liga ;
         initComponents();
     }
 
@@ -41,13 +49,11 @@ public class AnyadirGerente extends javax.swing.JFrame {
         jTextFieldNombre = new javax.swing.JTextField();
         jTextFieldIRPF = new javax.swing.JTextField();
         jTextFieldNomina = new javax.swing.JTextField();
-        jLabelCambiarClub = new javax.swing.JLabel();
-        jComboBoxNuevoClub = new javax.swing.JComboBox<>();
-        jLabelNuevoClub = new javax.swing.JLabel();
-        jComboBoxCambiarClub = new javax.swing.JComboBox<>();
+        jLabelClub = new javax.swing.JLabel();
         jButtonConfirmar = new javax.swing.JButton();
         jButtonAtras = new javax.swing.JButton();
         jButtonBuscar = new javax.swing.JButton();
+        jTextFieldClub = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -59,25 +65,7 @@ public class AnyadirGerente extends javax.swing.JFrame {
 
         jLabelIRPF.setText("IRPF");
 
-        jTextFieldDNI.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldDNIActionPerformed(evt);
-            }
-        });
-
-        jTextFieldNomina.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldNominaActionPerformed(evt);
-            }
-        });
-
-        jLabelCambiarClub.setText("Cambiar gerente de club");
-
-        jComboBoxNuevoClub.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jLabelNuevoClub.setText("Nuevo club");
-
-        jComboBoxCambiarClub.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jLabelClub.setText("Club actual/Nuevo Club");
 
         jButtonConfirmar.setText("Confirmar");
         jButtonConfirmar.addActionListener(new java.awt.event.ActionListener() {
@@ -94,6 +82,11 @@ public class AnyadirGerente extends javax.swing.JFrame {
         });
 
         jButtonBuscar.setText("Buscar");
+        jButtonBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonBuscarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -116,19 +109,15 @@ public class AnyadirGerente extends javax.swing.JFrame {
                                     .addComponent(jTextFieldDNI, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
                                     .addComponent(jTextFieldNomina)
                                     .addComponent(jTextFieldIRPF)))
-                            .addComponent(jTextFieldNombre)))
+                            .addComponent(jTextFieldNombre))
+                        .addGap(31, 31, 31)
+                        .addComponent(jButtonBuscar)
+                        .addGap(70, 70, 70))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabelNuevoClub)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jComboBoxNuevoClub, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabelCambiarClub)
-                        .addGap(18, 18, 18)
-                        .addComponent(jComboBoxCambiarClub, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(31, 31, 31)
-                .addComponent(jButtonBuscar)
-                .addGap(70, 70, 70))
+                        .addComponent(jLabelClub)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                        .addComponent(jTextFieldClub, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(42, 42, 42))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButtonAtras)
@@ -159,15 +148,11 @@ public class AnyadirGerente extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(24, 24, 24)
-                        .addComponent(jLabelNuevoClub))
+                        .addComponent(jLabelClub))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(jComboBoxNuevoClub, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(19, 19, 19)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelCambiarClub)
-                    .addComponent(jComboBoxCambiarClub, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(50, 50, 50)
+                        .addComponent(jTextFieldClub, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(97, 97, 97)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonConfirmar)
                     .addComponent(jButtonAtras))
@@ -178,37 +163,66 @@ public class AnyadirGerente extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmarActionPerformed
+        if(bCmp)
+            liga.cambiarClubGerente(gerente, sClb) ;
+        else
+            liga.anyadirGerente(gerente) ;
+        
        this.setVisible(false);
        vPrincipal.setVisible(true);
     }//GEN-LAST:event_jButtonConfirmarActionPerformed
 
-    private void jTextFieldDNIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldDNIActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldDNIActionPerformed
-
-    private void jTextFieldNominaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNominaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldNominaActionPerformed
-
     private void jButtonAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAtrasActionPerformed
-        
         setVisible(false);
         vAnterior.setVisible(true);
     }//GEN-LAST:event_jButtonAtrasActionPerformed
+
+    private void jButtonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarActionPerformed
+        sDNI = jTextFieldDNI.getText() ;
+        gerente = liga.buscarGerente(sDNI) ;
+        
+        if(gerente != null){
+            jTextFieldNombre.setEditable(false) ;
+            jTextFieldNomina.setEditable(false) ;
+            jTextFieldIRPF.setEditable(false) ;
+            jTextFieldClub.setEditable(false) ;
+            
+            jTextFieldNombre.setText(gerente.getsNmb()) ;
+            jTextFieldNomina.setText(gerente.getsNom()) ;
+            jTextFieldIRPF.setText(gerente.getsIRPF()) ;
+            jTextFieldClub.setText(gerente.getsClb()) ;
+            
+            bCmp = true ;
+        }
+        
+        else{
+            jTextFieldNombre.setEditable(true) ;
+            jTextFieldNomina.setEditable(true) ;
+            jTextFieldIRPF.setEditable(true) ;
+            jTextFieldClub.setEditable(true) ;
+            
+            sNmb = jTextFieldNombre.getText() ;
+            sNom = jTextFieldNomina.getText() ;
+            sIRPF = jTextFieldIRPF.getText() ;
+            sClb = jTextFieldClub.getText() ;
+            
+            gerente = new Gerente(sDNI,sNmb, sNom, sIRPF, sClb) ;
+            bCmp = false ;
+        }
+            
+    }//GEN-LAST:event_jButtonBuscarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAtras;
     private javax.swing.JButton jButtonBuscar;
     private javax.swing.JButton jButtonConfirmar;
-    private javax.swing.JComboBox<String> jComboBoxCambiarClub;
-    private javax.swing.JComboBox<String> jComboBoxNuevoClub;
-    private javax.swing.JLabel jLabelCambiarClub;
+    private javax.swing.JLabel jLabelClub;
     private javax.swing.JLabel jLabelDNI;
     private javax.swing.JLabel jLabelIRPF;
     private javax.swing.JLabel jLabelNombre;
     private javax.swing.JLabel jLabelNomina;
-    private javax.swing.JLabel jLabelNuevoClub;
+    private javax.swing.JTextField jTextFieldClub;
     private javax.swing.JTextField jTextFieldDNI;
     private javax.swing.JTextField jTextFieldIRPF;
     private javax.swing.JTextField jTextFieldNombre;

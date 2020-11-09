@@ -136,7 +136,7 @@ public class RegistrarJugador extends javax.swing.JFrame {
         sTel = jTextFieldTelefono.getText() ;
         sDNI = jTextFieldDNI.getText() ;
         sEdad = jTextFieldEdad.getText() ;
-        sClb = jTextFieldClub.getText() ;
+        //sClb = jTextFieldClub.getText() ;
         
         
         switch (jComboBoxElo.getSelectedIndex()) {

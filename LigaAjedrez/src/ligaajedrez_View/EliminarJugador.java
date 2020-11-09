@@ -86,8 +86,8 @@ public class EliminarJugador extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonAtrasActionPerformed
 
     private void jButtonContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonContinuarActionPerformed
-        sDNI = jTextFieldDNI.getText();
-        liga.eliminarJugador(sDNI);
+        sDNI = jTextFieldDNI.getText() ;
+        liga.eliminarJugador(sDNI) ;
         
         setVisible(false);
         vPrincipal.setVisible(true);

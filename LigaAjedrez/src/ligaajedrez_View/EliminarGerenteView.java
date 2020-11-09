@@ -6,6 +6,7 @@
 package ligaajedrez_View;
 
 import javax.swing.JFrame;
+import ligaajedrez_Model.LigaAjedrez;
 
 /**
  *
@@ -18,9 +19,12 @@ public class EliminarGerenteView extends javax.swing.JFrame {
      */
     JFrame vAnterior;
     JFrame vPrincipal;
-    public EliminarGerenteView(javax.swing.JFrame vAnterior, javax.swing.JFrame vPrincipal) {
+    private LigaAjedrez liga ;
+    private String sDNI;
+    public EliminarGerenteView(javax.swing.JFrame vAnterior, javax.swing.JFrame vPrincipal, LigaAjedrez liga) {
         this.vAnterior = vAnterior;
         this.vPrincipal = vPrincipal;
+        this.liga = liga ;
         initComponents();
     }
 
@@ -37,7 +41,6 @@ public class EliminarGerenteView extends javax.swing.JFrame {
         jButtonVolver = new javax.swing.JButton();
         jTextFieldDNI = new javax.swing.JTextField();
         jLabelDNI = new javax.swing.JLabel();
-        jButtonBuscar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -57,8 +60,6 @@ public class EliminarGerenteView extends javax.swing.JFrame {
 
         jLabelDNI.setText("DNI:");
 
-        jButtonBuscar.setText("Buscar");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -72,12 +73,9 @@ public class EliminarGerenteView extends javax.swing.JFrame {
                         .addComponent(jButtonEliminar)
                         .addGap(30, 30, 30))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButtonBuscar)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabelDNI)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextFieldDNI, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jLabelDNI)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextFieldDNI, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
@@ -87,9 +85,7 @@ public class EliminarGerenteView extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelDNI)
                     .addComponent(jTextFieldDNI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(4, 4, 4)
-                .addComponent(jButtonBuscar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonEliminar)
                     .addComponent(jButtonVolver))
@@ -100,19 +96,21 @@ public class EliminarGerenteView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVolverActionPerformed
-        
         setVisible(false);
         vAnterior.setVisible(true);
     }//GEN-LAST:event_jButtonVolverActionPerformed
 
     private void jButtonEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEliminarActionPerformed
+        sDNI = jTextFieldDNI.getText() ;
+        liga.eliminarGerente(sDNI) ;
+        
+        
         setVisible(false);
         vPrincipal.setVisible(true);
     }//GEN-LAST:event_jButtonEliminarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonBuscar;
     private javax.swing.JButton jButtonEliminar;
     private javax.swing.JButton jButtonVolver;
     private javax.swing.JLabel jLabelDNI;

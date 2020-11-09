@@ -6,6 +6,7 @@
 package ligaajedrez_View;
 
 import javax.swing.JFrame;
+import ligaajedrez_Model.LigaAjedrez;
 
 /**
  *
@@ -19,10 +20,10 @@ public class AdminGerentesView extends javax.swing.JFrame {
     JFrame vAnterior;
     private AnyadirGerente anyadirGerente;
     private EliminarGerenteView eliminarGerente;
-    public AdminGerentesView(javax.swing.JFrame vAnterior) {
+    public AdminGerentesView(javax.swing.JFrame vAnterior, LigaAjedrez liga) {
         this.vAnterior = vAnterior;
-        anyadirGerente = new AnyadirGerente(this,vAnterior) ;
-        eliminarGerente = new EliminarGerenteView(this,vAnterior);
+        anyadirGerente = new AnyadirGerente(this,vAnterior,liga) ;
+        eliminarGerente = new EliminarGerenteView(this,vAnterior,liga);
         initComponents();
     }
 
@@ -91,12 +92,12 @@ public class AdminGerentesView extends javax.swing.JFrame {
 
     private void jButtonCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCrearActionPerformed
         setVisible(false) ;
-        //anyadirGerente.setVisible(true) ;
+        anyadirGerente.setVisible(true) ;
     }//GEN-LAST:event_jButtonCrearActionPerformed
 
     private void jButtonEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEliminarActionPerformed
         setVisible(false) ;
-        //eliminarGerente.setVisible(true) ;
+        eliminarGerente.setVisible(true) ;
     }//GEN-LAST:event_jButtonEliminarActionPerformed
 
     private void jButtonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVolverActionPerformed
