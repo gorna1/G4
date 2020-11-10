@@ -6,6 +6,7 @@
 package ligaajedrez_View;
 
 import javax.swing.JFrame;
+import ligaajedrez_Model.LigaAjedrez;
 
 /**
  *
@@ -16,13 +17,13 @@ public class AdministrarEntrenador extends javax.swing.JFrame {
     /**
      * Creates new form AdministrarEntrenador
      */
+    JFrame vAnterior;
     private RegEntrenadorView registroEntrenador ;
     private EliminarEntrenador eliminar;
-    JFrame vAnterior;
-    public AdministrarEntrenador(javax.swing.JFrame vAnterior) {
+    public AdministrarEntrenador(javax.swing.JFrame vAnterior, LigaAjedrez liga) {
         this.vAnterior = vAnterior;
-        registroEntrenador = new RegEntrenadorView(this,vAnterior);
-        eliminar = new EliminarEntrenador(this,vAnterior);
+        registroEntrenador = new RegEntrenadorView(this,vAnterior,liga);
+        eliminar = new EliminarEntrenador(this,vAnterior,liga);
         initComponents();
         
     }
@@ -95,13 +96,11 @@ public class AdministrarEntrenador extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonAnyadirEntActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAnyadirEntActionPerformed
-       
        this.setVisible(false);
        registroEntrenador.setVisible(true);
     }//GEN-LAST:event_jButtonAnyadirEntActionPerformed
 
     private void jButtonEliminarEntActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEliminarEntActionPerformed
-        
         this.setVisible(false);
         eliminar.setVisible(true);
     }//GEN-LAST:event_jButtonEliminarEntActionPerformed

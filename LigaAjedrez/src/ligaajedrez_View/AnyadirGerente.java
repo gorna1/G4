@@ -24,7 +24,7 @@ public class AnyadirGerente extends javax.swing.JFrame {
     private String sDNI ;
     private Gerente gerente ;
     private String sNmb, sNom, sIRPF, sClb ;
-    private boolean bCmp ;
+    private boolean bCmp = false ;
     public AnyadirGerente(javax.swing.JFrame vAnterior, javax.swing.JFrame vPrincipal, LigaAjedrez liga) {
         this.vAnterior = vAnterior;
         this.vPrincipal = vPrincipal;
@@ -165,8 +165,22 @@ public class AnyadirGerente extends javax.swing.JFrame {
     private void jButtonConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmarActionPerformed
         if(bCmp)
             liga.cambiarClubGerente(gerente, sClb) ;
-        else
+        
+        else{
+            jTextFieldNombre.setEditable(true) ;
+            jTextFieldNomina.setEditable(true) ;
+            jTextFieldIRPF.setEditable(true) ;
+            jTextFieldClub.setEditable(true) ;
+            
+            sNmb = jTextFieldNombre.getText() ;
+            sNom = jTextFieldNomina.getText() ;
+            sIRPF = jTextFieldIRPF.getText() ;
+            sClb = jTextFieldClub.getText() ;
+            sDNI = jTextFieldDNI.getText() ;
+            
+            gerente = new Gerente(sDNI,sNmb, sNom, sIRPF, sClb) ;
             liga.anyadirGerente(gerente) ;
+        }
         
        this.setVisible(false);
        vPrincipal.setVisible(true);
@@ -193,23 +207,7 @@ public class AnyadirGerente extends javax.swing.JFrame {
             jTextFieldClub.setText(gerente.getsClb()) ;
             
             bCmp = true ;
-        }
-        
-        else{
-            jTextFieldNombre.setEditable(true) ;
-            jTextFieldNomina.setEditable(true) ;
-            jTextFieldIRPF.setEditable(true) ;
-            jTextFieldClub.setEditable(true) ;
-            
-            sNmb = jTextFieldNombre.getText() ;
-            sNom = jTextFieldNomina.getText() ;
-            sIRPF = jTextFieldIRPF.getText() ;
-            sClb = jTextFieldClub.getText() ;
-            
-            gerente = new Gerente(sDNI,sNmb, sNom, sIRPF, sClb) ;
-            bCmp = false ;
-        }
-            
+        }      
     }//GEN-LAST:event_jButtonBuscarActionPerformed
 
 

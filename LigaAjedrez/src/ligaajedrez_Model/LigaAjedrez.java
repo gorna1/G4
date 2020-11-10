@@ -23,7 +23,8 @@ public class LigaAjedrez {
     protected ArrayList<Jugador> listaMorosos = new ArrayList<Jugador>();
     protected ArrayList<Club> listaClubs = new ArrayList<Club>();
     protected ArrayList<Club> listaClubsGetter = new ArrayList<Club>();
-    //protected ArrayList<Entrenador> listaEntrenadores = new ArrayList<Entrenador>() ;
+    protected ArrayList<Entrenador> listaEntrenadores = new ArrayList<Entrenador>() ;
+    protected ArrayList<String> listaClubsEntrenador = new ArrayList<String>() ;
     protected ArrayList<Gerente> listaGerentes = new ArrayList<Gerente>() ;
     
     public LigaAjedrez(){}
@@ -148,17 +149,23 @@ public class LigaAjedrez {
                         sPlb_Aux5 += sLin.charAt(i) ;
                         i++ ;
                     }
+                    listaClubsEntrenador.add(sPlb_Aux5) ;
                     for(int j=i+1; j<sLin.length(); j++){
                         sPlb_Aux6 += sLin.charAt(j) ;
                     }
+                    listaClubsEntrenador.add(sPlb_Aux6) ;
                 }
                 else{
                     for(int j=i+1; j<sLin.length(); j++){
                         sPlb_Aux6 += sLin.charAt(j) ;
                     }
+                    listaClubsEntrenador.add(sPlb_Aux6) ;
                 }
                 //Constructor de Entrenador pasando sPlb,sPlb_Aux,sPlb_Aux2,sPlb_Aux3,sPlb_Aux,4,sPlb_Aux5,sPlb_Aux6
                 //Hay que tener en cuenta que sPlb_Aux5 y sPlb_Aux6 son ambos Strings clubes, ya que pueden estar en varios
+                Entrenador entrenador = new Entrenador(sPlb, sPlb_Aux, sPlb_Aux2, sPlb_Aux3, sPlb_Aux4, listaClubsEntrenador) ;
+                listaEntrenadores.add(entrenador) ;
+                listaClubsEntrenador.clear() ;
                 sLin=br.readLine() ;
             }
             
@@ -179,11 +186,16 @@ public class LigaAjedrez {
                     sPlb_Aux2 += sLin.charAt(i) ;
                     i++ ;
                 }
-                for(int j=i+1; j<sLin.length(); j++){
-                    sPlb_Aux3 += sLin.charAt(j) ;
+                i++ ;
+                while(sLin.charAt(i) != ','){
+                    sPlb_Aux3 += sLin.charAt(i) ;
+                    i++ ;
                 }
-                //Gerente gerente = new Gerente((sPlb, sPlb_Aux, sPlb_Aux2, sPlb_Aux3) ;
-                //listaGerentes.add(gerente) ;
+                for(int j=i+1; j<sLin.length(); j++){
+                    sPlb_Aux4 += sLin.charAt(j) ;
+                }
+                Gerente gerente = new Gerente(sPlb, sPlb_Aux, sPlb_Aux2, sPlb_Aux3, sPlb_Aux4) ;
+                listaGerentes.add(gerente) ;
                 sLin=br.readLine() ;
             }   
         }
@@ -262,12 +274,14 @@ public class LigaAjedrez {
         //Se busca si existe el jugador mediante el DNI
         jugador = buscarJugador(sDNI) ;
         
-        //Se comprueba si el jugador esta en la lista de morosos
-        if(listaMorosos.contains(jugador))
-            System.out.println("El jugador con el DNI introducido esta en la lista de morosos") ;
-        else{
-            listaJugadores.remove(jugador) ;
-            System.out.println("El jugador con el DNI introducido a sido eliminado") ;
+        if(jugador != null){
+            //Se comprueba si el jugador esta en la lista de morosos
+            if(listaMorosos.contains(jugador))
+                System.out.println("El jugador con el DNI introducido esta en la lista de morosos") ;
+            else{
+                listaJugadores.remove(jugador) ;
+                System.out.println("El jugador con el DNI introducido a sido eliminado") ;
+            }
         }
     }
     
@@ -288,8 +302,10 @@ public class LigaAjedrez {
         for(int i=0; i<listaJugadores.size(); i++)
             if(listaJugadores.get(i).getsDNI().equals(sDNI))
                 jugador = listaJugadores.get(i) ;
-            else
+            else{
                 System.out.println("El DNI introducido no corresponde a ningun jugador") ;
+                return null ;
+            }
         
         return jugador ;
     }
@@ -312,7 +328,8 @@ public class LigaAjedrez {
         //Se busca si existe el jugador mediante el DNI
         gerente = buscarGerente(sDNI) ;
         
-        listaGerentes.remove(gerente) ;
+        if(gerente != null)
+            listaGerentes.remove(gerente) ;
         
     }
     
@@ -332,8 +349,10 @@ public class LigaAjedrez {
         for(int i=0; i<listaGerentes.size(); i++)
             if(listaGerentes.get(i).getsDNI().equals(sDNI))
                 gerente = listaGerentes.get(i) ;
-            else
+            else{
                 System.out.println("El DNI introducido no corresponde a ningun gerente") ;
+                return null ;
+            }
         
         return gerente ;
     }
@@ -346,6 +365,43 @@ public class LigaAjedrez {
         
         return listaClubsGetter;
     }
+    
+    public void anyadirEntrenador(Entrenador entrenador){
+        //Si esta en la lista ya en lugar de crear se sobreescribe borrando y
+        //creando ya que el usuario ha debido modificar algun campo
+        if(listaEntrenadores.contains(entrenador)){
+            listaEntrenadores.remove(entrenador) ;
+            listaEntrenadores.add(entrenador) ;
+        }
+        //Si no esta en la lista se crea directamente
+        else
+            listaEntrenadores.add(entrenador) ;
+    }
+    
+    public void eliminarEntrenador(String sDNI){
+        Entrenador entrenador = new Entrenador() ;
+        
+        //Se busca si existe el jugador mediante el DNI
+        entrenador = buscarEntrenador(sDNI) ;
+        
+        if(entrenador != null)
+            listaGerentes.remove(entrenador) ;
+    }
+    
+    public Entrenador buscarEntrenador(String sDNI){
+        Entrenador entrenador = new Entrenador() ;
+        
+        for(int i=0; i<listaEntrenadores.size(); i++)
+            if(listaEntrenadores.get(i).getsDNI().equals(sDNI))
+                entrenador = listaEntrenadores.get(i) ;
+            else{
+                System.out.println("El DNI introducido no corresponde a ningun gerente") ;
+                return null ;
+            }
+        
+        return entrenador ;
+    }
+    
 }
     
 

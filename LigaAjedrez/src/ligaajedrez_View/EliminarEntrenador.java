@@ -6,6 +6,7 @@
 package ligaajedrez_View;
 
 import javax.swing.JFrame;
+import ligaajedrez_Model.LigaAjedrez;
 
 /**
  *
@@ -18,9 +19,12 @@ public class EliminarEntrenador extends javax.swing.JFrame {
      */
     JFrame vAnterior;
     JFrame vPrincipal;
-    public EliminarEntrenador(javax.swing.JFrame vAnterior, javax.swing.JFrame principal) {
+    private LigaAjedrez liga ;
+    private String sDNI ;
+    public EliminarEntrenador(javax.swing.JFrame vAnterior, javax.swing.JFrame principal,LigaAjedrez liga) {
         this.vAnterior = vAnterior;
         this.vPrincipal = principal;
+        this.liga = liga ;
         initComponents();
     }
 
@@ -99,13 +103,14 @@ public class EliminarEntrenador extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAtrasActionPerformed
-       
        this.setVisible(false);
        vAnterior.setVisible(true);
     }//GEN-LAST:event_jButtonAtrasActionPerformed
 
     private void jButtonEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEliminarActionPerformed
-
+        sDNI = jTextFieldDNI.getText() ;
+        liga.eliminarEntrenador(sDNI) ;
+        
         this.setVisible(false);
         vPrincipal.setVisible(true);
     }//GEN-LAST:event_jButtonEliminarActionPerformed

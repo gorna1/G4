@@ -5,7 +5,10 @@
  */
 package ligaajedrez_View;
 
+import java.util.ArrayList;
 import javax.swing.JFrame;
+import ligaajedrez_Model.Entrenador;
+import ligaajedrez_Model.LigaAjedrez;
 
 /**
  *
@@ -18,9 +21,16 @@ public class RegEntrenadorView extends javax.swing.JFrame {
      */
     JFrame vAnterior;
     JFrame vPrincipal;
-    public RegEntrenadorView(javax.swing.JFrame vAnterior,javax.swing.JFrame principal) {
+    private LigaAjedrez liga ;
+    private String sDNI ;
+    private Entrenador entrenador ;
+    private String sNmb, sApe, sFec, sTel ;
+    private ArrayList<String> listaClubsEntrenador= new ArrayList<String>() ;
+    private boolean bCmp = false ;
+    public RegEntrenadorView(javax.swing.JFrame vAnterior,javax.swing.JFrame principal,LigaAjedrez liga) {
         this.vAnterior = vAnterior;
         this.vPrincipal = principal;
+        this.liga = liga ;
         initComponents();
         
     }
@@ -49,6 +59,8 @@ public class RegEntrenadorView extends javax.swing.JFrame {
         jTextFieldClubs = new javax.swing.JTextField();
         jButtonVolver = new javax.swing.JButton();
         jButtonRegistrar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jButtonBuscar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -96,72 +108,97 @@ public class RegEntrenadorView extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setText("Separar los clubes con /, por ejemplo: CDA Paterna/CA Godella/");
+
+        jButtonBuscar.setText("Buscar");
+        jButtonBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonBuscarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanelViewLayout = new javax.swing.GroupLayout(jPanelView);
         jPanelView.setLayout(jPanelViewLayout);
         jPanelViewLayout.setHorizontalGroup(
             jPanelViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelViewLayout.createSequentialGroup()
                 .addGap(37, 37, 37)
-                .addGroup(jPanelViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelViewLayout.createSequentialGroup()
-                            .addComponent(jButtonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
-                            .addComponent(jButtonRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanelViewLayout.createSequentialGroup()
-                            .addComponent(jLabelClubs)
-                            .addGap(18, 18, 18)
-                            .addComponent(jTextFieldClubs))
-                        .addGroup(jPanelViewLayout.createSequentialGroup()
-                            .addComponent(jLabelTelefono)
-                            .addGap(18, 18, 18)
-                            .addComponent(jTextFieldTelefono))
-                        .addGroup(jPanelViewLayout.createSequentialGroup()
-                            .addComponent(jLabelDNI)
-                            .addGap(18, 18, 18)
-                            .addComponent(jTextFieldDNI))
-                        .addGroup(jPanelViewLayout.createSequentialGroup()
-                            .addComponent(jLabelFecha)
-                            .addGap(18, 18, 18)
-                            .addComponent(jTextFieldFecha))
-                        .addGroup(jPanelViewLayout.createSequentialGroup()
-                            .addComponent(jLabelApellidos)
-                            .addGap(18, 18, 18)
-                            .addComponent(jTextFieldApellidos)))
+                .addGroup(jPanelViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanelViewLayout.createSequentialGroup()
-                        .addComponent(jLabelNombre)
+                        .addComponent(jButtonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButtonRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelViewLayout.createSequentialGroup()
+                        .addComponent(jLabelTelefono)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextFieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(41, Short.MAX_VALUE))
+                        .addComponent(jTextFieldTelefono))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanelViewLayout.createSequentialGroup()
+                        .addGroup(jPanelViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanelViewLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jLabelApellidos))
+                            .addGroup(jPanelViewLayout.createSequentialGroup()
+                                .addComponent(jLabelNombre)
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanelViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jTextFieldApellidos, javax.swing.GroupLayout.DEFAULT_SIZE, 309, Short.MAX_VALUE)
+                            .addComponent(jTextFieldNombre)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelViewLayout.createSequentialGroup()
+                        .addComponent(jLabelClubs)
+                        .addGap(18, 18, 18)
+                        .addComponent(jTextFieldClubs))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelViewLayout.createSequentialGroup()
+                        .addGroup(jPanelViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelViewLayout.createSequentialGroup()
+                                .addComponent(jLabelFecha)
+                                .addGap(18, 18, 18)
+                                .addComponent(jTextFieldFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanelViewLayout.createSequentialGroup()
+                                .addComponent(jLabelDNI)
+                                .addGap(57, 57, 57)
+                                .addComponent(jTextFieldDNI, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButtonBuscar)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap(7, Short.MAX_VALUE))
         );
         jPanelViewLayout.setVerticalGroup(
             jPanelViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelViewLayout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addGroup(jPanelViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelNombre)
-                    .addComponent(jTextFieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanelViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelApellidos)
-                    .addComponent(jTextFieldApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanelViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelViewLayout.createSequentialGroup()
+                        .addGap(41, 41, 41)
+                        .addGroup(jPanelViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabelDNI)
+                            .addComponent(jTextFieldDNI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanelViewLayout.createSequentialGroup()
+                        .addGap(42, 42, 42)
+                        .addComponent(jButtonBuscar)
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanelViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextFieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelNombre))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanelViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jTextFieldApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelApellidos))
                 .addGap(18, 18, 18)
                 .addGroup(jPanelViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelFecha)
                     .addComponent(jTextFieldFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanelViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelDNI)
-                    .addComponent(jTextFieldDNI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanelViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanelViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabelTelefono)
                     .addComponent(jTextFieldTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanelViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelClubs)
                     .addComponent(jTextFieldClubs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
+                .addGap(37, 37, 37)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
                 .addGroup(jPanelViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonVolver)
                     .addComponent(jButtonRegistrar))
@@ -183,22 +220,74 @@ public class RegEntrenadorView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVolverActionPerformed
-       
        this.setVisible(false);
        vAnterior.setVisible(true);
     }//GEN-LAST:event_jButtonVolverActionPerformed
 
     private void jButtonRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegistrarActionPerformed
+        int iCnt = 0 ;
+        String sClb = "" ;
+        
+        if(!bCmp){
+            jTextFieldNombre.setEditable(true) ;
+            jTextFieldApellidos.setEditable(true) ;
+            jTextFieldFecha.setEditable(true) ;
+            jTextFieldTelefono.setEditable(true) ;
+            
+            sNmb = jTextFieldNombre.getText() ;
+            sApe = jTextFieldApellidos.getText() ;
+            sFec = jTextFieldFecha.getText() ;
+            sDNI = jTextFieldDNI.getText() ;
+            sTel = jTextFieldTelefono.getText() ;
+            
+            while(iCnt < jTextFieldClubs.getText().length()){
+                while(jTextFieldClubs.getText().charAt(iCnt) != '/'){
+                    sClb += jTextFieldClubs.getText().charAt(iCnt) ;
+                    iCnt++ ;
+                }
+                listaClubsEntrenador.add(sClb) ;
+            }
+                
+            entrenador = new Entrenador(sNmb, sApe, sFec, sDNI, sTel, listaClubsEntrenador) ;
+            liga.anyadirEntrenador(entrenador) ;
+        }
         
         this.setVisible(false);
         vPrincipal.setVisible(true);
     }//GEN-LAST:event_jButtonRegistrarActionPerformed
 
+    private void jButtonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarActionPerformed
+        String sClubs = "" ;
+        sDNI = jTextFieldDNI.getText() ;
+        entrenador = liga.buscarEntrenador(sDNI) ;
+        
+        if(entrenador != null){
+            jTextFieldNombre.setEditable(false) ;
+            jTextFieldApellidos.setEditable(false) ;
+            jTextFieldFecha.setEditable(false) ;
+            jTextFieldTelefono.setEditable(false) ;
+            
+            jTextFieldNombre.setText(entrenador.getsNmb()) ;
+            jTextFieldApellidos.setText(entrenador.getsApe()) ;
+            jTextFieldFecha.setText(entrenador.getsFec()) ;
+            jTextFieldTelefono.setText(entrenador.getsTel()) ;
+            
+            for(int i=0; i<entrenador.getlistaClubsEntrenador().size(); i++){
+                sClubs = entrenador.getlistaClubsEntrenador().get(i) + "/" ;
+            }
+            jTextFieldClubs.setText(sClubs) ;
+            
+            bCmp = true ;
+        }      
+    }//GEN-LAST:event_jButtonBuscarActionPerformed
+
    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonBuscar;
     private javax.swing.JButton jButtonRegistrar;
     private javax.swing.JButton jButtonVolver;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabelApellidos;
     private javax.swing.JLabel jLabelClubs;
     private javax.swing.JLabel jLabelDNI;

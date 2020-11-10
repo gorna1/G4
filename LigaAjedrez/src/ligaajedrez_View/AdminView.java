@@ -30,7 +30,7 @@ public class AdminView extends javax.swing.JFrame {
     
     public AdminView(LigaAjedrez liga) {
         this.liga = liga;
-        adminEntrenador = new AdministrarEntrenador(this);
+        adminEntrenador = new AdministrarEntrenador(this,liga);
         asignarSedePartida = new AsignarSedePartida(this);
         informacionPartidas = new InformacionPartidas(this);
         adminGerentesView = new AdminGerentesView(this, liga);
