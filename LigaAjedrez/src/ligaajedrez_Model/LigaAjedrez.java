@@ -22,6 +22,7 @@ public class LigaAjedrez {
     protected ArrayList<Jugador> listaRivales = new ArrayList<Jugador>();
     protected ArrayList<Jugador> listaMorosos = new ArrayList<Jugador>();
     protected ArrayList<Club> listaClubs = new ArrayList<Club>();
+    protected ArrayList<Club> listaClubsGetter = new ArrayList<Club>();
     //protected ArrayList<Entrenador> listaEntrenadores = new ArrayList<Entrenador>() ;
     protected ArrayList<Gerente> listaGerentes = new ArrayList<Gerente>() ;
     
@@ -248,6 +249,13 @@ public class LigaAjedrez {
             listaJugadores.add(jugador) ;
     }
     
+    public void addSedes(String ciudad,String sede){
+        for(Club c: listaClubs)
+            if(c.getNombre().equals(ciudad))
+                c.anyadirSedes(sede);
+                
+    }
+    
     public void eliminarJugador(String sDNI){
         Jugador jugador = new Jugador() ;
         
@@ -328,6 +336,15 @@ public class LigaAjedrez {
                 System.out.println("El DNI introducido no corresponde a ningun gerente") ;
         
         return gerente ;
+    }
+    
+    public ArrayList<Club> getClubs(String federacion){
+        
+        for(Club c: listaClubs)
+            if(c.getFederacion().equals(federacion))
+                listaClubsGetter.add(c);
+        
+        return listaClubsGetter;
     }
 }
     

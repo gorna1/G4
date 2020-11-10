@@ -13,6 +13,7 @@ import java.util.ArrayList;
  */
 public class Club {
     protected ArrayList<Jugador> listaJugadores = new ArrayList<Jugador>();
+    protected ArrayList<String> sedes = new ArrayList<String>();
     private String nombre;
     private String federacion;
     
@@ -22,6 +23,18 @@ public class Club {
     }
 
     Club() { }
+    
+    public void anyadirSedes(String sede){
+        boolean res = false;
+        for (String jAux : sedes) {
+            if (jAux.equals(sede)) {
+                res = true;
+            }
+        }
+        if(res == false)
+            sedes.add(sede);
+        
+    }
     
     public boolean checkJugador(Jugador j) {
         boolean res = false;

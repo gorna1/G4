@@ -7,6 +7,7 @@ package ligaajedrez_View;
 
 import java.util.ArrayList;
 import javax.swing.JFrame;
+import ligaajedrez_Model.Club;
 import ligaajedrez_Model.Jugador;
 import ligaajedrez_Model.LigaAjedrez;
 import ligaajedrez_Model.Torneo;
@@ -24,6 +25,7 @@ public class ApuntarseTorneo extends javax.swing.JFrame {
     private LigaAjedrez liga;
     JFrame vAnterior;
     protected ArrayList<Torneo> listaTorneos = new ArrayList<Torneo>();
+    protected ArrayList<Club> listaClubs = new ArrayList<Club>();
     private Jugador jugador1;
     
     public ApuntarseTorneo(javax.swing.JFrame vAnterior ,LigaAjedrez liga) {
@@ -34,11 +36,10 @@ public class ApuntarseTorneo extends javax.swing.JFrame {
         initComponents();
         jComboBoxRes.removeAllItems();
         
-        listaTorneos = liga.consultarTorneo();
-        for(Torneo lTorneos : listaTorneos)
-            jComboBoxRes.addItem(lTorneos.getFederacion());
-        
-        
+        listaClubs = liga.getClubs(jugador1.getsClb());
+        for(Club c : listaClubs)
+            jComboBoxRes.addItem(c.getNombre());
+
     }
     
     

@@ -13,7 +13,7 @@ import java.util.ArrayList;
  */
 public class Torneo {
     String federacion ;
-    String sNmb ;
+    String nombreTorneo ;
     String sede;
     protected ArrayList<Jugador> jugadoresTorneo = new ArrayList<Jugador>();
     protected ArrayList<EnfrentamientoTorneo> listaEnfrentamientos = new ArrayList<EnfrentamientoTorneo>();
@@ -21,7 +21,7 @@ public class Torneo {
     
     
     public Torneo(String sNmb, String sFed){
-        this.sNmb = sNmb ;
+        this.nombreTorneo = sNmb ;
         this.federacion = sFed ;
     }
     

@@ -33,13 +33,13 @@ public class LoginView extends javax.swing.JFrame {
         liga = new LigaAjedrez();
         //File datos = new File("NetbeansProjects/G4/Datos_G4.txt") ; //No encuentra el txt
         //liga = new LigaAjedrez(datos) ;
-        club1 = new Club("Club1", "Valencia");
+        club1 = new Club("Paterna", "Valencia");
         liga.anyadirClub(club1);
-        club2 = new Club("Club2", "China");
+        club2 = new Club("Burjassot", "Valencia");
         liga.anyadirClub(club2);
         jugador1 = new Jugador("Gor", "Navasardyan", "X2752013V", "625102312", "22", "Principiante", "Valencia");
         jugador2 = new Jugador ("Pepe","Andres","Z283913Y","723382912","23","Experto", "Valencia");
-        torneo = new Torneo("Valencia");
+        torneo = new Torneo("Torneo de Paterna", "Valencia");
         liga.anyadirJugadores(jugador1);
         System.out.println("añadido gor");
         
@@ -49,6 +49,10 @@ public class LoginView extends javax.swing.JFrame {
         //enfrentamientoTorneo = new EnfrentamientoTorneo(jugador1, jugador2);
         torneo.anyadirEnfrentamientos(jugador1, jugador2);
         //liga.anyadirEnfrentamiento(jugador1, jugador2);
+        liga.addSedes("Valencia","Paterna");
+        liga.addSedes("Valencia","Manises");
+        liga.addSedes("Valencia","Burjassot");
+        
         
         adminView = new AdminView(liga) ;
         

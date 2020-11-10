@@ -97,6 +97,11 @@ public class IntroducirResultados extends javax.swing.JFrame {
         jPanel3.add(jComboBoxJugador1);
 
         jComboBoxJugador2.setBackground(new java.awt.Color(204, 204, 204));
+        jComboBoxJugador2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxJugador2ActionPerformed(evt);
+            }
+        });
         jPanel3.add(jComboBoxJugador2);
 
         jPanel2.add(jPanel3);
@@ -148,19 +153,28 @@ public class IntroducirResultados extends javax.swing.JFrame {
     private void jButtonAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAtrasActionPerformed
         setVisible(false);
         vAnterior.setVisible(true);
+        jComboBoxJugador2.removeAllItems();
+        listaJugadores2.clear();
     }//GEN-LAST:event_jButtonAtrasActionPerformed
 
     private void jButtonContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonContinuarActionPerformed
         setVisible(false);
         vAnterior.setVisible(true);
+        jComboBoxJugador2.removeAllItems();
+        listaJugadores2.clear();
     }//GEN-LAST:event_jButtonContinuarActionPerformed
 
     private void jComboBoxJugador1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxJugador1ActionPerformed
-        
+        jComboBoxJugador2.removeAllItems();
+        listaJugadores2.clear();
         listaJugadores2 = liga.consultarEnfrentamiento(jComboBoxJugador1.getSelectedItem().toString());  
         for(Jugador j : listaJugadores2)
             jComboBoxJugador2.addItem(j.getsNmb());
     }//GEN-LAST:event_jComboBoxJugador1ActionPerformed
+
+    private void jComboBoxJugador2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxJugador2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxJugador2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
