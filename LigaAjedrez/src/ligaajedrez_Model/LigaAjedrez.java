@@ -288,24 +288,26 @@ public class LigaAjedrez {
     public void cambiarClubJugador(Jugador jugador, String sClb_Nvo){
         Club club = new Club() ;
         
-        for(int i=0; i<listaClubs.size(); i++)
-            if(listaClubs.get(i).getNombre().equals(sClb_Nvo))
+        for(int i=0; i<listaClubs.size(); i++) {
+            if(listaClubs.get(i).getNombre().equals(sClb_Nvo)) {
                 jugador.setsClb(sClb_Nvo) ;
+                break;
+            }
             else
                 System.out.println("El Club introducido no corresponde a ningun nombre") ;
+        }
         
     }
     
     public Jugador buscarJugador(String sDNI){
         Jugador jugador = new Jugador() ;
         
-        for(int i=0; i<listaJugadores.size(); i++)
-            if(listaJugadores.get(i).getsDNI().equals(sDNI))
+        for(int i=0; i<listaJugadores.size(); i++) {
+            if(listaJugadores.get(i).getsDNI().equals(sDNI)) {
                 jugador = listaJugadores.get(i) ;
-            else{
-                System.out.println("El DNI introducido no corresponde a ningun jugador") ;
-                return null ;
+                break;
             }
+        }
         
         return jugador ;
     }

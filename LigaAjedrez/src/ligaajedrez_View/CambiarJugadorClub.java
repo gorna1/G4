@@ -30,9 +30,9 @@ public class CambiarJugadorClub extends javax.swing.JFrame {
     private boolean bCmp = false ;
     /*private Jugador jugador1;
     private Jugador jugador2;
-    private String fed;
-    private ArrayList<Club> clubs = new ArrayList<Club>();
-    private ArrayList<Jugador> listaJugadores = new ArrayList<Jugador>();*/
+    private String fed;*/
+    private ArrayList<Club> listaClubs = new ArrayList<Club>();
+    //private ArrayList<Jugador> listaJugadores = new ArrayList<Jugador>();
     public CambiarJugadorClub(javax.swing.JFrame vAnterior, javax.swing.JFrame vPrincipal, LigaAjedrez liga) {
         this.liga = liga;
         /*jugador1 = new Jugador("marquitos", "jimenez", "s3452013V", "625302345", "21", "Principiante", "Valencia");
@@ -69,9 +69,9 @@ public class CambiarJugadorClub extends javax.swing.JFrame {
         labelClubNuevo = new javax.swing.JLabel();
         botonConfirmar = new javax.swing.JButton();
         botonAtras = new javax.swing.JButton();
-        jTextFieldClubNuevo = new javax.swing.JTextField();
         jTextFieldDNI = new javax.swing.JTextField();
         jButtonBuscar = new javax.swing.JButton();
+        jComboBoxClubs = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -81,6 +81,7 @@ public class CambiarJugadorClub extends javax.swing.JFrame {
 
         textFieldClubActual.setEditable(false);
         textFieldClubActual.setText(" ");
+        textFieldClubActual.setFocusable(false);
 
         labelClubNuevo.setText("Nuevo club");
 
@@ -118,20 +119,22 @@ public class CambiarJugadorClub extends javax.swing.JFrame {
                 .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(textFieldClubActual)
-                    .addComponent(jTextFieldClubNuevo)
-                    .addComponent(jTextFieldDNI))
+                    .addComponent(jTextFieldDNI)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jComboBoxClubs, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(89, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jButtonBuscar)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(botonAtras)
                         .addGap(44, 44, 44)
                         .addComponent(botonConfirmar)
-                        .addGap(68, 68, 68))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jButtonBuscar)
-                        .addContainerGap())))
+                        .addGap(68, 68, 68))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -149,8 +152,8 @@ public class CambiarJugadorClub extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelClubNuevo)
-                    .addComponent(jTextFieldClubNuevo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                    .addComponent(jComboBoxClubs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botonConfirmar)
                     .addComponent(botonAtras))
@@ -162,7 +165,7 @@ public class CambiarJugadorClub extends javax.swing.JFrame {
 
     private void botonConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonConfirmarActionPerformed
         if(bCmp){
-            sClb_Nvo = jTextFieldClubNuevo.getText() ;
+            sClb_Nvo = jComboBoxClubs.getSelectedItem().toString() ;
             liga.cambiarClubJugador(jugador, sClb_Nvo) ;
             
             this.setVisible(false) ;
@@ -181,6 +184,11 @@ public class CambiarJugadorClub extends javax.swing.JFrame {
         sDNI = jTextFieldDNI.getText() ;
         jugador = liga.buscarJugador(sDNI) ;
         textFieldClubActual.setText(jugador.getsClb()) ;
+        if (!textFieldClubActual.getText().isEmpty()) {
+            listaClubs = liga.getClubs(textFieldClubActual.getText());
+            for (Club c: listaClubs)
+                jComboBoxClubs.addItem(c.getNombre());
+        }
         bCmp = true ; //Para comprobar si se ha hecho la busqueda del jugador
     }//GEN-LAST:event_jButtonBuscarActionPerformed
 
@@ -190,7 +198,7 @@ public class CambiarJugadorClub extends javax.swing.JFrame {
     private javax.swing.JButton botonAtras;
     private javax.swing.JButton botonConfirmar;
     private javax.swing.JButton jButtonBuscar;
-    private javax.swing.JTextField jTextFieldClubNuevo;
+    private javax.swing.JComboBox<String> jComboBoxClubs;
     private javax.swing.JTextField jTextFieldDNI;
     private javax.swing.JLabel labelClubActual;
     private javax.swing.JLabel labelClubNuevo;
