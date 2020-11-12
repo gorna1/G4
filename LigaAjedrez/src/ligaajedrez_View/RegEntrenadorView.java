@@ -255,13 +255,13 @@ public class RegEntrenadorView extends javax.swing.JFrame {
             sDNI = jTextFieldDNI.getText() ;
             sTel = jTextFieldTelefono.getText() ;
             
-            while(iCnt < jTextFieldClubs.getText().length()){
+            /*while(iCnt < jTextFieldClubs.getText().length()){
                 while(jTextFieldClubs.getText().charAt(iCnt) != '/'){
                     sClb += jTextFieldClubs.getText().charAt(iCnt) ;
                     iCnt++ ;
-                }
+                }*/
                 listaClubsEntrenador.add(sClb) ;
-            }
+            //}
                 
             entrenador = new Entrenador(sNmb, sApe, sFec, sDNI, sTel, listaClubsEntrenador) ;
             liga.anyadirEntrenador(entrenador) ;
@@ -308,13 +308,13 @@ public class RegEntrenadorView extends javax.swing.JFrame {
             jTextFieldFecha.setText(entrenador.getsFec()) ;
             jTextFieldTelefono.setText(entrenador.getsTel()) ;
             
-            for(int i=0; i<entrenador.getlistaClubsEntrenador().size(); i++){
+            /*for(int i=0; i<entrenador.getlistaClubsEntrenador().size(); i++){
                 sClubs = entrenador.getlistaClubsEntrenador().get(i) + "/" ;
-            }
+            }*/
             jTextFieldClubs.setText(sClubs) ;
             
-            bCmp = true ;
-        }      
+        }   
+        bCmp = true ;
     }//GEN-LAST:event_jButtonBuscarActionPerformed
 
    

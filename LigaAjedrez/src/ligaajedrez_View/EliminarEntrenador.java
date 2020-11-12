@@ -37,15 +37,12 @@ public class EliminarEntrenador extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButtonBuscar = new javax.swing.JButton();
         jTextFieldDNI = new javax.swing.JTextField();
         jLabelDNI = new javax.swing.JLabel();
         jButtonAtras = new javax.swing.JButton();
         jButtonEliminar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jButtonBuscar.setText("Buscar");
 
         jLabelDNI.setText("DNI");
 
@@ -75,28 +72,25 @@ public class EliminarEntrenador extends javax.swing.JFrame {
                         .addComponent(jButtonAtras)
                         .addGap(35, 35, 35)
                         .addComponent(jButtonEliminar)
-                        .addGap(23, 23, 23))
+                        .addGap(91, 91, 91))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabelDNI)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jTextFieldDNI, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButtonBuscar)))
-                .addGap(68, 68, 68))
+                        .addGap(171, 171, 171))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonBuscar)
                     .addComponent(jTextFieldDNI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelDNI))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonAtras)
                     .addComponent(jButtonEliminar))
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         pack();
@@ -121,7 +115,6 @@ public class EliminarEntrenador extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAtras;
-    private javax.swing.JButton jButtonBuscar;
     private javax.swing.JButton jButtonEliminar;
     private javax.swing.JLabel jLabelDNI;
     private javax.swing.JTextField jTextFieldDNI;

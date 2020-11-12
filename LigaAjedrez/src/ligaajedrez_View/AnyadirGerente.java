@@ -235,8 +235,8 @@ public class AnyadirGerente extends javax.swing.JFrame {
             jTextFieldIRPF.setText(gerente.getsIRPF()) ;
             jTextFieldClub.setText(gerente.getsClb()) ;
             
-            bCmp = true ;
-        }             
+        }   
+        bCmp = true ;
     }//GEN-LAST:event_jButtonBuscarActionPerformed
 
 
