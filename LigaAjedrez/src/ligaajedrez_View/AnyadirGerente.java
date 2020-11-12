@@ -233,9 +233,14 @@ public class AnyadirGerente extends javax.swing.JFrame {
             jTextFieldNombre.setText(gerente.getsNmb()) ;
             jTextFieldNomina.setText(gerente.getsNom()) ;
             jTextFieldIRPF.setText(gerente.getsIRPF()) ;
-            jTextFieldClub.setText(gerente.getsClb()) ;
+            jTextFieldClub.setText(gerente.getsClb()) ; 
+        } 
+        
+        jTextFieldNombre.setEditable(true) ;
+        jTextFieldNomina.setEditable(true) ;
+        jTextFieldIRPF.setEditable(true) ;
+        jTextFieldClub.setEditable(true) ;
             
-        }   
         bCmp = true ;
     }//GEN-LAST:event_jButtonBuscarActionPerformed
 
