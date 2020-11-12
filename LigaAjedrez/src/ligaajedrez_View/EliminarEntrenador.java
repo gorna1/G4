@@ -103,10 +103,11 @@ public class EliminarEntrenador extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAtrasActionPerformed
-       
+        jTextFieldDNI.setEditable(true) ;
+        jTextFieldDNI.setText("") ;
         
         this.setVisible(false);
-       vAnterior.setVisible(true);
+        vAnterior.setVisible(true);
     }//GEN-LAST:event_jButtonAtrasActionPerformed
 
     private void jButtonEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEliminarActionPerformed

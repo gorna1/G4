@@ -1,0 +1,42 @@
+TORNEOS
+VALENCIA 100 ANIVERSARIO,Valencia
+VALENCIA CIUDAD DE LAS ARTES Y LAS CIENCIAS,Valencia
+MADRID PROMUEVE,Madrid
+TROFEO BLANCO,Madrid
+TORNEO AJEDREZ BCN,Barcelona
+FIN TORNEOS
+CLUBES
+CDA Paterna,Valencia
+CDA Burjassot,Valencia
+CA Godella,Valencia
+CJA Paterna,Valencia
+AC Rocafort,Valencia
+Fuenlabrada,Madrid
+Getafe,Madrid
+Mostoles,Madrid
+Montblac,Barcelona
+CA Barcelona,Barcelona
+FIN CLUBES
+JUGADORES
+Gor,Navasardyan,X2752013V,625102312,22,Principiante,CDA Paterna
+Pepe,Andres,1283913Y,723382912,23,Experto,CDA Burjassot
+Miguel,Garcia,12394502X,234097859,20,Intermedio,CA Godella
+Antonio,Pinacho,47320887Q,075293610,15,Principiante,AC Rocafort
+Pedro,Gomez,12908976Z,654096102,19,Principiante,Getafe
+Antonio,Lopez,10932289V,119003784,20,Principiante,Mostoles
+Laura,Lazaro,10392877W,948599691,20,Experto,Montblanc
+Lucia,Gimenez,76895543T,929203777,20,Experto,CA Barcelona
+FIN JUGADORES
+ENTRENADORES
+Angela,Garcia,15/4/1990,12897366OI,908745121,CDA Paterna/CDA Burjassot
+Gemma,Lopez,3/10/1991,03989077L,048777614,AC Rocafort
+Sergio,Gallego,18/5/1987,88665421C,123986740,Fuenlabrada
+Miguel,Segura,1/1/1990,38274859Q,038911232,Montblanc
+FIN ENTRENADORES
+GERENTES
+Jorge,98330872A,1500,20%,CDA Burjassot
+Claudia,19238433B,2000,22%,Mostoles
+FIN GERENTES
+
+
+
