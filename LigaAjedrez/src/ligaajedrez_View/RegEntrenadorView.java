@@ -220,8 +220,22 @@ public class RegEntrenadorView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVolverActionPerformed
-       this.setVisible(false);
-       vAnterior.setVisible(true);
+        jTextFieldDNI.setEditable(true) ;
+        jTextFieldNombre.setEditable(true) ;
+        jTextFieldApellidos.setEditable(true) ;
+        jTextFieldFecha.setEditable(true) ;
+        jTextFieldTelefono.setEditable(true) ;
+        jTextFieldClubs.setEditable(true) ;
+        
+        jTextFieldDNI.setText("") ;
+        jTextFieldNombre.setText("") ;
+        jTextFieldApellidos.setText("") ;
+        jTextFieldFecha.setText("") ;
+        jTextFieldTelefono.setText("") ;
+        jTextFieldClubs.setText("") ;
+        
+        this.setVisible(false);
+        vAnterior.setVisible(true);
     }//GEN-LAST:event_jButtonVolverActionPerformed
 
     private void jButtonRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegistrarActionPerformed
@@ -261,7 +275,7 @@ public class RegEntrenadorView extends javax.swing.JFrame {
         sDNI = jTextFieldDNI.getText() ;
         entrenador = liga.buscarEntrenador(sDNI) ;
         
-        if(entrenador != null){
+        if(entrenador.getsDNI() != null){
             jTextFieldNombre.setEditable(false) ;
             jTextFieldApellidos.setEditable(false) ;
             jTextFieldFecha.setEditable(false) ;

@@ -9,6 +9,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -280,10 +281,10 @@ public class LigaAjedrez {
         if(jugador != null){
             //Se comprueba si el jugador esta en la lista de morosos
             if(listaMorosos.contains(jugador))
-                System.out.println("El jugador con el DNI introducido esta en la lista de morosos") ;
+                JOptionPane.showMessageDialog(null, "El jugador esta en la lista de morosos") ;
             else{
                 listaJugadores.remove(jugador) ;
-                System.out.println("El jugador con el DNI introducido a sido eliminado") ;
+                JOptionPane.showMessageDialog(null, "El jugador ha sido eliminado") ;
             }
         }
     }
@@ -297,7 +298,7 @@ public class LigaAjedrez {
                 break;
             }
             else
-                System.out.println("El Club introducido no corresponde a ningun nombre") ;
+                JOptionPane.showMessageDialog(null, "El club introducido no existe") ;
         }
         
     }
@@ -310,6 +311,8 @@ public class LigaAjedrez {
                 jugador = listaJugadores.get(i) ;
                 break;
             }
+            else
+                JOptionPane.showMessageDialog(null, "El club introducido no existe") ;
         }
         
         return jugador ;
@@ -321,10 +324,13 @@ public class LigaAjedrez {
         if(listaGerentes.contains(gerente)){
             listaGerentes.remove(gerente) ;
             listaGerentes.add(gerente) ;
+            JOptionPane.showMessageDialog(null, "Gerente modificado") ;
         }
         //Si no esta en la lista se crea directamente
-        else
+        else{
             listaGerentes.add(gerente) ;
+            JOptionPane.showMessageDialog(null, "Gerente creado") ;
+        }
     }
     
     public void eliminarGerente(String sDNI){
@@ -333,8 +339,10 @@ public class LigaAjedrez {
         //Se busca si existe el jugador mediante el DNI
         gerente = buscarGerente(sDNI) ;
         
-        if(gerente != null)
+        if(gerente.getsDNI() != null){
             listaGerentes.remove(gerente) ;
+            JOptionPane.showMessageDialog(null, "El gerente ha sido eliminado") ;
+        }
         
     }
     
@@ -345,7 +353,7 @@ public class LigaAjedrez {
             if(listaClubs.get(i).getNombre().equals(sClb_Nvo))
                 gerente.setsClb(sClb_Nvo) ;
             else
-                System.out.println("El Club introducido no corresponde a ningun nombre") ;
+                JOptionPane.showMessageDialog(null, "El club introducido no existe") ;
     }
     
     public Gerente buscarGerente(String sDNI){
@@ -355,7 +363,7 @@ public class LigaAjedrez {
             if(listaGerentes.get(i).getsDNI().equals(sDNI))
                 gerente = listaGerentes.get(i) ;
             else{
-                System.out.println("El DNI introducido no corresponde a ningun gerente") ;
+                JOptionPane.showMessageDialog(null, "Gerente NO encontrado") ;
                 return null ;
             }
         
@@ -377,10 +385,13 @@ public class LigaAjedrez {
         if(listaEntrenadores.contains(entrenador)){
             listaEntrenadores.remove(entrenador) ;
             listaEntrenadores.add(entrenador) ;
+            JOptionPane.showMessageDialog(null, "Entrenador modificado") ;
         }
         //Si no esta en la lista se crea directamente
-        else
+        else{
             listaEntrenadores.add(entrenador) ;
+            JOptionPane.showMessageDialog(null, "Entrenador creado") ;
+        }
     }
     
     public void eliminarEntrenador(String sDNI){
@@ -388,9 +399,13 @@ public class LigaAjedrez {
         
         //Se busca si existe el jugador mediante el DNI
         entrenador = buscarEntrenador(sDNI) ;
-        
-        if(entrenador != null)
+        if(entrenador.getsDNI() != null){
             listaGerentes.remove(entrenador) ;
+            JOptionPane.showMessageDialog(null, "Entrenador eliminado") ;
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "No se ha podido eliminar el entrenador") ;
+        }
     }
     
     public Entrenador buscarEntrenador(String sDNI){
@@ -400,7 +415,7 @@ public class LigaAjedrez {
             if(listaEntrenadores.get(i).getsDNI().equals(sDNI))
                 entrenador = listaEntrenadores.get(i) ;
             else{
-                System.out.println("El DNI introducido no corresponde a ningun gerente") ;
+                JOptionPane.showMessageDialog(null, "Entrenador NO encontrado") ;
                 return null ;
             }
         
