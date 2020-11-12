@@ -259,10 +259,13 @@ public class LigaAjedrez {
         if(listaJugadores.contains(jugador)){
             listaJugadores.remove(jugador) ;
             listaJugadores.add(jugador) ;
+            JOptionPane.showMessageDialog(null, "Jugador modificado") ;
         }
         //Si no esta en la lista se crea directamente
-        else
+        else{
             listaJugadores.add(jugador) ;
+            JOptionPane.showMessageDialog(null, "Jugador creado") ;
+        }
     }
     
     public void addSedes(String ciudad,String sede){
@@ -291,29 +294,32 @@ public class LigaAjedrez {
     
     public void cambiarClubJugador(Jugador jugador, String sClb_Nvo){
         Club club = new Club() ;
+        boolean bCmp = false ;
         
         for(int i=0; i<listaClubs.size(); i++) {
             if(listaClubs.get(i).getNombre().equals(sClb_Nvo)) {
                 jugador.setsClb(sClb_Nvo) ;
+                bCmp = true ;
                 break;
             }
-            else
-                JOptionPane.showMessageDialog(null, "El club introducido no existe") ;
         }
-        
+        if(!bCmp)
+                JOptionPane.showMessageDialog(null, "El club introducido no existe") ;
     }
     
     public Jugador buscarJugador(String sDNI){
         Jugador jugador = new Jugador() ;
+        boolean bCmp = false ;
         
         for(int i=0; i<listaJugadores.size(); i++) {
             if(listaJugadores.get(i).getsDNI().equals(sDNI)) {
                 jugador = listaJugadores.get(i) ;
+                bCmp = true ;
                 break;
             }
-            else
-                JOptionPane.showMessageDialog(null, "El club introducido no existe") ;
         }
+        if(!bCmp)
+                JOptionPane.showMessageDialog(null, "El jugador no existe") ;
         
         return jugador ;
     }
