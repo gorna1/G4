@@ -27,6 +27,7 @@ public class LigaAjedrez {
     protected ArrayList<Entrenador> listaEntrenadores = new ArrayList<Entrenador>() ;
     protected ArrayList<String> listaClubsEntrenador = new ArrayList<String>() ;
     protected ArrayList<Gerente> listaGerentes = new ArrayList<Gerente>() ;
+    protected ArrayList<EnfrentamientoTorneo> listaEnfrentamientos = new ArrayList<EnfrentamientoTorneo>() ;
     
     public LigaAjedrez(){}
     
@@ -42,14 +43,17 @@ public class LigaAjedrez {
         try{
             // Apertura del fichero y creacion de BufferedReader para poder
             // hacer una lectura comoda (disponer del metodo readLine()).
-            datos = new File ("") ;
             fr = new FileReader (datos) ;
             br = new BufferedReader(fr) ;
 
             // Lectura del fichero
             sLin=br.readLine() ;
+            sLin=br.readLine() ;
+            
             while(!(sLin.equals("FIN TORNEOS"))){
-                sLin=br.readLine() ;
+                i = 0;
+                sPlb = "";
+                sPlb_Aux = "";
                 while(sLin.charAt(i) != ','){
                     sPlb += sLin.charAt(i) ;
                     i++ ;
@@ -61,10 +65,13 @@ public class LigaAjedrez {
                 listaTorneos.add(torneo) ;
                 sLin=br.readLine() ;
             }
-            
             sLin=br.readLine() ;
+            sLin=br.readLine() ;
+            
             while(!(sLin.equals("FIN CLUBES"))){
-                sLin=br.readLine() ;
+                i = 0;
+                sPlb = "";
+                sPlb_Aux = "";
                 while(sLin.charAt(i) != ','){
                     sPlb += sLin.charAt(i) ;
                     i++ ;
@@ -76,10 +83,18 @@ public class LigaAjedrez {
                 listaClubs.add(club) ;
                 sLin=br.readLine() ;
             }
-            
             sLin=br.readLine() ;
+            sLin=br.readLine() ;
+            
             while(!(sLin.equals("FIN JUGADORES"))){
-                sLin=br.readLine() ;
+                i = 0;
+                sPlb = "";
+                sPlb_Aux = "";
+                sPlb_Aux2 = "";
+                sPlb_Aux3 = "";
+                sPlb_Aux4 = "";
+                sPlb_Aux5 = "";
+                sPlb_Aux6 = "";
                 while(sLin.charAt(i) != ','){
                     sPlb += sLin.charAt(i) ;
                     i++ ;
@@ -116,10 +131,18 @@ public class LigaAjedrez {
                 listaJugadores.add(jugador) ;
                 sLin=br.readLine() ;
             }
-            
             sLin=br.readLine() ;
+            sLin=br.readLine() ;
+            
             while(!(sLin.equals("FIN ENTRENADORES"))){
-                sLin=br.readLine() ;
+                i = 0;
+                sPlb = "";
+                sPlb_Aux = "";
+                sPlb_Aux2 = "";
+                sPlb_Aux3 = "";
+                sPlb_Aux4 = "";
+                sPlb_Aux5 = "";
+                sPlb_Aux6 = "";
                 while(sLin.charAt(i) != ','){
                     sPlb += sLin.charAt(i) ;
                     i++ ;
@@ -144,9 +167,9 @@ public class LigaAjedrez {
                     sPlb_Aux4 += sLin.charAt(i) ;
                     i++ ;
                 }
-                if(sLin.contains("/")){
+                if(sLin.contains("-")){
                     i++ ;
-                    while(sLin.charAt(i) != '/'){
+                    while(sLin.charAt(i) != '-'){
                         sPlb_Aux5 += sLin.charAt(i) ;
                         i++ ;
                     }
@@ -171,8 +194,15 @@ public class LigaAjedrez {
             }
             
             sLin=br.readLine() ;
+            sLin=br.readLine() ;
+            
             while(!(sLin.equals("FIN GERENTES"))){
-                sLin=br.readLine() ;
+                i = 0;
+                sPlb = "";
+                sPlb_Aux = "";
+                sPlb_Aux2 = "";
+                sPlb_Aux3 = "";
+                sPlb_Aux4 = "";
                 while(sLin.charAt(i) != ','){
                     sPlb += sLin.charAt(i) ;
                     i++ ;
@@ -198,7 +228,27 @@ public class LigaAjedrez {
                 Gerente gerente = new Gerente(sPlb, sPlb_Aux, sPlb_Aux2, sPlb_Aux3, sPlb_Aux4) ;
                 listaGerentes.add(gerente) ;
                 sLin=br.readLine() ;
-            }   
+            }
+            sLin=br.readLine() ;
+            sLin=br.readLine() ;
+            while (!(sLin.equals("FIN ENFRENTAMIENTOS"))) {
+                i = 0;
+                sPlb = "";
+                sPlb_Aux = "";
+                while(sLin.charAt(i) != ','){
+                    sPlb += sLin.charAt(i) ;
+                    i++ ;
+                }
+                for(int j = i+1; j<sLin.length(); j++)
+                    sPlb_Aux += sLin.charAt(j) ;
+                Jugador j1;
+                Jugador j2;
+                j1 = buscarJugador(sPlb);
+                j2 = buscarJugador(sPlb_Aux);
+                listaEnfrentamientos.add(new EnfrentamientoTorneo(j1, j2));
+                sLin=br.readLine() ;
+            }
+            
         }
         catch(Exception e){
             e.printStackTrace() ;
@@ -246,6 +296,7 @@ public class LigaAjedrez {
     
     public ArrayList<Jugador> consultarEnfrentamiento(String nombre){
         listaRivales.removeAll(listaRivales);
+        System.out.println("hola");
         for(Torneo t : listaTorneos)
             listaRivales.addAll(t.consultarEnfrentamiento(nombre));
         return listaRivales;
@@ -261,7 +312,6 @@ public class LigaAjedrez {
         //Si no esta en la lista se crea directamente
         else{
             listaJugadores.add(jugador) ;
-            JOptionPane.showMessageDialog(null, "Jugador creado") ;
         }
     }
     
@@ -308,10 +358,10 @@ public class LigaAjedrez {
         Jugador jugador = new Jugador() ;
         boolean bCmp = false ;
         
-        for(int i=0; i<listaJugadores.size(); i++) {
-            if(listaJugadores.get(i).getsDNI().equals(sDNI)) {
-                jugador = listaJugadores.get(i) ;
-                bCmp = true ;
+        for (Jugador j : listaJugadores) {
+            if (j.getsDNI().equals(sDNI)) {
+                jugador = j;
+                bCmp = true;
                 break;
             }
         }

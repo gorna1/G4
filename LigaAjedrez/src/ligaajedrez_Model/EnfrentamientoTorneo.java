@@ -42,6 +42,7 @@ public class EnfrentamientoTorneo {
     public Jugador consultarEnfrentamiento(String nombre){
         
         Jugador rival;
+        System.out.println(nombre + " - " + jugador1.getsNmb());
         if(nombre.equals(jugador1.getsNmb()))
             rival = jugador2;
         else 

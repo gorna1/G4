@@ -29,31 +29,8 @@ public class LoginView extends javax.swing.JFrame {
     private Torneo torneo, torneo1;
     private EnfrentamientoTorneo enfrentamientoTorneo;
     public LoginView() {
-        
-        liga = new LigaAjedrez();
-        //File datos = new File("NetbeansProjects/G4/Datos_G4.txt") ; //No encuentra el txt
-        //liga = new LigaAjedrez(datos) ;
-        club1 = new Club("Paterna", "Valencia");
-        liga.anyadirClub(club1);
-        club2 = new Club("Burjassot", "Valencia");
-        liga.anyadirClub(club2);
-        jugador1 = new Jugador("Gor", "Navasardyan", "X2752013V", "625102312", "22", "Principiante", "Valencia");
-        jugador2 = new Jugador ("Pepe","Andres","Z283913Y","723382912","23","Experto", "Valencia");
-        torneo = new Torneo("Torneo de La perla negra", "Valencia");
-        torneo1 = new Torneo("Torneo de La perla blanca", "Valencia");
-        liga.anyadirJugadores(jugador1);
-        System.out.println("añadido gor");
-        
-        liga.anyadirJugadores(jugador2);
-        
-        System.out.println("añadido pepe");
-        liga.anyadirTorneo(torneo);
-        liga.anyadirTorneo(torneo1);
-        enfrentamientoTorneo = new EnfrentamientoTorneo(jugador1, jugador2);
-        enfrentamientoTorneo.setGanador("Gor");
-        enfrentamientoTorneo.setDuracion("10 minutos");
-        enfrentamientoTorneo.setFecha("10/10/2020");
-        torneo.anyadirEnfrentamientos(jugador1, jugador2);
+        File datos = new File("src/Datos/Datos_G4.txt") ;
+        liga = new LigaAjedrez(datos) ;
         liga.addSedes("Valencia","Paterna");
         liga.addSedes("Valencia","Manises");
         liga.addSedes("Valencia","Burjassot");

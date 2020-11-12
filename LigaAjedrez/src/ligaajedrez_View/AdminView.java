@@ -30,27 +30,6 @@ public class AdminView extends javax.swing.JFrame {
     
     public AdminView(LigaAjedrez liga) {
         this.liga = liga;
-        adminEntrenador = new AdministrarEntrenador(this,liga);
-        asignarSedePartida = new AsignarSedePartida(this,liga);
-        informacionPartidas = new InformacionPartidas(this,liga);
-        adminGerentesView = new AdminGerentesView(this, liga);
-        morososView = new MorososView(this);
-        asignarResponsable = new AsignarResponsable(this);
-        
-        realizarReserva = new RealizarReserva(this);
-        adminJugadorView = new AdminJugadorView(this,liga);
-        apTorneo = new ApuntarseTorneo(this,liga);
-        introducirResultados = new IntroducirResultados(this,liga);
-        
-        morososView.pack();
-        informacionPartidas.pack();
-        asignarSedePartida.pack();
-        adminEntrenador.pack();
-        asignarResponsable.pack();
-        introducirResultados.pack();
-        adminJugadorView.pack();
-        apTorneo.pack();
-        
         initComponents();
     }
 
@@ -221,55 +200,65 @@ public class AdminView extends javax.swing.JFrame {
     private void jButtonInfoPartidasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonInfoPartidasActionPerformed
 
         setVisible(false);
+        informacionPartidas = new InformacionPartidas(this,liga);
         informacionPartidas.setVisible(true);
     }//GEN-LAST:event_jButtonInfoPartidasActionPerformed
 
     private void jButtonSedeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSedeActionPerformed
 
         setVisible(false);
+        asignarSedePartida = new AsignarSedePartida(this,liga);
         asignarSedePartida.setVisible(true);
     }//GEN-LAST:event_jButtonSedeActionPerformed
 
     private void jButtonAnyadirGerenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAnyadirGerenteActionPerformed
         setVisible(false);
+        adminGerentesView = new AdminGerentesView(this, liga);
         adminGerentesView.setVisible(true);
     }//GEN-LAST:event_jButtonAnyadirGerenteActionPerformed
 
     private void jButtonAnyadirEntrenadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAnyadirEntrenadorActionPerformed
        this.setVisible(false);
+       adminEntrenador = new AdministrarEntrenador(this,liga);
        adminEntrenador.setVisible(true);
     }//GEN-LAST:event_jButtonAnyadirEntrenadorActionPerformed
 
     private void jButtonMultasMorososActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMultasMorososActionPerformed
         
         setVisible(false);
+        morososView = new MorososView(this);
         morososView.setVisible(true);
     }//GEN-LAST:event_jButtonMultasMorososActionPerformed
 
     private void jButtonAsignarResActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAsignarResActionPerformed
         
         setVisible(false);
+        asignarResponsable = new AsignarResponsable(this);
         asignarResponsable.setVisible(true);
     }//GEN-LAST:event_jButtonAsignarResActionPerformed
 
     private void jButtonIntroResActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIntroResActionPerformed
         setVisible(false);
+        introducirResultados = new IntroducirResultados(this,liga);
         introducirResultados.setVisible(true);
     }//GEN-LAST:event_jButtonIntroResActionPerformed
 
     private void jButtonRealizarReservaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRealizarReservaActionPerformed
         setVisible(false);
+        realizarReserva = new RealizarReserva(this);
         realizarReserva.setVisible(true);
     }//GEN-LAST:event_jButtonRealizarReservaActionPerformed
 
     private void jButtonAdminJugActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAdminJugActionPerformed
         
         setVisible(false);
+        adminJugadorView = new AdminJugadorView(this,liga);
         adminJugadorView.setVisible(true);
     }//GEN-LAST:event_jButtonAdminJugActionPerformed
 
     private void jButtonAptTorneoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAptTorneoActionPerformed
         this.setVisible(false);
+        apTorneo = new ApuntarseTorneo(this,liga);
         apTorneo.setVisible(true);
     }//GEN-LAST:event_jButtonAptTorneoActionPerformed
 

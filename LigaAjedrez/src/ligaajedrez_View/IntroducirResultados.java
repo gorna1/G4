@@ -166,9 +166,9 @@ public class IntroducirResultados extends javax.swing.JFrame {
     private void jComboBoxJugador1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxJugador1ActionPerformed
         limpiar();
         String uno = (String) jComboBoxJugador1.getSelectedItem();
-       
+        
         listaJugadores2 = liga.consultarEnfrentamiento(uno);
-        // --> enseñarle depuracion al profesor.
+        
         for(Jugador j : listaJugadores2)
             jComboBoxJugador2.addItem(j.getsNmb());
        
