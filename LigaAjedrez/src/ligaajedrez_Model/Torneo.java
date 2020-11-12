@@ -59,7 +59,6 @@ public class Torneo {
     
     public ArrayList<Jugador> consultarEnfrentamiento(String nombre){
         listaRivales.removeAll(listaRivales);
-        System.out.println(nombre);
         for(EnfrentamientoTorneo et: listaEnfrentamientos)
             listaRivales.add(et.consultarEnfrentamiento(nombre));
         //enseñarle depuracion

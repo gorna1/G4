@@ -296,7 +296,6 @@ public class LigaAjedrez {
     
     public ArrayList<Jugador> consultarEnfrentamiento(String nombre){
         listaRivales.removeAll(listaRivales);
-        System.out.println("hola");
         for(Torneo t : listaTorneos)
             listaRivales.addAll(t.consultarEnfrentamiento(nombre));
         return listaRivales;
