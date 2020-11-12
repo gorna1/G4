@@ -292,7 +292,7 @@ public class RegEntrenadorView extends javax.swing.JFrame {
         String sClubs = "" ;
         sDNI = jTextFieldDNI.getText() ;
         
-        if((sDNI.equals("")))
+        if(!(sDNI.equals("")))
             entrenador = liga.buscarEntrenador(sDNI) ;
         else
             JOptionPane.showMessageDialog(null, "DNI no introducido") ;

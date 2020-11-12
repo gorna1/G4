@@ -219,7 +219,7 @@ public class AnyadirGerente extends javax.swing.JFrame {
         sDNI = jTextFieldDNI.getText() ;
         gerente = liga.buscarGerente(sDNI) ;
         
-        if((sDNI.equals("")))
+        if(!(sDNI.equals("")))
             gerente = liga.buscarGerente(sDNI) ;
         else
             JOptionPane.showMessageDialog(null, "DNI no introducido") ;
