@@ -1,6 +1,10 @@
 package ligaajedrez_View;
 
+import java.util.ArrayList;
 import javax.swing.JFrame;
+import ligaajedrez_Model.Club;
+import ligaajedrez_Model.LigaAjedrez;
+import ligaajedrez_Model.Torneo;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -18,9 +22,23 @@ public class AsignarSedePartida extends javax.swing.JFrame {
      * Creates new form AsignarSedePartida
      */
     JFrame vAnterior;
-    public AsignarSedePartida(javax.swing.JFrame vAnterior) {
+    protected ArrayList<Torneo> listaTorneos = new ArrayList<Torneo>();
+    protected ArrayList<Club> listaClubs = new ArrayList<Club>();
+    private LigaAjedrez liga;
+    public AsignarSedePartida(javax.swing.JFrame vAnterior,LigaAjedrez liga) {
+        this.liga = liga;
         this.vAnterior = vAnterior;
         initComponents();
+        comboBoxPartidas.removeAllItems();
+        comboBoxSedes.removeAllItems();
+        
+        listaTorneos = liga.consultarTorneo();
+        
+        for(Torneo t: listaTorneos)
+            comboBoxPartidas.addItem(t.getNombreTorneo());
+        
+        
+        
     }
 
     /**
@@ -41,7 +59,12 @@ public class AsignarSedePartida extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        comboBoxPartidas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboBoxPartidas.setSelectedIndex(-1);
+        comboBoxPartidas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboBoxPartidasActionPerformed(evt);
+            }
+        });
 
         labelPartidas.setText("Torneo");
 
@@ -107,16 +130,51 @@ public class AsignarSedePartida extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonGuardarActionPerformed
+        String sede ,nombre;
+        
+        nombre = (String) comboBoxPartidas.getSelectedItem();
+        sede = (String) comboBoxSedes.getSelectedItem();
+        
+        for(Torneo t: listaTorneos)
+            if(t.getFederacion().equals(nombre))
+                t.setSede(sede);
+        
+        
         setVisible(false);
         vAnterior.setVisible(true);
     }//GEN-LAST:event_botonGuardarActionPerformed
 
     private void botonAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAtrasActionPerformed
         
+        
+        limpiar();
         setVisible(false);
         vAnterior.setVisible(true);
     }//GEN-LAST:event_botonAtrasActionPerformed
 
+    private void comboBoxPartidasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxPartidasActionPerformed
+        String nombre;
+        String federacion = "";
+        
+        limpiar();
+        
+        nombre = (String) comboBoxPartidas.getSelectedItem();
+        for(Torneo t: listaTorneos)
+            if(t.getNombreTorneo().equals(nombre))
+                federacion = t.getFederacion();
+        
+        listaClubs = liga.getClubs(federacion);
+        
+        for(Club c: listaClubs)
+            comboBoxSedes.addItem(c.getNombre());
+    }//GEN-LAST:event_comboBoxPartidasActionPerformed
+    
+    
+    // Metodo para limpiar los jbox y los arrays reutilizables.
+    private void limpiar(){
+        comboBoxSedes.removeAllItems();
+        listaClubs.removeAll(listaClubs);       // Limpiamos el combobox para que no se chafen uno a otro.
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAtras;

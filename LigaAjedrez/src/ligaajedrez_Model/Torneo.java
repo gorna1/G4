@@ -25,6 +25,10 @@ public class Torneo {
         this.federacion = sFed ;
     }
     
+    public String getNombreTorneo() {
+        return nombreTorneo;
+    }
+    
     public Torneo (String federacion){
         this.federacion = federacion;
     }

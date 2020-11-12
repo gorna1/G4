@@ -26,7 +26,7 @@ public class LoginView extends javax.swing.JFrame {
     private AdminView adminView;
     private Jugador jugador1, jugador2;
     private LigaAjedrez liga;
-    private Torneo torneo;
+    private Torneo torneo, torneo1;
     private EnfrentamientoTorneo enfrentamientoTorneo;
     public LoginView() {
         
@@ -39,13 +39,16 @@ public class LoginView extends javax.swing.JFrame {
         liga.anyadirClub(club2);
         jugador1 = new Jugador("Gor", "Navasardyan", "X2752013V", "625102312", "22", "Principiante", "Valencia");
         jugador2 = new Jugador ("Pepe","Andres","Z283913Y","723382912","23","Experto", "Valencia");
-        torneo = new Torneo("Torneo de Paterna", "Valencia");
+        torneo = new Torneo("Torneo de La perla negra", "Valencia");
+        torneo1 = new Torneo("Torneo de La perla blanca", "Valencia");
         liga.anyadirJugadores(jugador1);
         System.out.println("añadido gor");
         
         liga.anyadirJugadores(jugador2);
+        
         System.out.println("añadido pepe");
         liga.anyadirTorneo(torneo);
+        liga.anyadirTorneo(torneo1);
         //enfrentamientoTorneo = new EnfrentamientoTorneo(jugador1, jugador2);
         torneo.anyadirEnfrentamientos(jugador1, jugador2);
         //liga.anyadirEnfrentamiento(jugador1, jugador2);
