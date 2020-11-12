@@ -153,15 +153,15 @@ public class IntroducirResultados extends javax.swing.JFrame {
     private void jButtonAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAtrasActionPerformed
         setVisible(false);
         vAnterior.setVisible(true);
-        /*jComboBoxJugador2.removeAllItems();
-        listaJugadores2.clear();*/
+        jComboBoxJugador2.removeAllItems();
+        listaJugadores2.clear();
     }//GEN-LAST:event_jButtonAtrasActionPerformed
 
     private void jButtonContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonContinuarActionPerformed
         setVisible(false);
         vAnterior.setVisible(true);
-        /*jComboBoxJugador2.removeAllItems();
-        listaJugadores2.clear();*/
+        jComboBoxJugador2.removeAllItems();
+        listaJugadores2.clear();
     }//GEN-LAST:event_jButtonContinuarActionPerformed
 
     private void jComboBoxJugador1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxJugador1ActionPerformed
