@@ -160,7 +160,7 @@ public class IntroducirResultados extends javax.swing.JFrame {
         setVisible(false);
         vAnterior.setVisible(true);
         limpiar();
-        
+       
     }//GEN-LAST:event_jButtonContinuarActionPerformed
 
     private void jComboBoxJugador1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxJugador1ActionPerformed

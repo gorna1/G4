@@ -11,13 +11,16 @@ package ligaajedrez_Model;
  */
 public class EnfrentamientoTorneo {
     private Jugador jugador1, jugador2;
-    private Jugador ganador;
+    private String ganador;
     private String fecha;
     private float duracion;
   
     public EnfrentamientoTorneo(Jugador jugador1, Jugador jugador2){
         this.jugador1 = jugador1;
         this.jugador2 = jugador2;        
+    }
+    public EnfrentamientoTorneo(){
+        ;
     }
 
     public Jugador getJugador1() {
@@ -45,11 +48,11 @@ public class EnfrentamientoTorneo {
             rival = jugador1;
         return rival;
     }
-    public Jugador getGanador() {
+    public String getGanador() {
         return ganador;
     }
 
-    public void setGanador(Jugador ganador) {
+    public void setGanador(String ganador) {
         this.ganador = ganador;
     }
 
@@ -68,7 +71,13 @@ public class EnfrentamientoTorneo {
     public void setDuracion(float duracion) {
         this.duracion = duracion;
     }
-            
+    
+    public EnfrentamientoTorneo consultarInfoEnfrentamiento(String uno, String dos){
+        EnfrentamientoTorneo et = null;
+        if(uno.equals(jugador1.getsNmb()) && dos.equals(jugador2.getsNmb()))
+            et = this;
+        return et;
+    }
 }
 
 

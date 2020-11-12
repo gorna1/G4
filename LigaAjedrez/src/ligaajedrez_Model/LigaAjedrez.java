@@ -424,7 +424,13 @@ public class LigaAjedrez {
         
         return entrenador ;
     }
-    
+
+    public EnfrentamientoTorneo consultarInfoEnfrentamiento(String uno, String dos){
+        EnfrentamientoTorneo et = null;
+        for(Torneo t: listaTorneos)
+            et = t.consultarInfoEnfrentamiento(uno,dos);
+        return et;
+    }
 }
     
 

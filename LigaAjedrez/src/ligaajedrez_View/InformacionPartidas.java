@@ -1,6 +1,9 @@
 package ligaajedrez_View;
 
+import java.util.ArrayList;
 import javax.swing.JFrame;
+import ligaajedrez_Model.EnfrentamientoTorneo;
+import ligaajedrez_Model.Jugador;
 import ligaajedrez_Model.LigaAjedrez;
 
 /*
@@ -20,10 +23,19 @@ public class InformacionPartidas extends javax.swing.JFrame {
      */
     JFrame vAnterior;
     private LigaAjedrez liga;
+    
+    protected ArrayList<Jugador> listaJugadores = new ArrayList<Jugador>();
+    protected ArrayList<Jugador> listaJugadores2 = new ArrayList<Jugador>();
     public InformacionPartidas(javax.swing.JFrame vAnterior,LigaAjedrez liga) {
         this.liga = liga;
         this.vAnterior = vAnterior;
+        
         initComponents();
+        //comboBoxJugadores.setSelectedIndex(-1);
+        //comboBoxPartidas.setSelectedIndex(-1);
+        listaJugadores = liga.consultarJugadores();
+        for(Jugador j : listaJugadores)
+            comboBoxJugadores.addItem(j.getsNmb());
     }
 
     /**
@@ -53,7 +65,13 @@ public class InformacionPartidas extends javax.swing.JFrame {
 
         labelNombreJugador.setText("Jugador");
 
-        labelPartidasJugador.setText("Partida");
+        labelPartidasJugador.setText("Rival");
+
+        comboBoxJugadores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboBoxJugadoresActionPerformed(evt);
+            }
+        });
 
         comboBoxPartidas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -170,9 +188,33 @@ public class InformacionPartidas extends javax.swing.JFrame {
     }//GEN-LAST:event_botonVolverActionPerformed
 
     private void comboBoxPartidasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxPartidasActionPerformed
-        // TODO add your handling code here:
+        String uno, dos;
+        EnfrentamientoTorneo et;
+        
+        uno = (String) comboBoxJugadores.getSelectedItem();
+        dos = (String) comboBoxPartidas.getSelectedItem();
+        
+        et = liga.consultarInfoEnfrentamiento(uno,dos);
+        
+        textFieldRival.setText(dos);
+        //textFieldGanador.setText(et.getGanador());
     }//GEN-LAST:event_comboBoxPartidasActionPerformed
 
+    private void comboBoxJugadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxJugadoresActionPerformed
+        limpiar();
+        String uno = (String) comboBoxJugadores.getSelectedItem();
+       
+        listaJugadores2 = liga.consultarEnfrentamiento(uno);
+        // --> enseñarle depuracion al profesor.
+        for(Jugador j : listaJugadores2)
+            comboBoxPartidas.addItem(j.getsNmb());
+    }//GEN-LAST:event_comboBoxJugadoresActionPerformed
+    
+    private void limpiar(){
+        
+        listaJugadores2.removeAll(listaJugadores2);
+        comboBoxPartidas.removeAllItems();// Limpiamos el combobox para que no se chafen uno a otro.
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonVolver;

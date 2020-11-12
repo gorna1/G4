@@ -65,6 +65,12 @@ public class Torneo {
         
         return listaRivales;
     }
-            
+    
+    public EnfrentamientoTorneo consultarInfoEnfrentamiento(String uno, String dos){
+        EnfrentamientoTorneo et = null;
+        for(EnfrentamientoTorneo et1: listaEnfrentamientos)
+            et = et1.consultarInfoEnfrentamiento(uno,dos);
+        return et;
+    }
     
 }
