@@ -7,6 +7,7 @@ package ligaajedrez_View;
 
 import java.util.ArrayList;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import ligaajedrez_Model.Entrenador;
 import ligaajedrez_Model.LigaAjedrez;
 
@@ -265,6 +266,23 @@ public class RegEntrenadorView extends javax.swing.JFrame {
             entrenador = new Entrenador(sNmb, sApe, sFec, sDNI, sTel, listaClubsEntrenador) ;
             liga.anyadirEntrenador(entrenador) ;
         }
+        else
+            JOptionPane.showMessageDialog(null, "Debes buscar primero por el DNI") ;
+        
+        
+        jTextFieldDNI.setEditable(true) ;
+        jTextFieldNombre.setEditable(true) ;
+        jTextFieldApellidos.setEditable(true) ;
+        jTextFieldFecha.setEditable(true) ;
+        jTextFieldTelefono.setEditable(true) ;
+        jTextFieldClubs.setEditable(true) ;
+        
+        jTextFieldDNI.setText("") ;
+        jTextFieldNombre.setText("") ;
+        jTextFieldApellidos.setText("") ;
+        jTextFieldFecha.setText("") ;
+        jTextFieldTelefono.setText("") ;
+        jTextFieldClubs.setText("") ;
         
         this.setVisible(false);
         vPrincipal.setVisible(true);
@@ -273,7 +291,11 @@ public class RegEntrenadorView extends javax.swing.JFrame {
     private void jButtonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarActionPerformed
         String sClubs = "" ;
         sDNI = jTextFieldDNI.getText() ;
-        entrenador = liga.buscarEntrenador(sDNI) ;
+        
+        if((sDNI.equals("")))
+            entrenador = liga.buscarEntrenador(sDNI) ;
+        else
+            JOptionPane.showMessageDialog(null, "DNI no introducido") ;
         
         if(entrenador.getsDNI() != null){
             jTextFieldNombre.setEditable(false) ;

@@ -2,6 +2,7 @@ package ligaajedrez_View;
 import java.util.ArrayList;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import ligaajedrez_Model.Club;
 import ligaajedrez_Model.Jugador;
 import ligaajedrez_Model.LigaAjedrez;
@@ -28,30 +29,14 @@ public class CambiarJugadorClub extends javax.swing.JFrame {
     private String sDNI, sClb_Act, sClb_Nvo ;
     private Jugador jugador ;
     private boolean bCmp = false ;
-    /*private Jugador jugador1;
-    private Jugador jugador2;
-    private String fed;*/
     private ArrayList<Club> listaClubs = new ArrayList<Club>();
-    //private ArrayList<Jugador> listaJugadores = new ArrayList<Jugador>();
+    
     public CambiarJugadorClub(javax.swing.JFrame vAnterior, javax.swing.JFrame vPrincipal, LigaAjedrez liga) {
         this.liga = liga;
-        /*jugador1 = new Jugador("marquitos", "jimenez", "s3452013V", "625302345", "21", "Principiante", "Valencia");
-        liga.anyadirJugadores(jugador1);*/
         this.vAnterior = vAnterior;
         this.vPrincipal = vPrincipal;
         initComponents();
-        /*clubs = liga.consultarClubs();
-        comboBoxJugador.addItem(jugador1.getsNmb());
-        comboBoxJugador.setSelectedIndex(0);
-        
-        for (Club c : clubs) {
-            if (c.getNombre().equals(jugador1.getClb())) {
-                textFieldClubActual.setText(c.getNombre());
-            }
-            comboBoxClubNuevo.addItem(c.getNombre());
-        }*/
-        
-        
+     
     }
 
     /**
@@ -172,24 +157,38 @@ public class CambiarJugadorClub extends javax.swing.JFrame {
             vPrincipal.setVisible(true) ;
         }
         else
-            System.out.println("Debes buscar el jugador mediante su DNI primero") ;
+            JOptionPane.showMessageDialog(null, "Debes buscar primero por el DNI") ;
+        
+        jTextFieldDNI.setEditable(true) ;
+        jTextFieldDNI.setText("") ;
+        textFieldClubActual.setEditable(true) ;
+        textFieldClubActual.setText("") ;
+        jComboBoxClubs.removeAllItems() ;
     }//GEN-LAST:event_botonConfirmarActionPerformed
 
     private void botonAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAtrasActionPerformed
-       this.setVisible(false) ;
-       vAnterior.setVisible(true) ;  
+        jTextFieldDNI.setEditable(true) ;
+        jTextFieldDNI.setText("") ;
+        textFieldClubActual.setEditable(true) ;
+        textFieldClubActual.setText("") ;
+        jComboBoxClubs.removeAllItems() ;
+
+        this.setVisible(false) ;
+        vAnterior.setVisible(true) ;  
     }//GEN-LAST:event_botonAtrasActionPerformed
 
     private void jButtonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarActionPerformed
         sDNI = jTextFieldDNI.getText() ;
         jugador = liga.buscarJugador(sDNI) ;
         textFieldClubActual.setText(jugador.getsClb()) ;
+        
         if (!textFieldClubActual.getText().isEmpty()) {
             listaClubs = liga.getClubs(textFieldClubActual.getText());
             for (Club c: listaClubs)
                 jComboBoxClubs.addItem(c.getNombre());
         }
         bCmp = true ; //Para comprobar si se ha hecho la busqueda del jugador
+        
     }//GEN-LAST:event_jButtonBuscarActionPerformed
 
 

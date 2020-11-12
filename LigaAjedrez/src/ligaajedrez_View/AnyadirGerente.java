@@ -6,6 +6,7 @@
 package ligaajedrez_View;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import ligaajedrez_Model.Gerente;
 import ligaajedrez_Model.LigaAjedrez;
 
@@ -182,11 +183,34 @@ public class AnyadirGerente extends javax.swing.JFrame {
             liga.anyadirGerente(gerente) ;
         }
         
-       this.setVisible(false);
-       vPrincipal.setVisible(true);
+        jTextFieldClub.setEditable(true) ;
+        jTextFieldDNI.setEditable(true) ;
+        jTextFieldIRPF.setEditable(true) ;
+        jTextFieldNombre.setEditable(true) ;
+        jTextFieldNomina.setEditable(true) ;
+        
+        jTextFieldClub.setText("") ;
+        jTextFieldDNI.setText("") ;
+        jTextFieldIRPF.setText("") ;
+        jTextFieldNombre.setText("") ;
+        jTextFieldNomina.setText("") ; 
+        this.setVisible(false);
+        vPrincipal.setVisible(true);
     }//GEN-LAST:event_jButtonConfirmarActionPerformed
 
     private void jButtonAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAtrasActionPerformed
+        jTextFieldClub.setEditable(true) ;
+        jTextFieldDNI.setEditable(true) ;
+        jTextFieldIRPF.setEditable(true) ;
+        jTextFieldNombre.setEditable(true) ;
+        jTextFieldNomina.setEditable(true) ;
+        
+        jTextFieldClub.setText("") ;
+        jTextFieldDNI.setText("") ;
+        jTextFieldIRPF.setText("") ;
+        jTextFieldNombre.setText("") ;
+        jTextFieldNomina.setText("") ;
+        
         setVisible(false);
         vAnterior.setVisible(true);
     }//GEN-LAST:event_jButtonAtrasActionPerformed
@@ -194,6 +218,11 @@ public class AnyadirGerente extends javax.swing.JFrame {
     private void jButtonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarActionPerformed
         sDNI = jTextFieldDNI.getText() ;
         gerente = liga.buscarGerente(sDNI) ;
+        
+        if((sDNI.equals("")))
+            gerente = liga.buscarGerente(sDNI) ;
+        else
+            JOptionPane.showMessageDialog(null, "DNI no introducido") ;
         
         if(gerente != null){
             jTextFieldNombre.setEditable(false) ;
@@ -207,7 +236,7 @@ public class AnyadirGerente extends javax.swing.JFrame {
             jTextFieldClub.setText(gerente.getsClb()) ;
             
             bCmp = true ;
-        }      
+        }             
     }//GEN-LAST:event_jButtonBuscarActionPerformed
 
 

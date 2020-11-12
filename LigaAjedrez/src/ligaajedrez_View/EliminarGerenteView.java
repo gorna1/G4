@@ -96,6 +96,9 @@ public class EliminarGerenteView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVolverActionPerformed
+        jTextFieldDNI.setEditable(true) ;
+        jTextFieldDNI.setText("") ;
+        
         setVisible(false);
         vAnterior.setVisible(true);
     }//GEN-LAST:event_jButtonVolverActionPerformed
@@ -104,6 +107,8 @@ public class EliminarGerenteView extends javax.swing.JFrame {
         sDNI = jTextFieldDNI.getText() ;
         liga.eliminarGerente(sDNI) ;
         
+        jTextFieldDNI.setEditable(true) ;
+        jTextFieldDNI.setText("") ;
         
         setVisible(false);
         vPrincipal.setVisible(true);

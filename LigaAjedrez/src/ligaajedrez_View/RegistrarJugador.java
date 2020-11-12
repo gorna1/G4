@@ -2,6 +2,7 @@ package ligaajedrez_View;
 
 import ligaajedrez_Model.Jugador ;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import ligaajedrez_Model.LigaAjedrez;
 
 /*
@@ -161,8 +162,27 @@ public class RegistrarJugador extends javax.swing.JFrame {
                         sElo = "Principiante";
                         break;
                 }
-        jugador = new Jugador(sNmb, sApe, sDNI, sTel, sEdad, sElo, sClb) ;
-        liga.anyadirJugadores(jugador);
+        if(!(sDNI.equals(""))){
+            jugador = new Jugador(sNmb, sApe, sDNI, sTel, sEdad, sElo, sClb) ;
+            liga.anyadirJugadores(jugador);
+        }
+        else
+            JOptionPane.showMessageDialog(null, "Debes introducir el DNI") ;
+        
+        
+        jTextFieldNombre.setEditable(true) ;
+        jTextFieldApellidos.setEditable(true) ;
+        jTextFieldTelefono.setEditable(true) ;
+        jTextFieldDNI.setEditable(true) ;
+        jTextFieldEdad.setEditable(true) ;
+        jTextFieldClub.setEditable(true) ;
+        
+        jTextFieldNombre.setText("") ;
+        jTextFieldApellidos.setText("") ;
+        jTextFieldTelefono.setText("") ;
+        jTextFieldDNI.setText("") ;
+        jTextFieldEdad.setText("") ;
+        jTextFieldClub.setText("") ;
         
         setVisible(false);
         vPrincipal.setVisible(true);
