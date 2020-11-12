@@ -67,7 +67,7 @@ public class Torneo {
     }
     
     public EnfrentamientoTorneo consultarInfoEnfrentamiento(String uno, String dos){
-        EnfrentamientoTorneo et = null;
+        EnfrentamientoTorneo et = new EnfrentamientoTorneo();
         for(EnfrentamientoTorneo et1: listaEnfrentamientos)
             et = et1.consultarInfoEnfrentamiento(uno,dos);
         return et;

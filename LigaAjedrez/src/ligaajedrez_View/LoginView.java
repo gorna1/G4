@@ -50,6 +50,9 @@ public class LoginView extends javax.swing.JFrame {
         liga.anyadirTorneo(torneo);
         liga.anyadirTorneo(torneo1);
         enfrentamientoTorneo = new EnfrentamientoTorneo(jugador1, jugador2);
+        enfrentamientoTorneo.setGanador("Gor");
+        enfrentamientoTorneo.setDuracion("10 minutos");
+        enfrentamientoTorneo.setFecha("10/10/2020");
         torneo.anyadirEnfrentamientos(jugador1, jugador2);
         liga.addSedes("Valencia","Paterna");
         liga.addSedes("Valencia","Manises");

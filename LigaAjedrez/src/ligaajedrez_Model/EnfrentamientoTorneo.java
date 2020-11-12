@@ -13,7 +13,7 @@ public class EnfrentamientoTorneo {
     private Jugador jugador1, jugador2;
     private String ganador;
     private String fecha;
-    private float duracion;
+    private String duracion;
   
     public EnfrentamientoTorneo(Jugador jugador1, Jugador jugador2){
         this.jugador1 = jugador1;
@@ -64,17 +64,17 @@ public class EnfrentamientoTorneo {
         this.fecha = fecha;
     }
 
-    public float getDuracion() {
+    public String getDuracion() {
         return duracion;
     }
 
-    public void setDuracion(float duracion) {
+    public void setDuracion(String duracion) {
         this.duracion = duracion;
     }
     
     public EnfrentamientoTorneo consultarInfoEnfrentamiento(String uno, String dos){
-        EnfrentamientoTorneo et = null;
-        if(uno.equals(jugador1.getsNmb()) && dos.equals(jugador2.getsNmb()))
+        EnfrentamientoTorneo et = new EnfrentamientoTorneo();
+        if((uno.equals(jugador1.getsNmb())) && (dos.equals(jugador2.getsNmb())))
             et = this;
         return et;
     }

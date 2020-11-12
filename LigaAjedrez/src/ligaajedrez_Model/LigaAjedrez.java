@@ -426,7 +426,7 @@ public class LigaAjedrez {
     }
 
     public EnfrentamientoTorneo consultarInfoEnfrentamiento(String uno, String dos){
-        EnfrentamientoTorneo et = null;
+        EnfrentamientoTorneo et = new EnfrentamientoTorneo();
         for(Torneo t: listaTorneos)
             et = t.consultarInfoEnfrentamiento(uno,dos);
         return et;

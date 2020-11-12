@@ -197,7 +197,10 @@ public class InformacionPartidas extends javax.swing.JFrame {
         et = liga.consultarInfoEnfrentamiento(uno,dos);
         
         textFieldRival.setText(dos);
-        //textFieldGanador.setText(et.getGanador());
+        textFieldGanador.setText(et.getGanador());
+        textFieldDuracionPartida.setText(et.getDuracion());
+        textFieldFechaPartida.setText(et.getFecha());
+        
     }//GEN-LAST:event_comboBoxPartidasActionPerformed
 
     private void comboBoxJugadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxJugadoresActionPerformed
