@@ -49,9 +49,8 @@ public class LoginView extends javax.swing.JFrame {
         System.out.println("añadido pepe");
         liga.anyadirTorneo(torneo);
         liga.anyadirTorneo(torneo1);
-        //enfrentamientoTorneo = new EnfrentamientoTorneo(jugador1, jugador2);
+        enfrentamientoTorneo = new EnfrentamientoTorneo(jugador1, jugador2);
         torneo.anyadirEnfrentamientos(jugador1, jugador2);
-        //liga.anyadirEnfrentamiento(jugador1, jugador2);
         liga.addSedes("Valencia","Paterna");
         liga.addSedes("Valencia","Manises");
         liga.addSedes("Valencia","Burjassot");

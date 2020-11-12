@@ -5,6 +5,8 @@
  */
 package ligaajedrez_Model;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author alberto
@@ -17,6 +19,7 @@ public class Jugador {
     private String sEdad ;
     private String sElo ;
     private String sClb ;
+    protected ArrayList<Jugador> listaPartidas = new ArrayList<Jugador>();
     
     public Jugador(){
         
@@ -87,4 +90,5 @@ public class Jugador {
     public void setsClb(String sClb) {
         this.sClb = sClb ;
     }
+    
 }

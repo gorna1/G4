@@ -1,6 +1,7 @@
 package ligaajedrez_View;
 
 import javax.swing.JFrame;
+import ligaajedrez_Model.LigaAjedrez;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -18,7 +19,9 @@ public class InformacionPartidas extends javax.swing.JFrame {
      * Creates new form InformacionPartidas
      */
     JFrame vAnterior;
-    public InformacionPartidas(javax.swing.JFrame vAnterior) {
+    private LigaAjedrez liga;
+    public InformacionPartidas(javax.swing.JFrame vAnterior,LigaAjedrez liga) {
+        this.liga = liga;
         this.vAnterior = vAnterior;
         initComponents();
     }
@@ -52,9 +55,11 @@ public class InformacionPartidas extends javax.swing.JFrame {
 
         labelPartidasJugador.setText("Partida");
 
-        comboBoxJugadores.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        comboBoxPartidas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboBoxPartidas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboBoxPartidasActionPerformed(evt);
+            }
+        });
 
         labelRival.setText("Rival: ");
 
@@ -120,7 +125,7 @@ public class InformacionPartidas extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(158, 158, 158)
                         .addComponent(botonVolver)))
-                .addContainerGap(81, Short.MAX_VALUE))
+                .addContainerGap(98, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -163,6 +168,10 @@ public class InformacionPartidas extends javax.swing.JFrame {
         setVisible(false);
         vAnterior.setVisible(true);
     }//GEN-LAST:event_botonVolverActionPerformed
+
+    private void comboBoxPartidasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxPartidasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comboBoxPartidasActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

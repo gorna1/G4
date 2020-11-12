@@ -57,12 +57,13 @@ public class Torneo {
         listaEnfrentamientos.add(new EnfrentamientoTorneo(j1,j2));
     }
     
-    public ArrayList consultarEnfrentamiento(String nombre){
+    public ArrayList<Jugador> consultarEnfrentamiento(String nombre){
         
         for(EnfrentamientoTorneo et: listaEnfrentamientos)
             listaRivales.add(et.consultarEnfrentamiento(nombre));
-        
-        
+        //enseñarle depuracion
+        for(Jugador j: listaRivales)
+            System.out.println(j.getsNmb());
         return listaRivales;
     }
             
