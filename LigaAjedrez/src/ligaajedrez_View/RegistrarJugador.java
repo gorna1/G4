@@ -57,6 +57,8 @@ public class RegistrarJugador extends javax.swing.JFrame {
         jTextFieldEdad = new javax.swing.JTextField();
         jButtonAtras = new javax.swing.JButton();
         jButtonContinuar = new javax.swing.JButton();
+        jLabelClub = new javax.swing.JLabel();
+        jTextFieldClub = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(400, 300));
@@ -67,30 +69,30 @@ public class RegistrarJugador extends javax.swing.JFrame {
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabelNombre.setText("Nombre");
-        jPanel3.add(jLabelNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, -1, -1));
+        jPanel3.add(jLabelNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
 
         jLabelApellidos.setText("Apellidos");
-        jPanel3.add(jLabelApellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 40, -1, -1));
-        jPanel3.add(jTextFieldNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 200, 30));
-        jPanel3.add(jTextFieldApellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 70, 160, 30));
+        jPanel3.add(jLabelApellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 30, -1, -1));
+        jPanel3.add(jTextFieldNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 160, 30));
+        jPanel3.add(jTextFieldApellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 60, 160, 30));
 
         jLabelDNI.setText("DNI");
-        jPanel3.add(jLabelDNI, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 140, -1, -1));
+        jPanel3.add(jLabelDNI, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, -1));
 
         jLabelTelefono.setText("Teléfono");
-        jPanel3.add(jLabelTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 140, -1, -1));
-        jPanel3.add(jTextFieldDNI, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 190, 30));
-        jPanel3.add(jTextFieldTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 180, 170, 30));
+        jPanel3.add(jLabelTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 120, -1, -1));
+        jPanel3.add(jTextFieldDNI, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 190, 30));
+        jPanel3.add(jTextFieldTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, 170, 30));
 
         jLabelElo.setText("Nivel de Habilidad");
-        jPanel3.add(jLabelElo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, -1, -1));
+        jPanel3.add(jLabelElo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
 
         jLabelEdad.setText("Edad");
-        jPanel3.add(jLabelEdad, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 240, -1, -1));
+        jPanel3.add(jLabelEdad, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 180, -1, -1));
 
         jComboBoxElo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Principiante", "Intermedio", "Experto" }));
-        jPanel3.add(jComboBoxElo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 180, -1));
-        jPanel3.add(jTextFieldEdad, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 270, 170, 30));
+        jPanel3.add(jComboBoxElo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 180, -1));
+        jPanel3.add(jTextFieldEdad, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 210, 170, 30));
 
         jButtonAtras.setText("ATRAS");
         jButtonAtras.addActionListener(new java.awt.event.ActionListener() {
@@ -98,7 +100,7 @@ public class RegistrarJugador extends javax.swing.JFrame {
                 jButtonAtrasActionPerformed(evt);
             }
         });
-        jPanel3.add(jButtonAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 340, -1, -1));
+        jPanel3.add(jButtonAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 330, -1, -1));
 
         jButtonContinuar.setText("CONTINUAR");
         jButtonContinuar.addActionListener(new java.awt.event.ActionListener() {
@@ -106,7 +108,11 @@ public class RegistrarJugador extends javax.swing.JFrame {
                 jButtonContinuarActionPerformed(evt);
             }
         });
-        jPanel3.add(jButtonContinuar, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 330, -1, -1));
+        jPanel3.add(jButtonContinuar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 330, -1, -1));
+
+        jLabelClub.setText("Club");
+        jPanel3.add(jLabelClub, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, -1, -1));
+        jPanel3.add(jTextFieldClub, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 180, -1));
 
         getContentPane().add(jPanel3);
 
@@ -114,6 +120,19 @@ public class RegistrarJugador extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAtrasActionPerformed
+        jTextFieldNombre.setEditable(true) ;
+        jTextFieldApellidos.setEditable(true) ;
+        jTextFieldTelefono.setEditable(true) ;
+        jTextFieldDNI.setEditable(true) ;
+        jTextFieldEdad.setEditable(true) ;
+        jTextFieldClub.setEditable(true) ;
+        
+        jTextFieldNombre.setText("") ;
+        jTextFieldApellidos.setText("") ;
+        jTextFieldTelefono.setText("") ;
+        jTextFieldDNI.setText("") ;
+        jTextFieldEdad.setText("") ;
+        jTextFieldClub.setText("") ;
         
         setVisible(false);
         vAnterior.setVisible(true);
@@ -125,7 +144,7 @@ public class RegistrarJugador extends javax.swing.JFrame {
         sTel = jTextFieldTelefono.getText() ;
         sDNI = jTextFieldDNI.getText() ;
         sEdad = jTextFieldEdad.getText() ;
-        //sClb = jTextFieldClub.getText() ;
+        sClb = jTextFieldClub.getText() ;
         
         
         switch (jComboBoxElo.getSelectedIndex()) {
@@ -155,6 +174,7 @@ public class RegistrarJugador extends javax.swing.JFrame {
     private javax.swing.JButton jButtonContinuar;
     private javax.swing.JComboBox<String> jComboBoxElo;
     private javax.swing.JLabel jLabelApellidos;
+    private javax.swing.JLabel jLabelClub;
     private javax.swing.JLabel jLabelDNI;
     private javax.swing.JLabel jLabelEdad;
     private javax.swing.JLabel jLabelElo;
@@ -162,6 +182,7 @@ public class RegistrarJugador extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelTelefono;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JTextField jTextFieldApellidos;
+    private javax.swing.JTextField jTextFieldClub;
     private javax.swing.JTextField jTextFieldDNI;
     private javax.swing.JTextField jTextFieldEdad;
     private javax.swing.JTextField jTextFieldNombre;
