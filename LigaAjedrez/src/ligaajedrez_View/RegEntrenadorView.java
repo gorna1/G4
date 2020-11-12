@@ -243,7 +243,7 @@ public class RegEntrenadorView extends javax.swing.JFrame {
         int iCnt = 0 ;
         String sClb = "" ;
         
-        if(!bCmp){
+        if(bCmp){
             jTextFieldNombre.setEditable(true) ;
             jTextFieldApellidos.setEditable(true) ;
             jTextFieldFecha.setEditable(true) ;
