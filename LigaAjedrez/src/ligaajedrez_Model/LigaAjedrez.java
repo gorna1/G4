@@ -285,27 +285,18 @@ public class LigaAjedrez {
         }
         
         try {
-            Jugador jTest = listaJugadores.get(0);
-            String dnix = jTest.getsDNI();
-            String nomx = jTest.getsNmb();
-            String apex = jTest.getsApe();
-            String telx = jTest.getsTel();
-            String edax = jTest.getsEdad();
-            String elox = jTest.getsElo();
-            String clux = jTest.getsClb();
-            
-            Statement s = conexionBD.createStatement();
-            String con = "INSERT INTO jugadores(dni, nombre, apellido, telefono, edad, elo, club) VALUES('" 
-                    + dnix + "','"
-                    + nomx + "','"
-                    + apex + "','"
-                    + telx + "','"
-                    + edax + "','"
-                    + elox + "','"
-                    + clux + "'"
-             + ")";
-            PreparedStatement preparedStm = conexionBD.prepareStatement(con);
-            preparedStm.executeUpdate();
+            for (Gerente g : listaGerentes) {
+                Statement s = conexionBD.createStatement();
+                String con = "INSERT INTO gerentes(dni, nombre, nomina, irpf, club) VALUES('" 
+                        + g.getsDNI() + "','"
+                        + g.getsNmb() + "','"
+                        + g.getsNom() + "','"
+                        + g.getsIRPF()+ "','"
+                        + g.getsClb()+ "'"
+                 + ")";
+                PreparedStatement preparedStm = conexionBD.prepareStatement(con);
+                preparedStm.executeUpdate();
+            }
         }
         catch (Exception e) {
             System.out.println(e);
