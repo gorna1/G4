@@ -1,5 +1,6 @@
 package ligaajedrez_View;
 
+import Controlador.Administrador;
 import ligaajedrez_Model.Jugador ;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -25,9 +26,11 @@ public class RegistrarJugador extends javax.swing.JFrame {
     private String sNmb, sApe, sTel, sDNI,sEdad, sElo, sClb;
     private Jugador jugador;
     private LigaAjedrez liga;
+    private Administrador admin;
 
     
-    public RegistrarJugador(javax.swing.JFrame vAnterior, javax.swing.JFrame vPrincipal, LigaAjedrez liga) {
+    public RegistrarJugador(javax.swing.JFrame vAnterior, javax.swing.JFrame vPrincipal, LigaAjedrez liga,Administrador admin) {
+        this.admin = admin;
         this.liga = liga;
         this.vAnterior = vAnterior;
         this.vPrincipal = vPrincipal;
@@ -164,7 +167,8 @@ public class RegistrarJugador extends javax.swing.JFrame {
                 }
         if(!(sDNI.equals(""))){
             jugador = new Jugador(sNmb, sApe, sDNI, sTel, sEdad, sElo, sClb) ;
-            liga.anyadirJugadores(jugador);
+            admin.anyadirJugadores(jugador);
+           
         }
         else
             JOptionPane.showMessageDialog(null, "Debes introducir el DNI") ;

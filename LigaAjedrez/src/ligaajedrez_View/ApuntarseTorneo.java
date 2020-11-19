@@ -5,6 +5,7 @@
  */
 package ligaajedrez_View;
 
+import Controlador.Administrador;
 import java.util.ArrayList;
 import javax.swing.JFrame;
 import ligaajedrez_Model.Club;
@@ -27,16 +28,19 @@ public class ApuntarseTorneo extends javax.swing.JFrame {
     protected ArrayList<Torneo> listaTorneos = new ArrayList<Torneo>();
     protected ArrayList<Club> listaClubs = new ArrayList<Club>();
     private Jugador jugador1;
+    private Administrador admin;
     
-    public ApuntarseTorneo(javax.swing.JFrame vAnterior ,LigaAjedrez liga) {
+    public ApuntarseTorneo(javax.swing.JFrame vAnterior ,LigaAjedrez liga, Administrador admin) {
+        this.admin = admin;
         jugador1 = new Jugador("joselo", "fernandez", "X2252013V", "625302312", "24", "Principiante", "Valencia");      //Jugador de prueba.
         this.liga = liga;
-        liga.anyadirJugadores(jugador1);       
+        liga.anyadirJugadores(jugador1);    // pruebas.     
         this.vAnterior = vAnterior;
         initComponents();
         jComboBoxRes.removeAllItems();
         
-        listaClubs = liga.getClubs(jugador1.getsClb());
+        listaClubs = admin.getClubs(jugador1.getsClb());
+        
         for(Club c : listaClubs)
             jComboBoxRes.addItem(c.getNombre());
 
@@ -128,7 +132,7 @@ public class ApuntarseTorneo extends javax.swing.JFrame {
     private void jButtonConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmarActionPerformed
          for(Torneo lT: listaTorneos)
             if(lT.getFederacion() == jComboBoxRes.getSelectedItem())
-                liga.anyadirJugadorTorneo(lT,jugador1);
+                admin.anyadirJugadorTorneo(lT,jugador1);
         this.setVisible(false);
         vAnterior.setVisible(true);
         jComboBoxRes.removeAllItems();

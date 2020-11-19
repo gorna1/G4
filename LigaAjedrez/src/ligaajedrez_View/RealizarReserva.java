@@ -1,5 +1,6 @@
 package ligaajedrez_View;
 
+import Controlador.Administrador;
 import javax.swing.DefaultListCellRenderer;
 import javax.swing.JFrame;
 import javax.swing.SwingConstants;
@@ -20,7 +21,9 @@ public class RealizarReserva extends javax.swing.JFrame {
      * Creates new form realizarReserva
      */
     JFrame vAnterior;
-    public RealizarReserva(javax.swing.JFrame vAnterior) {
+    private Administrador admin;
+    public RealizarReserva(javax.swing.JFrame vAnteriorm,Administrador admin) {
+        this.admin = admin;
         this.vAnterior = vAnterior;
         initComponents();
     }

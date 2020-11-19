@@ -5,6 +5,7 @@
  */
 package ligaajedrez_View;
 
+import Controlador.Administrador;
 import javax.swing.JFrame;
 
 /**
@@ -17,7 +18,9 @@ public class MorososView extends javax.swing.JFrame {
      * Creates new form MorososView
      */
     JFrame vAnterior;
-    public MorososView(javax.swing.JFrame vAnterior) {
+    private Administrador admin;
+    public MorososView(javax.swing.JFrame vAnterior, Administrador admin) {
+        this.admin = admin;
         this.vAnterior = vAnterior;
         initComponents();
     }

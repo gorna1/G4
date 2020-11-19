@@ -5,6 +5,7 @@
  */
 package ligaajedrez_Model;
 
+import Controlador.Administrador;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -31,7 +32,7 @@ public class LigaAjedrez {
     
     public LigaAjedrez(){}
     
-    public LigaAjedrez(File datos){
+    public LigaAjedrez(File datos){  
         FileReader fr = null ;
         BufferedReader br = null ;
         String sLin ;

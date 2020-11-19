@@ -1,4 +1,5 @@
 package ligaajedrez_View;
+import Controlador.Administrador;
 import java.util.ArrayList;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -30,8 +31,10 @@ public class CambiarJugadorClub extends javax.swing.JFrame {
     private Jugador jugador ;
     private boolean bCmp = false ;
     private ArrayList<Club> listaClubs = new ArrayList<Club>();
+    private Administrador admin;
     
-    public CambiarJugadorClub(javax.swing.JFrame vAnterior, javax.swing.JFrame vPrincipal, LigaAjedrez liga) {
+    public CambiarJugadorClub(javax.swing.JFrame vAnterior, javax.swing.JFrame vPrincipal, LigaAjedrez liga, Administrador admin) {
+        this.admin = admin;
         this.liga = liga;
         this.vAnterior = vAnterior;
         this.vPrincipal = vPrincipal;
@@ -151,7 +154,8 @@ public class CambiarJugadorClub extends javax.swing.JFrame {
     private void botonConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonConfirmarActionPerformed
         if(bCmp){
             sClb_Nvo = jComboBoxClubs.getSelectedItem().toString() ;
-            liga.cambiarClubJugador(jugador, sClb_Nvo) ;
+            admin.cambiarClubJugador(jugador, sClb_Nvo);
+            
             
             this.setVisible(false) ;
             vPrincipal.setVisible(true) ;
@@ -179,11 +183,13 @@ public class CambiarJugadorClub extends javax.swing.JFrame {
 
     private void jButtonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarActionPerformed
         sDNI = jTextFieldDNI.getText() ;
-        jugador = liga.buscarJugador(sDNI) ;
+        jugador = admin.buscarJugador(sDNI);
+        
         textFieldClubActual.setText(jugador.getsClb()) ;
         
         if (!textFieldClubActual.getText().isEmpty()) {
-            listaClubs = liga.getClubs(textFieldClubActual.getText());
+            listaClubs = admin.getClubs(textFieldClubActual.getText());
+            
             for (Club c: listaClubs)
                 jComboBoxClubs.addItem(c.getNombre());
         }

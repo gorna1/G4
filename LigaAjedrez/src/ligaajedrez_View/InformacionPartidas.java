@@ -1,5 +1,6 @@
 package ligaajedrez_View;
 
+import Controlador.Administrador;
 import java.util.ArrayList;
 import javax.swing.JFrame;
 import ligaajedrez_Model.EnfrentamientoTorneo;
@@ -26,14 +27,16 @@ public class InformacionPartidas extends javax.swing.JFrame {
     
     protected ArrayList<Jugador> listaJugadores = new ArrayList<Jugador>();
     protected ArrayList<Jugador> listaJugadores2 = new ArrayList<Jugador>();
-    public InformacionPartidas(javax.swing.JFrame vAnterior,LigaAjedrez liga) {
+    private Administrador admin ;
+    public InformacionPartidas(javax.swing.JFrame vAnterior,LigaAjedrez liga,Administrador admin) {
+        this.admin = admin;
         this.liga = liga;
         this.vAnterior = vAnterior;
         
         initComponents();
-        //comboBoxJugadores.setSelectedIndex(-1);
-        //comboBoxPartidas.setSelectedIndex(-1);
-        listaJugadores = liga.consultarJugadores();
+
+        listaJugadores = admin.consultarJugadores();
+   
         for(Jugador j : listaJugadores)
             comboBoxJugadores.addItem(j.getsNmb());
     }
@@ -194,8 +197,8 @@ public class InformacionPartidas extends javax.swing.JFrame {
         uno = (String) comboBoxJugadores.getSelectedItem();
         dos = (String) comboBoxPartidas.getSelectedItem();
         
-        et = liga.consultarInfoEnfrentamiento(uno,dos);
-        
+        et = admin.consultarEnfrentamientos(uno,dos);
+
         textFieldRival.setText(dos);
         textFieldGanador.setText(et.getGanador());
         textFieldDuracionPartida.setText(et.getDuracion());
@@ -207,7 +210,7 @@ public class InformacionPartidas extends javax.swing.JFrame {
         limpiar();
         String uno = (String) comboBoxJugadores.getSelectedItem();
        
-        listaJugadores2 = liga.consultarEnfrentamiento(uno);
+        listaJugadores2 = admin.consultarEnfrentamiento(uno);
         // --> enseñarle depuracion al profesor.
         for(Jugador j : listaJugadores2)
             comboBoxPartidas.addItem(j.getsNmb());

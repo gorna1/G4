@@ -1,5 +1,6 @@
 package ligaajedrez_View;
 
+import Controlador.Administrador;
 import java.util.ArrayList;
 import javax.swing.JFrame;
 import ligaajedrez_Model.Club;
@@ -25,14 +26,17 @@ public class AsignarSedePartida extends javax.swing.JFrame {
     protected ArrayList<Torneo> listaTorneos = new ArrayList<Torneo>();
     protected ArrayList<Club> listaClubs = new ArrayList<Club>();
     private LigaAjedrez liga;
-    public AsignarSedePartida(javax.swing.JFrame vAnterior,LigaAjedrez liga) {
+    private Administrador admin;
+    public AsignarSedePartida(javax.swing.JFrame vAnterior,LigaAjedrez liga,Administrador admin) {
+        this.admin = admin;
         this.liga = liga;
         this.vAnterior = vAnterior;
         initComponents();
         comboBoxPartidas.removeAllItems();
         comboBoxSedes.removeAllItems();
         
-        listaTorneos = liga.consultarTorneo();
+        listaTorneos = admin.consultarTorneo();
+        
         
         for(Torneo t: listaTorneos)
             comboBoxPartidas.addItem(t.getNombreTorneo());
@@ -163,8 +167,8 @@ public class AsignarSedePartida extends javax.swing.JFrame {
             if(t.getNombreTorneo().equals(nombre))
                 federacion = t.getFederacion();
         
-        listaClubs = liga.getClubs(federacion);
-        
+        listaClubs = admin.getClubs(federacion);
+       
         for(Club c: listaClubs)
             comboBoxSedes.addItem(c.getNombre());
     }//GEN-LAST:event_comboBoxPartidasActionPerformed
