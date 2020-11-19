@@ -11,11 +11,7 @@ import java.util.ArrayList;
  *
  * @author alberto
  */
-public class Jugador {
-    private String sNmb ;
-    private String sApe ;
-    private String sDNI ;
-    private String sTel ;
+public class Jugador extends Persona{
     private String sEdad ;
     private String sElo ;
     private String sClb ;

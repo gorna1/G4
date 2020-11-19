@@ -11,12 +11,8 @@ import java.util.ArrayList;
  *
  * @author alberto
  */
-public class Entrenador {
-    private String sNmb ;
-    private String sApe ;
+public class Entrenador extends Persona{
     private String sFec ;
-    private String sDNI ;
-    private String sTel ;
     private ArrayList<String> listaClubsEntrenador = new ArrayList<String>() ;
     
     public Entrenador(){}

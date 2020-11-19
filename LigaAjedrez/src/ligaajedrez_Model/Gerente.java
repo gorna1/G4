@@ -9,9 +9,7 @@ package ligaajedrez_Model;
  *
  * @author alberto
  */
-public class Gerente {
-    private String sDNI ;
-    private String sNmb ;
+public class Gerente extends Persona{
     private String sNom ;
     private String sIRPF ;
     private String sClb ;
