@@ -1,9 +1,11 @@
 package ligaajedrez_View;
 
 import Controlador.Administrador;
+import java.util.ArrayList;
 import ligaajedrez_Model.Jugador ;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import ligaajedrez_Model.Factory;
 import ligaajedrez_Model.LigaAjedrez;
 
 /*
@@ -27,6 +29,8 @@ public class RegistrarJugador extends javax.swing.JFrame {
     private Jugador jugador;
     private LigaAjedrez liga;
     private Administrador admin;
+    private ArrayList<String> listaArg = new ArrayList<String>() ;
+    private ArrayList<String> listaClubsVacio = new ArrayList<String>() ;
 
     
     public RegistrarJugador(javax.swing.JFrame vAnterior, javax.swing.JFrame vPrincipal, LigaAjedrez liga,Administrador admin) {
@@ -166,7 +170,14 @@ public class RegistrarJugador extends javax.swing.JFrame {
                         break;
                 }
         if(!(sDNI.equals(""))){
-            jugador = new Jugador(sNmb, sApe, sDNI, sTel, sEdad, sElo, sClb) ;
+            Factory fac = new Factory() ;
+            listaArg.add(sApe) ;
+            listaArg.add(sTel) ;
+            listaArg.add(sEdad) ;
+            listaArg.add(sElo) ; 
+            listaArg.add(sClb) ;
+            jugador = (Jugador) fac.crearPersona(1, sNmb, sDNI, listaArg, listaClubsVacio) ;
+            listaArg.clear() ;
             admin.anyadirJugadores(jugador);
            
         }

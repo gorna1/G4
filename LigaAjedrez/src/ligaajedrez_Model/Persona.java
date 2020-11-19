@@ -11,9 +11,7 @@ package ligaajedrez_Model;
  */
 public class Persona {
     protected String sNmb ;
-    protected String sApe ;
     protected String sDNI ;
-    protected String sTel ;
     
     public Persona(){}
 }

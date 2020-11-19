@@ -15,6 +15,8 @@ public class Jugador extends Persona{
     private String sEdad ;
     private String sElo ;
     private String sClb ;
+    private String sApe ;
+    private String sTel ;
     protected ArrayList<Jugador> listaPartidas = new ArrayList<Jugador>();
     
     public Jugador(){

@@ -6,8 +6,10 @@
 package ligaajedrez_View;
 
 import Controlador.Administrador;
+import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import ligaajedrez_Model.Factory;
 import ligaajedrez_Model.Gerente;
 import ligaajedrez_Model.LigaAjedrez;
 
@@ -28,6 +30,9 @@ public class AnyadirGerente extends javax.swing.JFrame {
     private String sNmb, sNom, sIRPF, sClb ;
     private boolean bCmp = false ;
     private Administrador admin;
+    
+    private ArrayList<String> listaArg = new ArrayList<String>() ;
+    private ArrayList<String> listaClubsVacio = new ArrayList<String>() ;
     public AnyadirGerente(javax.swing.JFrame vAnterior, javax.swing.JFrame vPrincipal, LigaAjedrez liga, Administrador admin) {
         this.admin = admin;
         this.vAnterior = vAnterior;
@@ -182,7 +187,12 @@ public class AnyadirGerente extends javax.swing.JFrame {
             sClb = jTextFieldClub.getText() ;
             sDNI = jTextFieldDNI.getText() ;
             
-            gerente = new Gerente(sDNI,sNmb, sNom, sIRPF, sClb) ;
+            Factory fac = new Factory() ;
+            listaArg.add(sNom) ;
+            listaArg.add(sIRPF) ;
+            listaArg.add(sClb) ;
+            gerente = (Gerente) fac.crearPersona(3, sDNI,sNmb, listaArg, listaClubsVacio) ;
+            listaArg.clear() ;
             
             admin.anyadirGerente(gerente);
             

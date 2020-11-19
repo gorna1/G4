@@ -15,20 +15,24 @@ public class Factory {
     
     public Factory(){}
     
-    public Persona crearPersona(int iNum, String sNmb, String sApe, String sDNI, String sTel, ArrayList<String> listaArg, ArrayList<String> listaClubs){
+    public Persona crearPersona(int iNum, String sNmb, String sDNI, ArrayList<String> listaArg, ArrayList<String> listaClubs){
         Persona p = null ;
-        String sEdad, sElo, sClb ;
+        String sApe, sTel, sEdad, sElo, sClb ;
         String sFec ;
         String sNom, sIRPF ;
         switch(iNum){
-            case 1: sEdad = listaArg.get(1) ;
-                    sElo = listaArg.get(2) ;
-                    sClb = listaArg.get(3) ;
+            case 1: sApe = listaArg.get(1) ;
+                    sTel = listaArg.get(2) ;
+                    sEdad = listaArg.get(3) ;
+                    sElo = listaArg.get(4) ;
+                    sClb = listaArg.get(5) ;
                     
                     p = new Jugador(sNmb, sApe, sDNI, sTel, sEdad, sElo, sClb) ;
                     break ;
             
-            case 2: sFec = listaArg.get(1) ;
+            case 2: sApe = listaArg.get(1) ;
+                    sFec = listaArg.get(2) ;
+                    sTel = listaArg.get(3) ;
                 
                     p = new Entrenador(sNmb, sApe, sFec, sDNI, sTel, listaClubs) ;
                     break ;

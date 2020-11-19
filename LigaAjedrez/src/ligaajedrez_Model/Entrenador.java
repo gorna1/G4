@@ -13,6 +13,8 @@ import java.util.ArrayList;
  */
 public class Entrenador extends Persona{
     private String sFec ;
+    private String sApe ;
+    private String sTel ;
     private ArrayList<String> listaClubsEntrenador = new ArrayList<String>() ;
     
     public Entrenador(){}

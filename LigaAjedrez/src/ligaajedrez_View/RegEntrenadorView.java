@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import ligaajedrez_Model.Entrenador;
+import ligaajedrez_Model.Factory;
 import ligaajedrez_Model.LigaAjedrez;
 
 /**
@@ -28,6 +29,7 @@ public class RegEntrenadorView extends javax.swing.JFrame {
     private Entrenador entrenador ;
     private String sNmb, sApe, sFec, sTel ;
     private ArrayList<String> listaClubsEntrenador= new ArrayList<String>() ;
+    private ArrayList<String> listaArg= new ArrayList<String>() ;
     private boolean bCmp = false ;
     private Administrador admin;
     public RegEntrenadorView(javax.swing.JFrame vAnterior,javax.swing.JFrame principal,LigaAjedrez liga, Administrador admin) {
@@ -265,8 +267,14 @@ public class RegEntrenadorView extends javax.swing.JFrame {
                 }*/
                 listaClubsEntrenador.add(sClb) ;
             //}
-                
-            entrenador = new Entrenador(sNmb, sApe, sFec, sDNI, sTel, listaClubsEntrenador) ;
+            
+            Factory fac = new Factory() ;
+            listaArg.add(sApe) ;
+            listaArg.add(sFec) ;
+            listaArg.add(sTel) ;
+            entrenador = (Entrenador) fac.crearPersona(3, sDNI,sNmb, listaArg, listaClubsEntrenador) ;
+            listaArg.clear() ;
+
             admin.anyadirEntrenador(entrenador);
             
         }

@@ -40,10 +40,12 @@ public class ApuntarseTorneo extends javax.swing.JFrame {
         this.liga = liga;
         
         Factory fac = new Factory() ;
+        listaArg.add("fernandez") ;
+        listaArg.add("625302312") ; 
         listaArg.add("24") ;
         listaArg.add("Principiante") ; 
         listaArg.add("Valencia") ;
-        jugador1 = (Jugador) fac.crearPersona(1, "joselo", "fernandez", "X2252013V", "625302312", listaArg, listaClubsVacio) ;
+        jugador1 = (Jugador) fac.crearPersona(1, "joselo", "X2252013V", listaArg, listaClubsVacio) ;
         listaArg.clear() ;
 
         liga.anyadirJugadores(jugador1);    // pruebas.     
