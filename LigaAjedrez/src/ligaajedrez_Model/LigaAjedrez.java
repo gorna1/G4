@@ -9,7 +9,12 @@ import Controlador.Administrador;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.TimeZone;
 import javax.swing.JOptionPane;
 
 /**
@@ -29,6 +34,7 @@ public class LigaAjedrez {
     protected ArrayList<String> listaClubsEntrenador = new ArrayList<String>() ;
     protected ArrayList<Gerente> listaGerentes = new ArrayList<Gerente>() ;
     protected ArrayList<EnfrentamientoTorneo> listaEnfrentamientos = new ArrayList<EnfrentamientoTorneo>() ;
+    protected Connection conexionBD;
     
     public LigaAjedrez(){}
     
@@ -40,6 +46,16 @@ public class LigaAjedrez {
         String sPlb = "" , sPlb_Aux = "", sPlb_Aux2 = "", sPlb_Aux3 = "" ;
         String sPlb_Aux4 = "", sPlb_Aux5 = "", sPlb_Aux6 = "" ;
         int i=0 ;
+        
+        String bd = "jdbc:mysql://localhost/practicaIS2?serverTimezone=" + TimeZone.getDefault().getID();
+        try {
+         Class.forName("com.mysql.cj.jdbc.Driver"); // Driver de mysql
+            // Conexión usando usuario y clave de administrador de la BD
+            conexionBD = DriverManager.getConnection(bd, "root", "3141632");
+        } catch (Exception e) { // Error en la conexión con la BD
+            System.out.println(e);
+            System.out.println("Error de conexión");
+        }
         
         try{
             // Apertura del fichero y creacion de BufferedReader para poder
@@ -266,6 +282,34 @@ public class LigaAjedrez {
             catch (Exception e2){ 
                 e2.printStackTrace() ;
             }
+        }
+        
+        try {
+            Jugador jTest = listaJugadores.get(0);
+            String dnix = jTest.getsDNI();
+            String nomx = jTest.getsNmb();
+            String apex = jTest.getsApe();
+            String telx = jTest.getsTel();
+            String edax = jTest.getsEdad();
+            String elox = jTest.getsElo();
+            String clux = jTest.getsClb();
+            
+            Statement s = conexionBD.createStatement();
+            String con = "INSERT INTO jugadores(dni, nombre, apellido, telefono, edad, elo, club) VALUES('" 
+                    + dnix + "','"
+                    + nomx + "','"
+                    + apex + "','"
+                    + telx + "','"
+                    + edax + "','"
+                    + elox + "','"
+                    + clux + "'"
+             + ")";
+            PreparedStatement preparedStm = conexionBD.prepareStatement(con);
+            preparedStm.executeUpdate();
+        }
+        catch (Exception e) {
+            System.out.println(e);
+            System.out.println("No se ha completado la operación");
         }
     }  
     
