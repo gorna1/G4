@@ -272,7 +272,7 @@ public class RegEntrenadorView extends javax.swing.JFrame {
             listaArg.add(sApe) ;
             listaArg.add(sFec) ;
             listaArg.add(sTel) ;
-            entrenador = (Entrenador) fac.crearPersona(3, sDNI,sNmb, listaArg, listaClubsEntrenador) ;
+            entrenador = (Entrenador) fac.crearPersona(2, sNmb, sDNI, listaArg, listaClubsEntrenador) ;
             listaArg.clear() ;
 
             admin.anyadirEntrenador(entrenador);

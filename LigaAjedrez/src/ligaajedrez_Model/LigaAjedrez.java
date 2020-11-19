@@ -35,6 +35,11 @@ public class LigaAjedrez {
     protected ArrayList<Gerente> listaGerentes = new ArrayList<Gerente>() ;
     protected ArrayList<EnfrentamientoTorneo> listaEnfrentamientos = new ArrayList<EnfrentamientoTorneo>() ;
     protected Connection conexionBD;
+    private ArrayList<String> listaArg= new ArrayList<String>() ;
+    Factory fac = new Factory() ;
+    Entrenador entrenador1 = new Entrenador() ;
+    Gerente gerente1 = new Gerente() ;
+    Jugador jugador1 = new Jugador() ;
     
     public LigaAjedrez(){}
     
@@ -144,8 +149,15 @@ public class LigaAjedrez {
                 for(int j=i+1; j<sLin.length(); j++){
                     sPlb_Aux6 += sLin.charAt(j) ;
                 }
-                Jugador jugador = new Jugador(sPlb, sPlb_Aux, sPlb_Aux2, sPlb_Aux3, sPlb_Aux4, sPlb_Aux5, sPlb_Aux6) ;
-                listaJugadores.add(jugador) ;
+                listaArg.add(sPlb_Aux) ;
+                listaArg.add(sPlb_Aux3) ;
+                listaArg.add(sPlb_Aux4) ;
+                listaArg.add(sPlb_Aux5) ;
+                listaArg.add(sPlb_Aux6) ;
+                jugador1 = (Jugador) fac.crearPersona(1, sPlb, sPlb_Aux2, listaArg, listaClubsEntrenador) ;
+                listaArg.clear() ;
+                
+                listaJugadores.add(jugador1) ;
                 sLin=br.readLine() ;
             }
             sLin=br.readLine() ;
@@ -204,8 +216,13 @@ public class LigaAjedrez {
                 }
                 //Constructor de Entrenador pasando sPlb,sPlb_Aux,sPlb_Aux2,sPlb_Aux3,sPlb_Aux,4,sPlb_Aux5,sPlb_Aux6
                 //Hay que tener en cuenta que sPlb_Aux5 y sPlb_Aux6 son ambos Strings clubes, ya que pueden estar en varios
-                Entrenador entrenador = new Entrenador(sPlb, sPlb_Aux, sPlb_Aux2, sPlb_Aux3, sPlb_Aux4, listaClubsEntrenador) ;
-                listaEntrenadores.add(entrenador) ;
+                listaArg.add(sPlb_Aux) ;
+                listaArg.add(sPlb_Aux2) ;
+                listaArg.add(sPlb_Aux4) ;
+                entrenador1 = (Entrenador) fac.crearPersona(2, sPlb, sPlb_Aux3, listaArg, listaClubsEntrenador) ;
+                listaArg.clear() ;
+                
+                listaEntrenadores.add(entrenador1) ;
                 listaClubsEntrenador.clear() ;
                 sLin=br.readLine() ;
             }
@@ -242,8 +259,14 @@ public class LigaAjedrez {
                 for(int j=i+1; j<sLin.length(); j++){
                     sPlb_Aux4 += sLin.charAt(j) ;
                 }
-                Gerente gerente = new Gerente(sPlb, sPlb_Aux, sPlb_Aux2, sPlb_Aux3, sPlb_Aux4) ;
-                listaGerentes.add(gerente) ;
+                
+                listaArg.add(sPlb_Aux2) ;
+                listaArg.add(sPlb_Aux3) ;
+                listaArg.add(sPlb_Aux4) ;
+                gerente1 = (Gerente) fac.crearPersona(3, sPlb, sPlb_Aux, listaArg, listaClubsEntrenador) ;
+                listaArg.clear() ;
+                
+                listaGerentes.add(gerente1) ;
                 sLin=br.readLine() ;
             }
             sLin=br.readLine() ;
@@ -302,7 +325,7 @@ public class LigaAjedrez {
             System.out.println(e);
             System.out.println("No se ha completado la operación");
         }
-    }  
+    }
     
     public void anyadirTorneo(Torneo torneo){
         listaTorneos.add(torneo);

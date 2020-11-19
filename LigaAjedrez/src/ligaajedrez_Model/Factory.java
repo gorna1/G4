@@ -21,25 +21,25 @@ public class Factory {
         String sFec ;
         String sNom, sIRPF ;
         switch(iNum){
-            case 1: sApe = listaArg.get(1) ;
-                    sTel = listaArg.get(2) ;
-                    sEdad = listaArg.get(3) ;
-                    sElo = listaArg.get(4) ;
-                    sClb = listaArg.get(5) ;
+            case 1: sApe = listaArg.get(0) ;
+                    sTel = listaArg.get(1) ;
+                    sEdad = listaArg.get(2) ;
+                    sElo = listaArg.get(3) ;
+                    sClb = listaArg.get(4) ;
                     
                     p = new Jugador(sNmb, sApe, sDNI, sTel, sEdad, sElo, sClb) ;
                     break ;
             
-            case 2: sApe = listaArg.get(1) ;
-                    sFec = listaArg.get(2) ;
-                    sTel = listaArg.get(3) ;
+            case 2: sApe = listaArg.get(0) ;
+                    sFec = listaArg.get(1) ;
+                    sTel = listaArg.get(2) ;
                 
                     p = new Entrenador(sNmb, sApe, sFec, sDNI, sTel, listaClubs) ;
                     break ;
             
-            case 3: sNom = listaArg.get(1) ;
-                    sIRPF = listaArg.get(2) ;
-                    sClb = listaArg.get(3) ;
+            case 3: sNom = listaArg.get(0) ;
+                    sIRPF = listaArg.get(1) ;
+                    sClb = listaArg.get(2) ;
                     
                     p = new Gerente(sDNI, sNmb, sNom, sIRPF, sClb) ;
                     break ;
