@@ -8,6 +8,7 @@ package ligaajedrez_View;
 import java.util.ArrayList;
 import javax.swing.JFrame;
 import ligaajedrez_Model.Club;
+import ligaajedrez_Model.Factory;
 import ligaajedrez_Model.Jugador;
 import ligaajedrez_Model.LigaAjedrez;
 import ligaajedrez_Model.Torneo;
@@ -27,9 +28,16 @@ public class ApuntarseTorneo extends javax.swing.JFrame {
     protected ArrayList<Torneo> listaTorneos = new ArrayList<Torneo>();
     protected ArrayList<Club> listaClubs = new ArrayList<Club>();
     private Jugador jugador1;
+    private ArrayList<String> listaArg = new ArrayList<String>() ;
+    private ArrayList<String> listaClubsVacio = new ArrayList<String>() ;
     
     public ApuntarseTorneo(javax.swing.JFrame vAnterior ,LigaAjedrez liga) {
-        jugador1 = new Jugador("joselo", "fernandez", "X2252013V", "625302312", "24", "Principiante", "Valencia");      //Jugador de prueba.
+        Factory fac = null ;
+        listaArg.add("24") ;
+        listaArg.add("Principiante") ; 
+        listaArg.add("Valencia") ;
+        jugador1 = (Jugador) fac.crearPersona(1, "joselo", "fernandez", "X2252013V", "625302312", listaArg, listaClubsVacio) ;
+        listaArg.clear() ;
         this.liga = liga;
         liga.anyadirJugadores(jugador1);       
         this.vAnterior = vAnterior;
