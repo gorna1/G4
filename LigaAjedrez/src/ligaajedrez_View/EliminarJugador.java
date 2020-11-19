@@ -5,6 +5,7 @@
  */
 package ligaajedrez_View;
 
+import Controlador.Administrador;
 import javax.swing.JFrame;
 import ligaajedrez_Model.LigaAjedrez;
 
@@ -21,7 +22,9 @@ public class EliminarJugador extends javax.swing.JFrame {
     JFrame vPrincipal;
     LigaAjedrez liga;
     private String sDNI;
-    public EliminarJugador(javax.swing.JFrame vAnterior, javax.swing.JFrame vPrincipal,LigaAjedrez liga) {
+    private Administrador admin;
+    public EliminarJugador(javax.swing.JFrame vAnterior, javax.swing.JFrame vPrincipal,LigaAjedrez liga, Administrador admin) {
+        this.admin = admin;
         this.vAnterior = vAnterior;
         this.vPrincipal = vPrincipal;
         this.liga = liga;
@@ -90,8 +93,7 @@ public class EliminarJugador extends javax.swing.JFrame {
 
     private void jButtonContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonContinuarActionPerformed
         sDNI = jTextFieldDNI.getText() ;
-        liga.eliminarJugador(sDNI) ;
-        
+        admin.eliminarJugador(sDNI);
         
         jTextFieldDNI.setEditable(true) ;
         jTextFieldDNI.setText("") ;

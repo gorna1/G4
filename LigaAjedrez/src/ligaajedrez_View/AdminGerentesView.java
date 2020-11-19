@@ -5,6 +5,7 @@
  */
 package ligaajedrez_View;
 
+import Controlador.Administrador;
 import javax.swing.JFrame;
 import ligaajedrez_Model.LigaAjedrez;
 
@@ -20,10 +21,12 @@ public class AdminGerentesView extends javax.swing.JFrame {
     JFrame vAnterior;
     private AnyadirGerente anyadirGerente;
     private EliminarGerenteView eliminarGerente;
-    public AdminGerentesView(javax.swing.JFrame vAnterior, LigaAjedrez liga) {
+    private Administrador admin;
+    public AdminGerentesView(javax.swing.JFrame vAnterior, LigaAjedrez liga, Administrador admin) {
+        this.admin = admin;
         this.vAnterior = vAnterior;
-        anyadirGerente = new AnyadirGerente(this,vAnterior,liga) ;
-        eliminarGerente = new EliminarGerenteView(this,vAnterior,liga);
+        anyadirGerente = new AnyadirGerente(this,vAnterior,liga,admin);
+        eliminarGerente = new EliminarGerenteView(this,vAnterior,liga,admin);
         initComponents();
     }
 

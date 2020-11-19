@@ -1,6 +1,7 @@
 package ligaajedrez_View;
 
 
+import Controlador.Administrador;
 import javax.swing.JFrame;
 import ligaajedrez_View.AdminView;
 
@@ -20,7 +21,9 @@ public class AsignarResponsable extends javax.swing.JFrame {
      * Creates new form asignarResponsable
      */
     JFrame vAnterior;
-    public AsignarResponsable(javax.swing.JFrame vAnterior) {
+    private Administrador admin;
+    public AsignarResponsable(javax.swing.JFrame vAnterior, Administrador admin) {
+        this.admin = admin;
         this.vAnterior = vAnterior;
         initComponents();
     }

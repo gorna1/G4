@@ -1,6 +1,7 @@
 package ligaajedrez_View;
 
 
+import Controlador.Administrador;
 import java.util.ArrayList;
 import javax.swing.JFrame;
 import ligaajedrez_Model.Jugador;
@@ -27,9 +28,11 @@ public class IntroducirResultados extends javax.swing.JFrame {
     private LigaAjedrez liga;
     protected ArrayList<Jugador> listaJugadores = new ArrayList<Jugador>();
     protected ArrayList<Jugador> listaJugadores2 = new ArrayList<Jugador>();
+    private Administrador admin;
     
     
-    public IntroducirResultados(javax.swing.JFrame vAnterior,LigaAjedrez liga) {
+    public IntroducirResultados(javax.swing.JFrame vAnterior,LigaAjedrez liga, Administrador admin) {
+        this.admin = admin;
         this.liga = liga;
         this.vAnterior = vAnterior;
         initComponents();
@@ -167,7 +170,7 @@ public class IntroducirResultados extends javax.swing.JFrame {
         limpiar();
         String uno = (String) jComboBoxJugador1.getSelectedItem();
         
-        listaJugadores2 = liga.consultarEnfrentamiento(uno);
+        listaJugadores2 = admin.consultarEnfrentamiento(uno);
         
         for(Jugador j : listaJugadores2)
             jComboBoxJugador2.addItem(j.getsNmb());

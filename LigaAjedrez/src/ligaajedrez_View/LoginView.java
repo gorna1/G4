@@ -5,6 +5,7 @@
  */
 package ligaajedrez_View;
 
+import Controlador.Administrador;
 import java.io.File;
 import ligaajedrez_Model.Club;
 import ligaajedrez_Model.EnfrentamientoTorneo;
@@ -28,15 +29,17 @@ public class LoginView extends javax.swing.JFrame {
     private LigaAjedrez liga;
     private Torneo torneo, torneo1;
     private EnfrentamientoTorneo enfrentamientoTorneo;
+    private Administrador administrador;
     public LoginView() {
         File datos = new File("src/Datos/Datos_G4.txt") ;
         liga = new LigaAjedrez(datos) ;
+        administrador = new Administrador(liga);
         liga.addSedes("Valencia","Paterna");
         liga.addSedes("Valencia","Manises");
         liga.addSedes("Valencia","Burjassot");
         
         
-        adminView = new AdminView(liga) ;
+        adminView = new AdminView(liga,administrador) ;
         
         
         initComponents();

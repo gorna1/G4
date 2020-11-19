@@ -5,6 +5,7 @@
  */
 package ligaajedrez_View;
 
+import Controlador.Administrador;
 import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -28,7 +29,9 @@ public class RegEntrenadorView extends javax.swing.JFrame {
     private String sNmb, sApe, sFec, sTel ;
     private ArrayList<String> listaClubsEntrenador= new ArrayList<String>() ;
     private boolean bCmp = false ;
-    public RegEntrenadorView(javax.swing.JFrame vAnterior,javax.swing.JFrame principal,LigaAjedrez liga) {
+    private Administrador admin;
+    public RegEntrenadorView(javax.swing.JFrame vAnterior,javax.swing.JFrame principal,LigaAjedrez liga, Administrador admin) {
+        this.admin = admin;
         this.vAnterior = vAnterior;
         this.vPrincipal = principal;
         this.liga = liga ;
@@ -264,7 +267,8 @@ public class RegEntrenadorView extends javax.swing.JFrame {
             //}
                 
             entrenador = new Entrenador(sNmb, sApe, sFec, sDNI, sTel, listaClubsEntrenador) ;
-            liga.anyadirEntrenador(entrenador) ;
+            admin.anyadirEntrenador(entrenador);
+            
         }
         else
             JOptionPane.showMessageDialog(null, "Debes buscar primero por el DNI") ;
@@ -293,7 +297,8 @@ public class RegEntrenadorView extends javax.swing.JFrame {
         sDNI = jTextFieldDNI.getText() ;
         
         if(!(sDNI.equals("")))
-            entrenador = liga.buscarEntrenador(sDNI) ;
+            entrenador = admin.buscarEntrenador(sDNI);
+            
         else
             JOptionPane.showMessageDialog(null, "DNI no introducido") ;
         

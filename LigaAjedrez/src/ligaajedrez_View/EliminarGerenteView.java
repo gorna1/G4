@@ -5,6 +5,7 @@
  */
 package ligaajedrez_View;
 
+import Controlador.Administrador;
 import javax.swing.JFrame;
 import ligaajedrez_Model.LigaAjedrez;
 
@@ -21,7 +22,9 @@ public class EliminarGerenteView extends javax.swing.JFrame {
     JFrame vPrincipal;
     private LigaAjedrez liga ;
     private String sDNI;
-    public EliminarGerenteView(javax.swing.JFrame vAnterior, javax.swing.JFrame vPrincipal, LigaAjedrez liga) {
+    private Administrador admin;
+    public EliminarGerenteView(javax.swing.JFrame vAnterior, javax.swing.JFrame vPrincipal, LigaAjedrez liga, Administrador admin) {
+        this.admin = admin;
         this.vAnterior = vAnterior;
         this.vPrincipal = vPrincipal;
         this.liga = liga ;
@@ -105,7 +108,8 @@ public class EliminarGerenteView extends javax.swing.JFrame {
 
     private void jButtonEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEliminarActionPerformed
         sDNI = jTextFieldDNI.getText() ;
-        liga.eliminarGerente(sDNI) ;
+        admin.eliminarGerente(sDNI);
+        
         
         jTextFieldDNI.setEditable(true) ;
         jTextFieldDNI.setText("") ;

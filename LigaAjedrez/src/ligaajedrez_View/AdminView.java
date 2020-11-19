@@ -5,6 +5,7 @@
  */
 package ligaajedrez_View;
 
+import Controlador.Administrador;
 import ligaajedrez_Model.LigaAjedrez;
 
 /**
@@ -27,8 +28,10 @@ public class AdminView extends javax.swing.JFrame {
     private AdminJugadorView adminJugadorView;
     private LigaAjedrez liga;
     private ApuntarseTorneo apTorneo;
+    private Administrador admin;
     
-    public AdminView(LigaAjedrez liga) {
+    public AdminView(LigaAjedrez liga,Administrador admin) {
+        this.admin = admin;
         this.liga = liga;
         initComponents();
     }
@@ -200,65 +203,65 @@ public class AdminView extends javax.swing.JFrame {
     private void jButtonInfoPartidasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonInfoPartidasActionPerformed
 
         setVisible(false);
-        informacionPartidas = new InformacionPartidas(this,liga);
+        informacionPartidas = new InformacionPartidas(this,liga,admin);
         informacionPartidas.setVisible(true);
     }//GEN-LAST:event_jButtonInfoPartidasActionPerformed
 
     private void jButtonSedeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSedeActionPerformed
 
         setVisible(false);
-        asignarSedePartida = new AsignarSedePartida(this,liga);
+        asignarSedePartida = new AsignarSedePartida(this,liga,admin);
         asignarSedePartida.setVisible(true);
     }//GEN-LAST:event_jButtonSedeActionPerformed
 
     private void jButtonAnyadirGerenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAnyadirGerenteActionPerformed
         setVisible(false);
-        adminGerentesView = new AdminGerentesView(this, liga);
+        adminGerentesView = new AdminGerentesView(this, liga,admin);
         adminGerentesView.setVisible(true);
     }//GEN-LAST:event_jButtonAnyadirGerenteActionPerformed
 
     private void jButtonAnyadirEntrenadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAnyadirEntrenadorActionPerformed
        this.setVisible(false);
-       adminEntrenador = new AdministrarEntrenador(this,liga);
+       adminEntrenador = new AdministrarEntrenador(this,liga,admin);
        adminEntrenador.setVisible(true);
     }//GEN-LAST:event_jButtonAnyadirEntrenadorActionPerformed
 
     private void jButtonMultasMorososActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMultasMorososActionPerformed
         
         setVisible(false);
-        morososView = new MorososView(this);
+        morososView = new MorososView(this,admin);
         morososView.setVisible(true);
     }//GEN-LAST:event_jButtonMultasMorososActionPerformed
 
     private void jButtonAsignarResActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAsignarResActionPerformed
         
         setVisible(false);
-        asignarResponsable = new AsignarResponsable(this);
+        asignarResponsable = new AsignarResponsable(this,admin);
         asignarResponsable.setVisible(true);
     }//GEN-LAST:event_jButtonAsignarResActionPerformed
 
     private void jButtonIntroResActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIntroResActionPerformed
         setVisible(false);
-        introducirResultados = new IntroducirResultados(this,liga);
+        introducirResultados = new IntroducirResultados(this,liga,admin);
         introducirResultados.setVisible(true);
     }//GEN-LAST:event_jButtonIntroResActionPerformed
 
     private void jButtonRealizarReservaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRealizarReservaActionPerformed
         setVisible(false);
-        realizarReserva = new RealizarReserva(this);
+        realizarReserva = new RealizarReserva(this,admin);
         realizarReserva.setVisible(true);
     }//GEN-LAST:event_jButtonRealizarReservaActionPerformed
 
     private void jButtonAdminJugActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAdminJugActionPerformed
         
         setVisible(false);
-        adminJugadorView = new AdminJugadorView(this,liga);
+        adminJugadorView = new AdminJugadorView(this,liga,admin);
         adminJugadorView.setVisible(true);
     }//GEN-LAST:event_jButtonAdminJugActionPerformed
 
     private void jButtonAptTorneoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAptTorneoActionPerformed
         this.setVisible(false);
-        apTorneo = new ApuntarseTorneo(this,liga);
+        apTorneo = new ApuntarseTorneo(this,liga,admin);
         apTorneo.setVisible(true);
     }//GEN-LAST:event_jButtonAptTorneoActionPerformed
 

@@ -5,6 +5,7 @@
  */
 package ligaajedrez_View;
 
+import Controlador.Administrador;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import ligaajedrez_Model.Gerente;
@@ -26,7 +27,9 @@ public class AnyadirGerente extends javax.swing.JFrame {
     private Gerente gerente ;
     private String sNmb, sNom, sIRPF, sClb ;
     private boolean bCmp = false ;
-    public AnyadirGerente(javax.swing.JFrame vAnterior, javax.swing.JFrame vPrincipal, LigaAjedrez liga) {
+    private Administrador admin;
+    public AnyadirGerente(javax.swing.JFrame vAnterior, javax.swing.JFrame vPrincipal, LigaAjedrez liga, Administrador admin) {
+        this.admin = admin;
         this.vAnterior = vAnterior;
         this.vPrincipal = vPrincipal;
         this.liga = liga ;
@@ -180,7 +183,9 @@ public class AnyadirGerente extends javax.swing.JFrame {
             sDNI = jTextFieldDNI.getText() ;
             
             gerente = new Gerente(sDNI,sNmb, sNom, sIRPF, sClb) ;
-            liga.anyadirGerente(gerente) ;
+            
+            admin.anyadirGerente(gerente);
+            
         }
         
         jTextFieldClub.setEditable(true) ;
@@ -217,10 +222,12 @@ public class AnyadirGerente extends javax.swing.JFrame {
 
     private void jButtonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarActionPerformed
         sDNI = jTextFieldDNI.getText() ;
-        gerente = liga.buscarGerente(sDNI) ;
+        gerente = admin.buscarGerente(sDNI);
+        
         
         if(!(sDNI.equals("")))
-            gerente = liga.buscarGerente(sDNI) ;
+            gerente = admin.buscarGerente(sDNI);
+            
         else
             JOptionPane.showMessageDialog(null, "DNI no introducido") ;
         
