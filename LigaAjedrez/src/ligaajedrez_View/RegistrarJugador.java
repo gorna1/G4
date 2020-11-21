@@ -178,7 +178,11 @@ public class RegistrarJugador extends javax.swing.JFrame {
             listaArg.add(sClb) ;
             jugador = (Jugador) fac.crearPersona(1, sNmb, sDNI, listaArg, listaClubsVacio) ;
             listaArg.clear() ;
-            admin.anyadirJugadores(jugador);
+            try {
+                admin.anyadirJugadores(jugador);
+            } catch (Exception e) {
+                System.out.println(e);
+            }
            
         }
         else

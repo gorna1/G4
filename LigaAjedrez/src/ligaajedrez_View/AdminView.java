@@ -261,8 +261,12 @@ public class AdminView extends javax.swing.JFrame {
 
     private void jButtonAptTorneoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAptTorneoActionPerformed
         this.setVisible(false);
-        apTorneo = new ApuntarseTorneo(this,liga,admin);
-        apTorneo.setVisible(true);
+        try {
+            apTorneo = new ApuntarseTorneo(this,liga,admin);
+            apTorneo.setVisible(true);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }//GEN-LAST:event_jButtonAptTorneoActionPerformed
 
 

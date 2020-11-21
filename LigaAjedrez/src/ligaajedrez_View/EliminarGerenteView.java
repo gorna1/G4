@@ -108,7 +108,11 @@ public class EliminarGerenteView extends javax.swing.JFrame {
 
     private void jButtonEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEliminarActionPerformed
         sDNI = jTextFieldDNI.getText() ;
-        admin.eliminarGerente(sDNI);
+        try {
+            admin.eliminarGerente(sDNI);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
         
         
         jTextFieldDNI.setEditable(true) ;

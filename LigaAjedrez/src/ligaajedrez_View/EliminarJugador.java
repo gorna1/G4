@@ -93,7 +93,11 @@ public class EliminarJugador extends javax.swing.JFrame {
 
     private void jButtonContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonContinuarActionPerformed
         sDNI = jTextFieldDNI.getText() ;
-        admin.eliminarJugador(sDNI);
+        try {
+            admin.eliminarJugador(sDNI);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
         
         jTextFieldDNI.setEditable(true) ;
         jTextFieldDNI.setText("") ;

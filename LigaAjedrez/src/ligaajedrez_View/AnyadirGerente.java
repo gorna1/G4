@@ -194,7 +194,11 @@ public class AnyadirGerente extends javax.swing.JFrame {
             gerente = (Gerente) fac.crearPersona(3, sNmb, sDNI, listaArg, listaClubsVacio) ;
             listaArg.clear() ;
             
-            admin.anyadirGerente(gerente);
+            try {
+                admin.anyadirGerente(gerente);
+            } catch (Exception e) {
+                System.out.println(e);
+            }
             
         }
         
