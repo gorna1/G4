@@ -37,7 +37,7 @@ public class IntroducirResultados extends javax.swing.JFrame {
         this.vAnterior = vAnterior;
         initComponents();
         
-        listaJugadores = liga.consultarJugadores();
+        listaJugadores = admin.consultarJugadores();
         for(Jugador j : listaJugadores)
             jComboBoxJugador1.addItem(j.getsNmb());       
     }

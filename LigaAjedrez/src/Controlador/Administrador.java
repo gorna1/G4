@@ -5,6 +5,7 @@
  */
 package Controlador;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import ligaajedrez_Model.*;
 import ligaajedrez_Model.LigaAjedrez;
@@ -44,28 +45,28 @@ public class Administrador {
     public ArrayList<Torneo> consultarTorneo(){
         return liga.consultarTorneo();
     }
-    public void anyadirGerente(Gerente g){
+    public void anyadirGerente(Gerente g) throws SQLException{
         liga.anyadirGerente(g);
     }
     public Gerente buscarGerente(String sDNI){
         return liga.buscarGerente(sDNI);
     }
-    public void eliminarGerente(String sDNI){
+    public void eliminarGerente(String sDNI) throws SQLException{
         liga.eliminarGerente(sDNI);
     }
-    public void anyadirEntrenador(Entrenador e){
+    public void anyadirEntrenador(Entrenador e) throws SQLException{
         liga.anyadirEntrenador(e);
     }
     public Entrenador buscarEntrenador(String sDNI){
         return liga.buscarEntrenador(sDNI);
     }
-    public void eliminarEntrenador(String sDNI){
+    public void eliminarEntrenador(String sDNI) throws SQLException{
         liga.eliminarEntrenador(sDNI);
     }
-    public void anyadirJugadores(Jugador j){
+    public void anyadirJugadores(Jugador j) throws SQLException{
         liga.anyadirJugadores(j);
     }
-    public void eliminarJugador(String sDNI){
+    public void eliminarJugador(String sDNI) throws SQLException{
         liga.eliminarJugador(sDNI);
     }
     public void cambiarClubJugador(Jugador jugador, String sClb_Nvo){

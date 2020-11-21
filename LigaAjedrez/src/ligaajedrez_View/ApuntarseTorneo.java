@@ -6,6 +6,7 @@
 package ligaajedrez_View;
 
 import Controlador.Administrador;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.swing.JFrame;
 import ligaajedrez_Model.Club;
@@ -35,7 +36,7 @@ public class ApuntarseTorneo extends javax.swing.JFrame {
 
     private Administrador admin;
 
-    public ApuntarseTorneo(javax.swing.JFrame vAnterior ,LigaAjedrez liga, Administrador admin) {
+    public ApuntarseTorneo(javax.swing.JFrame vAnterior ,LigaAjedrez liga, Administrador admin) throws SQLException {
         this.admin = admin;
         this.liga = liga;
         

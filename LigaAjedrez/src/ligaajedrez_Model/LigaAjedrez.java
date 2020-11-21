@@ -12,6 +12,7 @@ import java.io.FileReader;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.TimeZone;
@@ -44,14 +45,6 @@ public class LigaAjedrez {
     public LigaAjedrez(){}
     
     public LigaAjedrez(File datos){  
-        FileReader fr = null ;
-        BufferedReader br = null ;
-        String sLin ;
-        char cCar ;
-        String sPlb = "" , sPlb_Aux = "", sPlb_Aux2 = "", sPlb_Aux3 = "" ;
-        String sPlb_Aux4 = "", sPlb_Aux5 = "", sPlb_Aux6 = "" ;
-        int i=0 ;
-        
         String bd = "jdbc:mysql://localhost/practicaIS2?serverTimezone=" + TimeZone.getDefault().getID();
         try {
          Class.forName("com.mysql.cj.jdbc.Driver"); // Driver de mysql
@@ -62,293 +55,6 @@ public class LigaAjedrez {
             System.out.println("Error de conexión");
         }
         
-        try{
-            // Apertura del fichero y creacion de BufferedReader para poder
-            // hacer una lectura comoda (disponer del metodo readLine()).
-            fr = new FileReader (datos) ;
-            br = new BufferedReader(fr) ;
-
-            // Lectura del fichero
-            sLin=br.readLine() ;
-            sLin=br.readLine() ;
-            
-            while(!(sLin.equals("FIN TORNEOS"))){
-                i = 0;
-                sPlb = "";
-                sPlb_Aux = "";
-                while(sLin.charAt(i) != ','){
-                    sPlb += sLin.charAt(i) ;
-                    i++ ;
-                }
-                for(int j=i+1; j<sLin.length(); j++){
-                    sPlb_Aux += sLin.charAt(j) ;
-                }
-                Torneo torneo = new Torneo(sPlb, sPlb_Aux) ;
-                listaTorneos.add(torneo) ;
-                sLin=br.readLine() ;
-            }
-            sLin=br.readLine() ;
-            sLin=br.readLine() ;
-            
-            while(!(sLin.equals("FIN CLUBES"))){
-                i = 0;
-                sPlb = "";
-                sPlb_Aux = "";
-                while(sLin.charAt(i) != ','){
-                    sPlb += sLin.charAt(i) ;
-                    i++ ;
-                }
-                for(int j=i+1; j<sLin.length(); j++){
-                    sPlb_Aux += sLin.charAt(j) ;
-                }
-                Club club = new Club(sPlb, sPlb_Aux) ;
-                listaClubs.add(club) ;
-                sLin=br.readLine() ;
-            }
-            sLin=br.readLine() ;
-            sLin=br.readLine() ;
-            
-            while(!(sLin.equals("FIN JUGADORES"))){
-                i = 0;
-                sPlb = "";
-                sPlb_Aux = "";
-                sPlb_Aux2 = "";
-                sPlb_Aux3 = "";
-                sPlb_Aux4 = "";
-                sPlb_Aux5 = "";
-                sPlb_Aux6 = "";
-                while(sLin.charAt(i) != ','){
-                    sPlb += sLin.charAt(i) ;
-                    i++ ;
-                }
-                i++ ;
-                while(sLin.charAt(i) != ','){
-                    sPlb_Aux += sLin.charAt(i) ;
-                    i++ ;
-                }
-                i++ ;
-                while(sLin.charAt(i) != ','){
-                    sPlb_Aux2 += sLin.charAt(i) ;
-                    i++ ;
-                }
-                i++ ;
-                while(sLin.charAt(i) != ','){
-                    sPlb_Aux3 += sLin.charAt(i) ;
-                    i++ ;
-                }
-                i++ ;
-                while(sLin.charAt(i) != ','){
-                    sPlb_Aux4 += sLin.charAt(i) ;
-                    i++ ;
-                }
-                i++ ;
-                while(sLin.charAt(i) != ','){
-                    sPlb_Aux5 += sLin.charAt(i) ;
-                    i++ ;
-                }       
-                for(int j=i+1; j<sLin.length(); j++){
-                    sPlb_Aux6 += sLin.charAt(j) ;
-                }
-                listaArg.add(sPlb_Aux) ;
-                listaArg.add(sPlb_Aux3) ;
-                listaArg.add(sPlb_Aux4) ;
-                listaArg.add(sPlb_Aux5) ;
-                listaArg.add(sPlb_Aux6) ;
-                jugador1 = (Jugador) fac.crearPersona(1, sPlb, sPlb_Aux2, listaArg, listaClubsEntrenador) ;
-                listaArg.clear() ;
-                
-                listaJugadores.add(jugador1) ;
-                sLin=br.readLine() ;
-            }
-            sLin=br.readLine() ;
-            sLin=br.readLine() ;
-            
-            while(!(sLin.equals("FIN ENTRENADORES"))){
-                i = 0;
-                sPlb = "";
-                sPlb_Aux = "";
-                sPlb_Aux2 = "";
-                sPlb_Aux3 = "";
-                sPlb_Aux4 = "";
-                sPlb_Aux5 = "";
-                sPlb_Aux6 = "";
-                while(sLin.charAt(i) != ','){
-                    sPlb += sLin.charAt(i) ;
-                    i++ ;
-                }
-                i++ ;
-                while(sLin.charAt(i) != ','){
-                    sPlb_Aux += sLin.charAt(i) ;
-                    i++ ;
-                }
-                i++ ;
-                while(sLin.charAt(i) != ','){
-                    sPlb_Aux2 += sLin.charAt(i) ;
-                    i++ ;
-                }
-                i++ ;
-                while(sLin.charAt(i) != ','){
-                    sPlb_Aux3 += sLin.charAt(i) ;
-                    i++ ;
-                }
-                i++ ;
-                while(sLin.charAt(i) != ','){
-                    sPlb_Aux4 += sLin.charAt(i) ;
-                    i++ ;
-                }
-                if(sLin.contains("-")){
-                    i++ ;
-                    while(sLin.charAt(i) != '-'){
-                        sPlb_Aux5 += sLin.charAt(i) ;
-                        i++ ;
-                    }
-                    listaClubsEntrenador.add(sPlb_Aux5) ;
-                    for(int j=i+1; j<sLin.length(); j++){
-                        sPlb_Aux6 += sLin.charAt(j) ;
-                    }
-                    listaClubsEntrenador.add(sPlb_Aux6) ;
-                }
-                else{
-                    for(int j=i+1; j<sLin.length(); j++){
-                        sPlb_Aux6 += sLin.charAt(j) ;
-                    }
-                    listaClubsEntrenador.add(sPlb_Aux6) ;
-                }
-                //Constructor de Entrenador pasando sPlb,sPlb_Aux,sPlb_Aux2,sPlb_Aux3,sPlb_Aux,4,sPlb_Aux5,sPlb_Aux6
-                //Hay que tener en cuenta que sPlb_Aux5 y sPlb_Aux6 son ambos Strings clubes, ya que pueden estar en varios
-                listaArg.add(sPlb_Aux) ;
-                listaArg.add(sPlb_Aux2) ;
-                listaArg.add(sPlb_Aux4) ;
-                entrenador1 = (Entrenador) fac.crearPersona(2, sPlb, sPlb_Aux3, listaArg, listaClubsEntrenador) ;
-                listaArg.clear() ;
-                
-                listaEntrenadores.add(entrenador1) ;
-                listaClubsEntrenador.clear() ;
-                sLin=br.readLine() ;
-            }
-            
-            sLin=br.readLine() ;
-            sLin=br.readLine() ;
-            
-            while(!(sLin.equals("FIN GERENTES"))){
-                i = 0;
-                sPlb = "";
-                sPlb_Aux = "";
-                sPlb_Aux2 = "";
-                sPlb_Aux3 = "";
-                sPlb_Aux4 = "";
-                while(sLin.charAt(i) != ','){
-                    sPlb += sLin.charAt(i) ;
-                    i++ ;
-                }
-                i++ ;
-                while(sLin.charAt(i) != ','){
-                    sPlb_Aux += sLin.charAt(i) ;
-                    i++ ;
-                }
-                i++ ;
-                while(sLin.charAt(i) != ','){
-                    sPlb_Aux2 += sLin.charAt(i) ;
-                    i++ ;
-                }
-                i++ ;
-                while(sLin.charAt(i) != ','){
-                    sPlb_Aux3 += sLin.charAt(i) ;
-                    i++ ;
-                }
-                for(int j=i+1; j<sLin.length(); j++){
-                    sPlb_Aux4 += sLin.charAt(j) ;
-                }
-                
-                listaArg.add(sPlb_Aux2) ;
-                listaArg.add(sPlb_Aux3) ;
-                listaArg.add(sPlb_Aux4) ;
-                gerente1 = (Gerente) fac.crearPersona(3, sPlb, sPlb_Aux, listaArg, listaClubsEntrenador) ;
-                listaArg.clear() ;
-                
-                listaGerentes.add(gerente1) ;
-                sLin=br.readLine() ;
-            }
-            sLin=br.readLine() ;
-            sLin=br.readLine() ;
-            while (!(sLin.equals("FIN ENFRENTAMIENTOS"))) {
-                i = 0;
-                sPlb = "";
-                sPlb_Aux = "";
-                while(sLin.charAt(i) != ','){
-                    sPlb += sLin.charAt(i) ;
-                    i++ ;
-                }
-                for(int j = i+1; j<sLin.length(); j++)
-                    sPlb_Aux += sLin.charAt(j) ;
-                Jugador j1;
-                Jugador j2;
-                j1 = buscarJugador(sPlb);
-                j2 = buscarJugador(sPlb_Aux);
-                listaEnfrentamientos.add(new EnfrentamientoTorneo(j1, j2));
-                sLin=br.readLine() ;
-            }
-            
-        }
-        catch(Exception e){
-            e.printStackTrace() ;
-        }
-        finally{
-            // En el finally cerramos el fichero, para asegurarnos
-            // que se cierra tanto si todo va bien como si salta 
-            // una excepcion.
-            try{                    
-                if(null != fr)
-                   fr.close() ;     
-            
-            }
-            catch (Exception e2){ 
-                e2.printStackTrace() ;
-            }
-        }
-
-/*ResultSet resultados = null;
-        try {
-            String con;
-            Statement s = conexionBD.createStatement();
-            // Consulta SQL
-            con = "SELECT * FROM entrenadores";
-            resultados = s.executeQuery(con);
-            while (resultados.next()) {
-                String dnix = resultados.getString("dni");
-                String nombrex = resultados.getString("nombre");
-                String apellidox = resultados.getString("apellido");
-                String fechax = resultados.getString("fecha");
-                String telefonox = resultados.getString("telefono");
-                //int id = resultados.getInt("id_prueba");
-                System.out.println(dnix);
-                System.out.println(nombrex);
-                System.out.println(apellidox);
-                System.out.println(fechax);
-                System.out.println(telefonox);
-            }
-        } catch (Exception e) { // Error al realizar la consulta
-            System.out.println(e);
-            System.out.println("Error en la petición a la BD");
-        } */
-        
-        /*try {
-            for (Gerente g : listaGerentes) {
-                Statement s = conexionBD.createStatement();
-                String con = "INSERT INTO gerentes(dni, nombre, nomina, irpf, club) VALUES('" 
-                        + g.getsDNI() + "','"
-                        + g.getsNmb() + "','"
-                        + g.getsNom() + "','"
-                        + g.getsIRPF()+ "','"
-                        + g.getsClb()+ "'"
-                 + ")";
-                PreparedStatement preparedStm = conexionBD.prepareStatement(con);
-                preparedStm.executeUpdate();
-            }
-        } catch (Exception e) {
-            System.out.println(e);
-            System.out.println("No se ha completado la operación");
-        }*/
     }
     
     public void anyadirTorneo(Torneo torneo){
@@ -384,7 +90,7 @@ public class LigaAjedrez {
         return listaRivales;
     }
     
-    public void anyadirJugadores(Jugador jugador){
+    public void anyadirJugadores(Jugador jugador) throws SQLException{
         //Si esta en la lista ya en lugar de crear se sobreescribe borrando y creando
         if(listaJugadores.contains(jugador)){
             listaJugadores.remove(jugador) ;
@@ -395,6 +101,18 @@ public class LigaAjedrez {
         else{
             listaJugadores.add(jugador) ;
         }
+        Statement s = conexionBD.createStatement();
+        String con = "INSERT INTO jugadores(nombre, apellidos, dni, telefono, edad, elo, club) VALUES('" 
+                        + jugador.getsNmb() + "','"
+                        + jugador.getsApe() + "','"
+                        + jugador.getsDNI() + "','"
+                        + jugador.getsTel()+ "','"
+                        + jugador.getsEdad()+ ","
+                        + jugador.getsElo()+ ","
+                        + jugador.getsClb()+ "'"
+                 + ")";
+                PreparedStatement preparedStm = conexionBD.prepareStatement(con);
+                preparedStm.executeUpdate();
     }
     
     public void addSedes(String ciudad,String sede){
@@ -404,7 +122,7 @@ public class LigaAjedrez {
                 
     }
     
-    public void eliminarJugador(String sDNI){
+    public void eliminarJugador(String sDNI) throws SQLException{
         Jugador jugador = new Jugador() ;
         
         //Se busca si existe el jugador mediante el DNI
@@ -418,7 +136,14 @@ public class LigaAjedrez {
                 listaJugadores.remove(jugador) ;
                 JOptionPane.showMessageDialog(null, "El jugador ha sido eliminado") ;
             }
+            
         }
+        String con = "DELETE FROM jugadores "
+                + "WHERE dni == "+jugador.getsDNI()
+                 + ")";
+                PreparedStatement preparedStm = conexionBD.prepareStatement(con);
+                preparedStm.executeUpdate();
+        
     }
     
     public void cambiarClubJugador(Jugador jugador, String sClb_Nvo){
@@ -453,7 +178,7 @@ public class LigaAjedrez {
         return jugador ;
     }
     
-    public void anyadirGerente(Gerente gerente){
+    public void anyadirGerente(Gerente gerente) throws SQLException{
         //Si esta en la lista ya en lugar de crear se sobreescribe borrando y
         //creando ya que el usuario ha debido modificar algun campo
         if(listaGerentes.contains(gerente)){
@@ -466,9 +191,20 @@ public class LigaAjedrez {
             listaGerentes.add(gerente) ;
             JOptionPane.showMessageDialog(null, "Gerente creado") ;
         }
+        String con = "INSERT INTO gerentes(dni, nombre, nomina, irpf, club) VALUES('" 
+                        + gerente.getsDNI() + "','"
+                        + gerente.getsNmb() + "','"
+                        + gerente.getsNom() + "','"
+                        + gerente.getsIRPF()+ "','"
+                        + gerente.getsClb()+ "'"
+                 + ")";
+                PreparedStatement preparedStm = conexionBD.prepareStatement(con);
+                preparedStm.executeUpdate();
+         
+        
     }
     
-    public void eliminarGerente(String sDNI){
+    public void eliminarGerente(String sDNI) throws SQLException{
         Gerente gerente = new Gerente() ;
         
         //Se busca si existe el jugador mediante el DNI
@@ -478,6 +214,12 @@ public class LigaAjedrez {
             listaGerentes.remove(gerente) ;
             JOptionPane.showMessageDialog(null, "El gerente ha sido eliminado") ;
         }
+        String con = "DELETE FROM gerentes "
+                + "WHERE dni == "+gerente.getsDNI()
+                 + ")";
+                PreparedStatement preparedStm = conexionBD.prepareStatement(con);
+                preparedStm.executeUpdate();
+        
         
     }
     
@@ -514,7 +256,7 @@ public class LigaAjedrez {
         return listaClubsGetter;
     }
     
-    public void anyadirEntrenador(Entrenador entrenador){
+    public void anyadirEntrenador(Entrenador entrenador) throws SQLException{
         //Si esta en la lista ya en lugar de crear se sobreescribe borrando y
         //creando ya que el usuario ha debido modificar algun campo
         if(listaEntrenadores.contains(entrenador)){
@@ -527,9 +269,21 @@ public class LigaAjedrez {
             listaEntrenadores.add(entrenador) ;
             JOptionPane.showMessageDialog(null, "Entrenador creado") ;
         }
+        Statement s = conexionBD.createStatement();
+        String con = "INSERT INTO entrenadores(nombre, apellidos, fecha, dni, telefono) VALUES('" 
+                        + entrenador.getsNmb() + "','"
+                        + entrenador.getsApe() + "','"
+                        + entrenador.getsFec() + "','"
+                        + entrenador.getsDNI()+ "','"
+                        + entrenador.getsTel()+ "'"
+                 + ")";
+                PreparedStatement preparedStm = conexionBD.prepareStatement(con);
+                preparedStm.executeUpdate();
     }
+
     
-    public void eliminarEntrenador(String sDNI){
+    
+    public void eliminarEntrenador(String sDNI) throws SQLException{
         Entrenador entrenador = new Entrenador() ;
         
         //Se busca si existe el jugador mediante el DNI
@@ -541,6 +295,12 @@ public class LigaAjedrez {
         else{
             JOptionPane.showMessageDialog(null, "No se ha podido eliminar el entrenador") ;
         }
+        String con = "DELETE FROM entrenadores "
+                + "WHERE dni == "+entrenador.getsDNI()
+                 + ")";
+                PreparedStatement preparedStm = conexionBD.prepareStatement(con);
+                preparedStm.executeUpdate();
+        
     }
     
     public Entrenador buscarEntrenador(String sDNI){
