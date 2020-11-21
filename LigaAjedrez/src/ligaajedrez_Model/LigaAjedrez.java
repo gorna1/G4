@@ -306,8 +306,33 @@ public class LigaAjedrez {
                 e2.printStackTrace() ;
             }
         }
-        
+
+/*ResultSet resultados = null;
         try {
+            String con;
+            Statement s = conexionBD.createStatement();
+            // Consulta SQL
+            con = "SELECT * FROM entrenadores";
+            resultados = s.executeQuery(con);
+            while (resultados.next()) {
+                String dnix = resultados.getString("dni");
+                String nombrex = resultados.getString("nombre");
+                String apellidox = resultados.getString("apellido");
+                String fechax = resultados.getString("fecha");
+                String telefonox = resultados.getString("telefono");
+                //int id = resultados.getInt("id_prueba");
+                System.out.println(dnix);
+                System.out.println(nombrex);
+                System.out.println(apellidox);
+                System.out.println(fechax);
+                System.out.println(telefonox);
+            }
+        } catch (Exception e) { // Error al realizar la consulta
+            System.out.println(e);
+            System.out.println("Error en la petición a la BD");
+        } */
+        
+        /*try {
             for (Gerente g : listaGerentes) {
                 Statement s = conexionBD.createStatement();
                 String con = "INSERT INTO gerentes(dni, nombre, nomina, irpf, club) VALUES('" 
@@ -320,11 +345,10 @@ public class LigaAjedrez {
                 PreparedStatement preparedStm = conexionBD.prepareStatement(con);
                 preparedStm.executeUpdate();
             }
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             System.out.println(e);
             System.out.println("No se ha completado la operación");
-        }
+        }*/
     }
     
     public void anyadirTorneo(Torneo torneo){
