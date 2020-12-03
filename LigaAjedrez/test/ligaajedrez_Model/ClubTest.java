@@ -17,7 +17,7 @@ public class ClubTest {
     String sNom, sFed ;
     
     public ClubTest() {
-        sNom = "Alberto" ;
+        sNom = "Paterna" ;
         sFed = "Valencia" ;
     }
 
@@ -25,7 +25,8 @@ public class ClubTest {
     public void testClub() {
         Club club = new Club(sNom, sFed) ;
 
-        assertEquals(club.getNombre() , sNom) ;
+        assertEquals(club.getNombre(), sNom) ;
+        assertEquals(club.getFederacion(), sFed) ;
         
     }
     @Test
