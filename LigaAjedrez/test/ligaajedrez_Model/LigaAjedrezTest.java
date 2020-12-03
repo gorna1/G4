@@ -5,6 +5,7 @@
  */
 package ligaajedrez_Model;
 
+import java.util.ArrayList;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -13,24 +14,52 @@ import static org.junit.jupiter.api.Assertions.*;
  * @author alberto
  */
 public class LigaAjedrezTest {
+    protected ArrayList<Jugador> listaJugadores = new ArrayList<Jugador>();
+    protected ArrayList<Torneo> listaTorneos = new ArrayList<Torneo>();
+    protected ArrayList<Jugador> listaRivales = new ArrayList<Jugador>();
+    protected ArrayList<Jugador> listaMorosos = new ArrayList<Jugador>();
+    protected ArrayList<Club> listaClubs = new ArrayList<Club>();
+    protected ArrayList<Club> listaClubsGetter = new ArrayList<Club>();
+    protected ArrayList<Entrenador> listaEntrenadores = new ArrayList<Entrenador>() ;
+    protected ArrayList<String> listaClubsEntrenador = new ArrayList<String>() ;
+    protected ArrayList<Gerente> listaGerentes = new ArrayList<Gerente>() ;
+    protected ArrayList<EnfrentamientoTorneo> listaEnfrentamientos = new ArrayList<EnfrentamientoTorneo>() ;
+    Torneo t;
+    LigaAjedrez l;
     
     public LigaAjedrezTest() {
+        l = new LigaAjedrez();
+        t = new Torneo ("Torneo de prueba","Valencia");
+        listaTorneos.add(t);
     }
 
     @Test
     public void testAnyadirTorneo() {
+        t = new Torneo ("Torneo de juju","Valencia");
+        ArrayList<Torneo> listaTorneos1 = new ArrayList<Torneo>();
+        listaTorneos1.add(t);
+        
+        assertArrayEquals(listaTorneos,listaTorneos1);
+        
+        
     }
 
     @Test
     public void testConsultarTorneo() {
+        Torneo t1 = new Torneo ("Torneo de prueba","Valencia");
+        ArrayList<Torneo> listaTorneos1 = new ArrayList<Torneo>();
+        listaTorneos1.add(t1);
+        assertArrayEquals(listaTorneos1,l.consultarTorneo());
     }
 
     @Test
     public void testAnyadirClub() {
+        
     }
 
     @Test
     public void testConsultarClubs() {
+        
     }
 
     @Test
@@ -102,3 +131,4 @@ public class LigaAjedrezTest {
     }
     
 }
+

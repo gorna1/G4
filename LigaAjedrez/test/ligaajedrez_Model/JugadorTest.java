@@ -14,7 +14,29 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class JugadorTest {
     
+    String sNmb, sApe, sDNI, sTel, sEdad, sElo, sClb ;
+
     public JugadorTest() {
+        sNmb = "Jugador";
+        sApe = "Apellido";
+        sDNI = "12345678A";
+        sTel = "123456789";
+        sEdad = "34";
+        sElo = "Principiante";
+        sClb = "Valencia";
+    }
+
+    @Test
+    public void testJugador() {
+        Jugador jugador = new Jugador(sNmb, sApe, sDNI, sTel, sEdad, sElo, sClb);
+
+        assertEquals(jugador.getsNmb(), sNmb);
+        assertEquals(jugador.getsApe(), sApe);
+        assertEquals(jugador.getsDNI(), sDNI);
+        assertEquals(jugador.getsTel(), sTel);
+        assertEquals(jugador.getsEdad(), sEdad);
+        assertEquals(jugador.getsElo(), sElo);
+        assertEquals(jugador.getsClb(), sClb);
     }
 
     @Test

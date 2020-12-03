@@ -5,6 +5,7 @@
  */
 package ligaajedrez_Model;
 
+import java.util.ArrayList;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -14,7 +15,29 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class EntrenadorTest {
     
+    String sNmb, sApe, sFec, sDNI, sTel;
+    ArrayList<String> listaClubsENtrenador = new ArrayList<String>() ;
+
     public EntrenadorTest() {
+        sNmb = "Entrnador";
+        sApe = "Apellido";
+        sFec = "20/11/2020";
+        sDNI = "12345678A";
+        sTel = "123456789";
+        listaClubsENtrenador.add("Valencia") ;
+        listaClubsENtrenador.add("Murcia") ;
+    }
+
+    @Test
+    public void testEntrenador() {
+        Entrenador entrenador = new Entrenador(sNmb, sApe, sFec, sDNI, sTel, listaClubsENtrenador);
+
+        assertEquals(entrenador.getsNmb(), sNmb);
+        assertEquals(entrenador.getsApe(), sApe);
+        assertEquals(entrenador.getsFec(), sFec);
+        assertEquals(entrenador.getsDNI(), sDNI);
+        assertEquals(entrenador.getsTel(), sTel);
+        assertEquals(entrenador.getlistaClubsEntrenador(), listaClubsENtrenador);
     }
 
     @Test
@@ -66,3 +89,4 @@ public class EntrenadorTest {
     }
     
 }
+

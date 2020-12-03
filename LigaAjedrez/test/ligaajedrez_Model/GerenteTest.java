@@ -14,7 +14,25 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class GerenteTest {
     
+    String sDNI, sNmb, sNom, sIRPF, sClb;
+
     public GerenteTest() {
+        sDNI = "12345678A";
+        sNmb = "Gerente";
+        sNom = "1000";
+        sIRPF = "20";
+        sClb = "Valencia";
+    }
+
+    @Test
+    public void testGerente() {
+        Gerente gerente = new Gerente(sDNI, sNmb, sNom, sIRPF, sClb);
+
+        assertEquals(gerente.getsDNI(), sDNI);
+        assertEquals(gerente.getsNmb(), sNmb);
+        assertEquals(gerente.getsNom(), sNom);
+        assertEquals(gerente.getsIRPF(), sIRPF);
+        assertEquals(gerente.getsClb(), sClb);
     }
 
     @Test
