@@ -86,4 +86,12 @@ public class Club {
         return federacion;
     }
     
+    public ArrayList<String> getSedes() {
+        return sedes ;
+    }
+    
+    public ArrayList<Jugador> getJugadores() {
+        return listaJugadores ;
+    }
+    
 }
